@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
   58 000a 1A7D     		ldrb	r2, [r3, #20]	@ zero_extendqisi2
   59 000c 0243     		orrs	r2, r2, r0
   60 000e 1A75     		strb	r2, [r3, #20]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 2
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 2
 
 
   61 0010 0020     		movs	r0, #0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  121 000a 034B     		ldr	r3, .L16
  122 000c 5B7D     		ldrb	r3, [r3, #21]	@ zero_extendqisi2
  123 000e D8B2     		uxtb	r0, r3
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 3
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 3
 
 
  124 0010 AA2B     		cmp	r3, #170
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  183              		.thumb_func
  185              	FLASH_OB_DisableWRP:
  186              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 4
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 4
 
 
  187              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  245 0012 054F     		ldr	r7, .L39
  246 0014 3B7D     		ldrb	r3, [r7, #20]	@ zero_extendqisi2
  247 0016 03F01F03 		and	r3, r3, #31
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 5
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 5
 
 
  248 001a 43EA0601 		orr	r1, r3, r6
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  306 001a 10BD     		pop	{r4, pc}
  307              	.L50:
  308              		.align	2
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 6
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 6
 
 
  309              	.L49:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  365              	.L65:
  366 0056 207C     		ldrb	r0, [r4, #16]	@ zero_extendqisi2
  367 0058 FFF7FEFF 		bl	FLASH_OB_RDP_LevelConfig
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 7
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 7
 
 
  368 005c EFE7     		b	.L55
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  426 000a 4368     		ldr	r3, [r0, #4]
  427 000c 012B     		cmp	r3, #1
  428 000e 03D0     		beq	.L77
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 8
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 8
 
 
  429 0010 0089     		ldrh	r0, [r0, #8]
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  488              		.thumb_func
  490              	HAL_FLASHEx_OB_DeSelectPCROP:
  491              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 9
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 9
 
 
  492              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  548              		.align	2
  549              	.L92:
  550 0048 003C0240 		.word	1073888256
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 10
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 10
 
 
  552              		.section	.text.HAL_FLASHEx_Erase_IT,"ax",%progbits
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  608              		.thumb
  609              		.thumb_func
  611              	FLASH_FlushCaches:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 11
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 11
 
 
  612              		@ args = 0, pretend = 0, frame = 0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  668 0002 224B     		ldr	r3, .L118
  669 0004 1B7E     		ldrb	r3, [r3, #24]	@ zero_extendqisi2
  670 0006 012B     		cmp	r3, #1
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 12
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 12
 
 
  671 0008 3ED0     		beq	.L114
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  725 0082 1A76     		strb	r2, [r3, #24]
  726              	.L107:
  727 0084 3846     		mov	r0, r7
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 13
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 13
 
 
  728 0086 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
@@ -731,78 +731,78 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 1
  735 008c 00000000 		.word	pFlash
  736 0090 003C0240 		.word	1073888256
  738              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 14
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_flash_ex.c
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:18     .text.FLASH_MassErase:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:23     .text.FLASH_MassErase:00000000 FLASH_MassErase
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:42     .text.FLASH_MassErase:00000020 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:45     .text.FLASH_OB_BOR_LevelConfig:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:50     .text.FLASH_OB_BOR_LevelConfig:00000000 FLASH_OB_BOR_LevelConfig
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:66     .text.FLASH_OB_BOR_LevelConfig:00000014 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:69     .text.FLASH_OB_GetUser:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:74     .text.FLASH_OB_GetUser:00000000 FLASH_OB_GetUser
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:85     .text.FLASH_OB_GetUser:0000000c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:88     .text.FLASH_OB_GetWRP:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:93     .text.FLASH_OB_GetWRP:00000000 FLASH_OB_GetWRP
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:104    .text.FLASH_OB_GetWRP:00000008 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:107    .text.FLASH_OB_GetRDP:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:112    .text.FLASH_OB_GetRDP:00000000 FLASH_OB_GetRDP
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:132    .text.FLASH_OB_GetRDP:00000018 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:135    .text.FLASH_OB_GetBOR:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:140    .text.FLASH_OB_GetBOR:00000000 FLASH_OB_GetBOR
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:151    .text.FLASH_OB_GetBOR:0000000c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:154    .text.FLASH_OB_EnableWRP:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:159    .text.FLASH_OB_EnableWRP:00000000 FLASH_OB_EnableWRP
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:177    .text.FLASH_OB_EnableWRP:0000001c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:180    .text.FLASH_OB_DisableWRP:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:185    .text.FLASH_OB_DisableWRP:00000000 FLASH_OB_DisableWRP
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:204    .text.FLASH_OB_DisableWRP:0000001c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:207    .text.FLASH_OB_RDP_LevelConfig:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:212    .text.FLASH_OB_RDP_LevelConfig:00000000 FLASH_OB_RDP_LevelConfig
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:227    .text.FLASH_OB_RDP_LevelConfig:00000014 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:230    .text.FLASH_OB_UserConfig:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:235    .text.FLASH_OB_UserConfig:00000000 FLASH_OB_UserConfig
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:257    .text.FLASH_OB_UserConfig:00000028 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:260    .text.FLASH_OB_EnablePCROP:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:265    .text.FLASH_OB_EnablePCROP:00000000 FLASH_OB_EnablePCROP
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:284    .text.FLASH_OB_EnablePCROP:0000001c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:287    .text.FLASH_OB_DisablePCROP:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:292    .text.FLASH_OB_DisablePCROP:00000000 FLASH_OB_DisablePCROP
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:310    .text.FLASH_OB_DisablePCROP:0000001c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:313    .text.HAL_FLASHEx_OBProgram:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:319    .text.HAL_FLASHEx_OBProgram:00000000 HAL_FLASHEx_OBProgram
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:386    .text.HAL_FLASHEx_OBProgram:00000080 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:389    .text.HAL_FLASHEx_OBGetConfig:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:395    .text.HAL_FLASHEx_OBGetConfig:00000000 HAL_FLASHEx_OBGetConfig
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:413    .text.HAL_FLASHEx_AdvOBProgram:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:419    .text.HAL_FLASHEx_AdvOBProgram:00000000 HAL_FLASHEx_AdvOBProgram
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:442    .text.HAL_FLASHEx_AdvOBGetConfig:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:448    .text.HAL_FLASHEx_AdvOBGetConfig:00000000 HAL_FLASHEx_AdvOBGetConfig
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:459    .text.HAL_FLASHEx_AdvOBGetConfig:00000008 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:462    .text.HAL_FLASHEx_OB_SelectPCROP:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:468    .text.HAL_FLASHEx_OB_SelectPCROP:00000000 HAL_FLASHEx_OB_SelectPCROP
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:481    .text.HAL_FLASHEx_OB_SelectPCROP:00000010 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:484    .text.HAL_FLASHEx_OB_DeSelectPCROP:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:490    .text.HAL_FLASHEx_OB_DeSelectPCROP:00000000 HAL_FLASHEx_OB_DeSelectPCROP
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:503    .text.HAL_FLASHEx_OB_DeSelectPCROP:00000010 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:506    .text.FLASH_Erase_Sector:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:512    .text.FLASH_Erase_Sector:00000000 FLASH_Erase_Sector
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:550    .text.FLASH_Erase_Sector:00000048 $d
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s 			page 15
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:18     .text.FLASH_MassErase:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:23     .text.FLASH_MassErase:00000000 FLASH_MassErase
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:42     .text.FLASH_MassErase:00000020 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:45     .text.FLASH_OB_BOR_LevelConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:50     .text.FLASH_OB_BOR_LevelConfig:00000000 FLASH_OB_BOR_LevelConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:66     .text.FLASH_OB_BOR_LevelConfig:00000014 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:69     .text.FLASH_OB_GetUser:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:74     .text.FLASH_OB_GetUser:00000000 FLASH_OB_GetUser
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:85     .text.FLASH_OB_GetUser:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:88     .text.FLASH_OB_GetWRP:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:93     .text.FLASH_OB_GetWRP:00000000 FLASH_OB_GetWRP
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:104    .text.FLASH_OB_GetWRP:00000008 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:107    .text.FLASH_OB_GetRDP:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:112    .text.FLASH_OB_GetRDP:00000000 FLASH_OB_GetRDP
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:132    .text.FLASH_OB_GetRDP:00000018 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:135    .text.FLASH_OB_GetBOR:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:140    .text.FLASH_OB_GetBOR:00000000 FLASH_OB_GetBOR
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:151    .text.FLASH_OB_GetBOR:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:154    .text.FLASH_OB_EnableWRP:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:159    .text.FLASH_OB_EnableWRP:00000000 FLASH_OB_EnableWRP
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:177    .text.FLASH_OB_EnableWRP:0000001c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:180    .text.FLASH_OB_DisableWRP:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:185    .text.FLASH_OB_DisableWRP:00000000 FLASH_OB_DisableWRP
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:204    .text.FLASH_OB_DisableWRP:0000001c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:207    .text.FLASH_OB_RDP_LevelConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:212    .text.FLASH_OB_RDP_LevelConfig:00000000 FLASH_OB_RDP_LevelConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:227    .text.FLASH_OB_RDP_LevelConfig:00000014 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:230    .text.FLASH_OB_UserConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:235    .text.FLASH_OB_UserConfig:00000000 FLASH_OB_UserConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:257    .text.FLASH_OB_UserConfig:00000028 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:260    .text.FLASH_OB_EnablePCROP:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:265    .text.FLASH_OB_EnablePCROP:00000000 FLASH_OB_EnablePCROP
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:284    .text.FLASH_OB_EnablePCROP:0000001c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:287    .text.FLASH_OB_DisablePCROP:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:292    .text.FLASH_OB_DisablePCROP:00000000 FLASH_OB_DisablePCROP
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:310    .text.FLASH_OB_DisablePCROP:0000001c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:313    .text.HAL_FLASHEx_OBProgram:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:319    .text.HAL_FLASHEx_OBProgram:00000000 HAL_FLASHEx_OBProgram
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:386    .text.HAL_FLASHEx_OBProgram:00000080 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:389    .text.HAL_FLASHEx_OBGetConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:395    .text.HAL_FLASHEx_OBGetConfig:00000000 HAL_FLASHEx_OBGetConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:413    .text.HAL_FLASHEx_AdvOBProgram:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:419    .text.HAL_FLASHEx_AdvOBProgram:00000000 HAL_FLASHEx_AdvOBProgram
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:442    .text.HAL_FLASHEx_AdvOBGetConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:448    .text.HAL_FLASHEx_AdvOBGetConfig:00000000 HAL_FLASHEx_AdvOBGetConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:459    .text.HAL_FLASHEx_AdvOBGetConfig:00000008 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:462    .text.HAL_FLASHEx_OB_SelectPCROP:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:468    .text.HAL_FLASHEx_OB_SelectPCROP:00000000 HAL_FLASHEx_OB_SelectPCROP
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:481    .text.HAL_FLASHEx_OB_SelectPCROP:00000010 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:484    .text.HAL_FLASHEx_OB_DeSelectPCROP:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:490    .text.HAL_FLASHEx_OB_DeSelectPCROP:00000000 HAL_FLASHEx_OB_DeSelectPCROP
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:503    .text.HAL_FLASHEx_OB_DeSelectPCROP:00000010 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:506    .text.FLASH_Erase_Sector:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:512    .text.FLASH_Erase_Sector:00000000 FLASH_Erase_Sector
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:550    .text.FLASH_Erase_Sector:00000048 $d
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s 			page 15
 
 
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:553    .text.HAL_FLASHEx_Erase_IT:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:559    .text.HAL_FLASHEx_Erase_IT:00000000 HAL_FLASHEx_Erase_IT
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:601    .text.HAL_FLASHEx_Erase_IT:0000004c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:605    .text.FLASH_FlushCaches:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:611    .text.FLASH_FlushCaches:00000000 FLASH_FlushCaches
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:655    .text.FLASH_FlushCaches:0000005c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:658    .text.HAL_FLASHEx_Erase:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:664    .text.HAL_FLASHEx_Erase:00000000 HAL_FLASHEx_Erase
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccHnbiP1.s:735    .text.HAL_FLASHEx_Erase:0000008c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:553    .text.HAL_FLASHEx_Erase_IT:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:559    .text.HAL_FLASHEx_Erase_IT:00000000 HAL_FLASHEx_Erase_IT
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:601    .text.HAL_FLASHEx_Erase_IT:0000004c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:605    .text.FLASH_FlushCaches:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:611    .text.FLASH_FlushCaches:00000000 FLASH_FlushCaches
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:655    .text.FLASH_FlushCaches:0000005c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:658    .text.HAL_FLASHEx_Erase:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:664    .text.HAL_FLASHEx_Erase:00000000 HAL_FLASHEx_Erase
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccaHtNrk.s:735    .text.HAL_FLASHEx_Erase:0000008c $d
 
 UNDEFINED SYMBOLS
 FLASH_WaitForLastOperation

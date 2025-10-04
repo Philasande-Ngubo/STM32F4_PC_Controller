@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
   56              	.L3:
   57 004a 2568     		ldr	r5, [r4]
   58 004c 15F00405 		ands	r5, r5, #4
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 2
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 2
 
 
   59 0050 0FD0     		beq	.L4
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  113 00d2 08D0     		beq	.L19
  114 00d4 644A     		ldr	r2, .L73
  115 00d6 D2F89430 		ldr	r3, [r2, #148]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 3
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 3
 
 
  116 00da 23F08063 		bic	r3, r3, #67108864
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  170              	.L45:
  171 015e 0126     		movs	r6, #1
  172 0160 63E7     		b	.L2
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 4
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 4
 
 
  173              	.L60:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  227 01d8 1A67     		str	r2, [r3, #112]
  228 01da 1B6F     		ldr	r3, [r3, #112]
  229 01dc 13F0010F 		tst	r3, #1
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 5
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 5
 
 
  230 01e0 12D1     		bne	.L66
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  284 0254 13F0006F 		tst	r3, #134217728
  285 0258 0ED0     		beq	.L68
  286 025a FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 6
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 6
 
 
  287 025e 801B     		subs	r0, r0, r6
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  341 02de 6368     		ldr	r3, [r4, #4]
  342 02e0 A668     		ldr	r6, [r4, #8]
  343 02e2 43EA8613 		orr	r3, r3, r6, lsl #6
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 7
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 7
 
 
  344 02e6 00F44030 		and	r0, r0, #196608
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  398              	.L69:
  399 0370 3E48     		ldr	r0, .L75
  400 0372 D0F88420 		ldr	r2, [r0, #132]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 8
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 8
 
 
  401 0376 C2F30142 		ubfx	r2, r2, #16, #2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  455 03fa D2F88C30 		ldr	r3, [r2, #140]
  456 03fe 23F4F853 		bic	r3, r3, #7936
  457 0402 E16A     		ldr	r1, [r4, #44]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 9
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 9
 
 
  458 0404 0139     		subs	r1, r1, #1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  513              		.thumb_func
  515              	HAL_RCCEx_GetPeriphCLKConfig:
  516              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 10
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 10
 
 
  517              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  571 00a6 9968     		ldr	r1, [r3, #8]
  572 00a8 01F4F811 		and	r1, r1, #2031616
  573 00ac 1A6F     		ldr	r2, [r3, #112]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 11
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 11
 
 
  574 00ae 02F44072 		and	r2, r2, #768
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  630 001a 0800     		.2byte	(.L84-.L85)/2
  631              		.p2align 1
  632              	.L84:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 12
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 12
 
 
  633 001c B04B     		ldr	r3, .L126
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  687 00b2 5B68     		ldr	r3, [r3, #4]
  688 00b4 13F4800F 		tst	r3, #4194304
  689 00b8 1CD1     		bne	.L95
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 13
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 13
 
 
  690 00ba 894B     		ldr	r3, .L126
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  744 014a 13F4800F 		tst	r3, #4194304
  745 014e 40F0CF80 		bne	.L117
  746 0152 6448     		ldr	r0, .L126+4
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 14
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 14
 
 
  747 0154 7047     		bx	lr
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  801 01dc 13F4800F 		tst	r3, #4194304
  802 01e0 12D0     		beq	.L105
  803 01e2 3F4B     		ldr	r3, .L126
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 15
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 15
 
 
  804 01e4 5A68     		ldr	r2, [r3, #4]
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  858              	.L112:
  859 0268 1D4A     		ldr	r2, .L126
  860 026a D2F88400 		ldr	r0, [r2, #132]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 16
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 16
 
 
  861 026e C0F38810 		ubfx	r0, r0, #6, #9
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  915 02f2 7047     		bx	lr
  916              	.L118:
  917 02f4 0020     		movs	r0, #0
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 17
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 17
 
 
  918 02f6 7047     		bx	lr
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  976 0006 0022     		movs	r2, #0
  977 0008 9A66     		str	r2, [r3, #104]
  978 000a FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 18
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 18
 
 
  979 000e 0446     		mov	r4, r0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1034              		.syntax unified
  1035              		.thumb
  1036              		.thumb_func
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 19
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 19
 
 
  1038              	HAL_RCCEx_DisablePLLI2S:
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1094 0024 0320     		movs	r0, #3
  1095              	.L160:
  1096 0026 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 20
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 20
 
 
  1097              	.L167:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1153 0012 13F0005F 		tst	r3, #536870912
  1154 0016 06D0     		beq	.L177
  1155 0018 FFF7FEFF 		bl	HAL_GetTick
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 21
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 21
 
 
  1156 001c 001B     		subs	r0, r0, r4
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1212 0048 5B00     		lsls	r3, r3, #1
  1213 004a B0FBF3F0 		udiv	r0, r0, r3
  1214              	.L180:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 22
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 22
 
 
  1215 004e 08BD     		pop	{r3, pc}
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1269 00ec B1EB0C01 		subs	r1, r1, ip
  1270 00f0 63EB0E03 		sbc	r3, r3, lr
  1271 00f4 DB00     		lsls	r3, r3, #3
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 23
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 23
 
 
  1272 00f6 43EA5173 		orr	r3, r3, r1, lsr #29
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1328 003a 0023     		movs	r3, #0
  1329 003c AB60     		str	r3, [r5, #8]
  1330              	.L196:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 24
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 24
 
 
  1331 003e 494B     		ldr	r3, .L219
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1385              	.L202:
  1386 00ba 2A4B     		ldr	r3, .L219
  1387 00bc 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 25
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 25
 
 
  1388 00be 13F0006F 		tst	r3, #134217728
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1442 0144 5A6F     		ldr	r2, [r3, #116]
  1443 0146 42F08072 		orr	r2, r2, #16777216
  1444 014a 5A67     		str	r2, [r3, #116]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 26
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 26
 
 
  1445 014c 074B     		ldr	r3, .L219+8
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1501 003e 5BD0     		beq	.L303
  1502 0040 B3F5A02F 		cmp	r3, #327680
  1503 0044 5ED0     		beq	.L304
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 27
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 27
 
 
  1504 0046 8D4B     		ldr	r3, .L317
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1558 00be 0C2B     		cmp	r3, #12
  1559 00c0 69D0     		beq	.L307
  1560              	.L238:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 28
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 28
 
 
  1561 00c2 E368     		ldr	r3, [r4, #12]
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1615              	.L306:
  1616 0136 514B     		ldr	r3, .L317
  1617 0138 5B68     		ldr	r3, [r3, #4]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 29
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 29
 
 
  1618 013a 13F4800F 		tst	r3, #4194304
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1672              	.L240:
  1673 01b4 324B     		ldr	r3, .L317+4
  1674 01b6 0022     		movs	r2, #0
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 30
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 30
 
 
  1675 01b8 1A60     		str	r2, [r3]
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1729 0232 29D0     		beq	.L309
  1730              	.L253:
  1731 0234 A368     		ldr	r3, [r4, #8]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 31
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 31
 
 
  1732 0236 012B     		cmp	r3, #1
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1786 02ac 0320     		movs	r0, #3
  1787 02ae B2E0     		b	.L222
  1788              	.L310:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 32
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 32
 
 
  1789 02b0 624A     		ldr	r2, .L319+4
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1843 0328 0228     		cmp	r0, #2
  1844 032a F5D9     		bls	.L271
  1845 032c 0320     		movs	r0, #3
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 33
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 33
 
 
  1846 032e 72E0     		b	.L222
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1900 03a6 0320     		movs	r0, #3
  1901 03a8 35E0     		b	.L222
  1902              	.L316:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 34
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 34
 
 
  1903 03aa 0020     		movs	r0, #0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  1957              	.L290:
  1958 041a 0120     		movs	r0, #1
  1959 041c FBE7     		b	.L222
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 35
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 35
 
 
  1960              	.L291:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  2016 002c 136F     		ldr	r3, [r2, #112]
  2017 002e 13F0040F 		tst	r3, #4
  2018 0032 3BD0     		beq	.L327
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 36
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 36
 
 
  2019 0034 0523     		movs	r3, #5
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  2073 00aa BAE7     		b	.L326
  2074              	.L327:
  2075 00ac 084B     		ldr	r3, .L334
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 37
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 37
 
 
  2076 00ae 1B6F     		ldr	r3, [r3, #112]
@@ -2185,55 +2185,55 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 1
  2097 00d0 00380240 		.word	1073887232
  2099              		.global	__aeabi_uldivmod
  2100              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s 			page 38
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s 			page 38
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_rcc_ex.c
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:18     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:24     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:295    .text.HAL_RCCEx_PeriphCLKConfig:00000268 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:300    .text.HAL_RCCEx_PeriphCLKConfig:00000278 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:505    .text.HAL_RCCEx_PeriphCLKConfig:0000046c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:509    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:515    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:605    .text.HAL_RCCEx_GetPeriphCLKConfig:00000104 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:608    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:614    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:623    .text.HAL_RCCEx_GetPeriphCLKFreq:0000000c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:631    .text.HAL_RCCEx_GetPeriphCLKFreq:0000001c $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:909    .text.HAL_RCCEx_GetPeriphCLKFreq:000002e0 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:914    .text.HAL_RCCEx_GetPeriphCLKFreq:000002f0 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:931    .text.HAL_RCCEx_GetPeriphCLKFreq:00000304 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:935    .text.HAL_RCCEx_SelectLSEMode:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:941    .text.HAL_RCCEx_SelectLSEMode:00000000 HAL_RCCEx_SelectLSEMode
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:961    .text.HAL_RCCEx_SelectLSEMode:0000001c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:964    .text.HAL_RCCEx_EnablePLLI2S:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:970    .text.HAL_RCCEx_EnablePLLI2S:00000000 HAL_RCCEx_EnablePLLI2S
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1028   .text.HAL_RCCEx_EnablePLLI2S:00000074 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1032   .text.HAL_RCCEx_DisablePLLI2S:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1038   .text.HAL_RCCEx_DisablePLLI2S:00000000 HAL_RCCEx_DisablePLLI2S
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1065   .text.HAL_RCCEx_DisablePLLI2S:0000002c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1069   .text.HAL_RCCEx_EnablePLLSAI:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1075   .text.HAL_RCCEx_EnablePLLSAI:00000000 HAL_RCCEx_EnablePLLSAI
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1131   .text.HAL_RCCEx_EnablePLLSAI:00000070 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1135   .text.HAL_RCCEx_DisablePLLSAI:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1141   .text.HAL_RCCEx_DisablePLLSAI:00000000 HAL_RCCEx_DisablePLLSAI
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1168   .text.HAL_RCCEx_DisablePLLSAI:0000002c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1172   .text.HAL_RCC_GetSysClockFreq:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1178   .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1288   .text.HAL_RCC_GetSysClockFreq:0000011c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1293   .text.HAL_RCC_DeInit:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1299   .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1458   .text.HAL_RCC_DeInit:00000164 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1465   .text.HAL_RCC_OscConfig:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1471   .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1767   .text.HAL_RCC_OscConfig:0000027c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1771   .text.HAL_RCC_OscConfig:00000288 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1981   .text.HAL_RCC_OscConfig:00000438 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1986   .text.HAL_RCC_GetOscConfig:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:1992   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccgTB49u.s:2097   .text.HAL_RCC_GetOscConfig:000000d0 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:18     .text.HAL_RCCEx_PeriphCLKConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:24     .text.HAL_RCCEx_PeriphCLKConfig:00000000 HAL_RCCEx_PeriphCLKConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:295    .text.HAL_RCCEx_PeriphCLKConfig:00000268 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:300    .text.HAL_RCCEx_PeriphCLKConfig:00000278 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:505    .text.HAL_RCCEx_PeriphCLKConfig:0000046c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:509    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:515    .text.HAL_RCCEx_GetPeriphCLKConfig:00000000 HAL_RCCEx_GetPeriphCLKConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:605    .text.HAL_RCCEx_GetPeriphCLKConfig:00000104 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:608    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:614    .text.HAL_RCCEx_GetPeriphCLKFreq:00000000 HAL_RCCEx_GetPeriphCLKFreq
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:623    .text.HAL_RCCEx_GetPeriphCLKFreq:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:631    .text.HAL_RCCEx_GetPeriphCLKFreq:0000001c $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:909    .text.HAL_RCCEx_GetPeriphCLKFreq:000002e0 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:914    .text.HAL_RCCEx_GetPeriphCLKFreq:000002f0 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:931    .text.HAL_RCCEx_GetPeriphCLKFreq:00000304 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:935    .text.HAL_RCCEx_SelectLSEMode:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:941    .text.HAL_RCCEx_SelectLSEMode:00000000 HAL_RCCEx_SelectLSEMode
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:961    .text.HAL_RCCEx_SelectLSEMode:0000001c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:964    .text.HAL_RCCEx_EnablePLLI2S:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:970    .text.HAL_RCCEx_EnablePLLI2S:00000000 HAL_RCCEx_EnablePLLI2S
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1028   .text.HAL_RCCEx_EnablePLLI2S:00000074 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1032   .text.HAL_RCCEx_DisablePLLI2S:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1038   .text.HAL_RCCEx_DisablePLLI2S:00000000 HAL_RCCEx_DisablePLLI2S
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1065   .text.HAL_RCCEx_DisablePLLI2S:0000002c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1069   .text.HAL_RCCEx_EnablePLLSAI:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1075   .text.HAL_RCCEx_EnablePLLSAI:00000000 HAL_RCCEx_EnablePLLSAI
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1131   .text.HAL_RCCEx_EnablePLLSAI:00000070 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1135   .text.HAL_RCCEx_DisablePLLSAI:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1141   .text.HAL_RCCEx_DisablePLLSAI:00000000 HAL_RCCEx_DisablePLLSAI
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1168   .text.HAL_RCCEx_DisablePLLSAI:0000002c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1172   .text.HAL_RCC_GetSysClockFreq:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1178   .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1288   .text.HAL_RCC_GetSysClockFreq:0000011c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1293   .text.HAL_RCC_DeInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1299   .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1458   .text.HAL_RCC_DeInit:00000164 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1465   .text.HAL_RCC_OscConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1471   .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1767   .text.HAL_RCC_OscConfig:0000027c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1771   .text.HAL_RCC_OscConfig:00000288 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1981   .text.HAL_RCC_OscConfig:00000438 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1986   .text.HAL_RCC_GetOscConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:1992   .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccT5LNNa.s:2097   .text.HAL_RCC_GetOscConfig:000000d0 $d
 
 UNDEFINED SYMBOLS
 HAL_GetTick
