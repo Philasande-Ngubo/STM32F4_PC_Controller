@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s 			page 1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,14 +20,14 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "Core/Src/main.c"
-  20              		.section	.text.main,"ax",%progbits
+  20              		.section	.text.initLEDs,"ax",%progbits
   21              		.align	1
-  22              		.global	main
+  22              		.global	initLEDs
   23              		.syntax unified
   24              		.thumb
   25              		.thumb_func
-  27              	main:
-  28              	.LFB137:
+  27              	initLEDs:
+  28              	.LFB138:
    1:Core/Src/main.c **** /* USER CODE BEGIN Header */
    2:Core/Src/main.c **** /**
    3:Core/Src/main.c ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s 			page 1
   28:Core/Src/main.c **** 
   29:Core/Src/main.c **** /* Private macro -------------------------------------------------------------*/
   30:Core/Src/main.c **** /* USER CODE BEGIN PM */
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s 			page 2
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s 			page 2
 
 
   31:Core/Src/main.c **** 
@@ -69,185 +69,175 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s 			page 1
   36:Core/Src/main.c **** TIM_HandleTypeDef htim3;
   37:Core/Src/main.c **** DMA_HandleTypeDef hdma_tim2_ch1;
   38:Core/Src/main.c **** 
-  39:Core/Src/main.c **** /* USER CODE BEGIN PV */
-  40:Core/Src/main.c **** // TODO: Add code for global variables, including LUTs
+  39:Core/Src/main.c **** //Methods
+  40:Core/Src/main.c **** void initLEDs();
   41:Core/Src/main.c **** 
-  42:Core/Src/main.c **** 
-  43:Core/Src/main.c **** 
+  42:Core/Src/main.c **** /* USER CODE BEGIN PV */
+  43:Core/Src/main.c **** // TODO: Add code for global variables, including LUTs
   44:Core/Src/main.c **** 
-  45:Core/Src/main.c **** 
-  46:Core/Src/main.c **** /**
-  47:Core/Src/main.c ****   * @brief  The application entry point.
-  48:Core/Src/main.c ****   * @retval int
-  49:Core/Src/main.c ****   */
-  50:Core/Src/main.c **** int main(void)
-  51:Core/Src/main.c **** {
-  29              		.loc 1 51 1 view -0
-  30              		.cfi_startproc
-  31              		@ Volatile: function does not return.
-  32              		@ args = 0, pretend = 0, frame = 24
-  33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34 0000 80B5     		push	{r7, lr}
-  35              		.cfi_def_cfa_offset 8
-  36              		.cfi_offset 7, -8
-  37              		.cfi_offset 14, -4
-  38 0002 86B0     		sub	sp, sp, #24
-  39              		.cfi_def_cfa_offset 32
-  52:Core/Src/main.c **** 
-  53:Core/Src/main.c ****   HAL_Init();
-  40              		.loc 1 53 3 view .LVU1
-  41 0004 FFF7FEFF 		bl	HAL_Init
-  42              	.LVL0:
-  43              	.L2:
+  45:Core/Src/main.c **** /**
+  46:Core/Src/main.c ****   * @brief  The application entry point.
+  47:Core/Src/main.c ****   * @retval int
+  48:Core/Src/main.c ****   */
+  49:Core/Src/main.c **** int main(void)
+  50:Core/Src/main.c **** {
+  51:Core/Src/main.c **** 
+  52:Core/Src/main.c ****   HAL_Init();
+  53:Core/Src/main.c ****   initLEDs();
   54:Core/Src/main.c **** 
-  55:Core/Src/main.c **** 
-  56:Core/Src/main.c ****   while (1)
-  44              		.loc 1 56 3 view .LVU2
-  45              	.LBB2:
-  57:Core/Src/main.c ****   {
-  58:Core/Src/main.c ****     /* USER CODE END WHILE */
-  59:Core/Src/main.c ****     __HAL_RCC_GPIOB_CLK_ENABLE();
-  46              		.loc 1 59 5 view .LVU3
-  47              	.LBB3:
-  48              		.loc 1 59 5 view .LVU4
-  49 0008 0024     		movs	r4, #0
-  50 000a 0094     		str	r4, [sp]
-  51              		.loc 1 59 5 view .LVU5
-  52 000c 134B     		ldr	r3, .L4
-  53 000e 1A6B     		ldr	r2, [r3, #48]
-  54 0010 42F00202 		orr	r2, r2, #2
-  55 0014 1A63     		str	r2, [r3, #48]
-  56              		.loc 1 59 5 view .LVU6
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s 			page 3
-
-
-  57 0016 1B6B     		ldr	r3, [r3, #48]
-  58 0018 03F00203 		and	r3, r3, #2
-  59 001c 0093     		str	r3, [sp]
-  60              		.loc 1 59 5 view .LVU7
-  61 001e 009B     		ldr	r3, [sp]
-  62              	.LBE3:
-  63              		.loc 1 59 5 view .LVU8
-  60:Core/Src/main.c ****     
-  61:Core/Src/main.c ****     GPIO_InitTypeDef GPIO_InitStruct = {0};
-  64              		.loc 1 61 5 view .LVU9
-  65              		.loc 1 61 22 is_stmt 0 view .LVU10
-  66 0020 01A9     		add	r1, sp, #4
-  67 0022 0194     		str	r4, [sp, #4]
-  68 0024 4C60     		str	r4, [r1, #4]
-  69 0026 8C60     		str	r4, [r1, #8]
-  70 0028 CC60     		str	r4, [r1, #12]
-  71 002a 0C61     		str	r4, [r1, #16]
-  62:Core/Src/main.c **** 
-  63:Core/Src/main.c ****     GPIO_InitStruct.Pin = GPIO_PIN_3;
-  72              		.loc 1 63 5 is_stmt 1 view .LVU11
-  73              		.loc 1 63 25 is_stmt 0 view .LVU12
-  74 002c 0826     		movs	r6, #8
-  75 002e 0196     		str	r6, [sp, #4]
-  64:Core/Src/main.c ****     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;  // Push-pull output
-  76              		.loc 1 64 5 is_stmt 1 view .LVU13
-  77              		.loc 1 64 26 is_stmt 0 view .LVU14
-  78 0030 0127     		movs	r7, #1
-  79 0032 0297     		str	r7, [sp, #8]
-  65:Core/Src/main.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
-  80              		.loc 1 65 5 is_stmt 1 view .LVU15
-  66:Core/Src/main.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  81              		.loc 1 66 5 view .LVU16
-  67:Core/Src/main.c **** 
-  68:Core/Src/main.c ****     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-  82              		.loc 1 68 5 view .LVU17
-  83 0034 0A4D     		ldr	r5, .L4+4
-  84 0036 2846     		mov	r0, r5
-  85 0038 FFF7FEFF 		bl	HAL_GPIO_Init
-  86              	.LVL1:
-  69:Core/Src/main.c ****     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_SET);
-  87              		.loc 1 69 5 view .LVU18
-  88 003c 3A46     		mov	r2, r7
-  89 003e 3146     		mov	r1, r6
-  90 0040 2846     		mov	r0, r5
-  91 0042 FFF7FEFF 		bl	HAL_GPIO_WritePin
-  92              	.LVL2:
-  70:Core/Src/main.c ****     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_3, GPIO_PIN_RESET);
-  93              		.loc 1 70 5 view .LVU19
-  94 0046 2246     		mov	r2, r4
-  95 0048 3146     		mov	r1, r6
-  96 004a 2846     		mov	r0, r5
-  97 004c FFF7FEFF 		bl	HAL_GPIO_WritePin
-  98              	.LVL3:
-  71:Core/Src/main.c ****     HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_3);
-  99              		.loc 1 71 5 view .LVU20
- 100 0050 3146     		mov	r1, r6
- 101 0052 2846     		mov	r0, r5
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s 			page 4
-
-
- 102 0054 FFF7FEFF 		bl	HAL_GPIO_TogglePin
- 103              	.LVL4:
- 104              	.LBE2:
+  55:Core/Src/main.c ****   while (1)
   56:Core/Src/main.c ****   {
- 105              		.loc 1 56 9 view .LVU21
- 106 0058 D6E7     		b	.L2
- 107              	.L5:
- 108 005a 00BF     		.align	2
- 109              	.L4:
- 110 005c 00380240 		.word	1073887232
- 111 0060 00040240 		.word	1073873920
- 112              		.cfi_endproc
- 113              	.LFE137:
- 115              		.global	hdma_tim2_ch1
- 116              		.section	.bss.hdma_tim2_ch1,"aw",%nobits
+  57:Core/Src/main.c ****     /* USER CODE END WHILE */
+  58:Core/Src/main.c ****     /* USER CODE BEGIN 3 */
+  59:Core/Src/main.c ****   }
+  60:Core/Src/main.c ****   /* USER CODE END 3 */
+  61:Core/Src/main.c **** }
+  62:Core/Src/main.c **** 
+  63:Core/Src/main.c **** void initLEDs(){
+  29              		.loc 1 63 16 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 8
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34 0000 82B0     		sub	sp, sp, #8
+  35              		.cfi_def_cfa_offset 8
+  64:Core/Src/main.c ****   __HAL_RCC_GPIOB_CLK_ENABLE();
+  36              		.loc 1 64 3 view .LVU1
+  37              	.LBB2:
+  38              		.loc 1 64 3 view .LVU2
+  39 0002 0023     		movs	r3, #0
+  40 0004 0193     		str	r3, [sp, #4]
+  41              		.loc 1 64 3 view .LVU3
+  42 0006 094B     		ldr	r3, .L3
+  43 0008 1A6B     		ldr	r2, [r3, #48]
+  44 000a 42F00202 		orr	r2, r2, #2
+  45 000e 1A63     		str	r2, [r3, #48]
+  46              		.loc 1 64 3 view .LVU4
+  47 0010 1B6B     		ldr	r3, [r3, #48]
+  48 0012 03F00203 		and	r3, r3, #2
+  49 0016 0193     		str	r3, [sp, #4]
+  50              		.loc 1 64 3 view .LVU5
+  51 0018 019B     		ldr	r3, [sp, #4]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s 			page 3
+
+
+  52              	.LBE2:
+  53              		.loc 1 64 3 view .LVU6
+  65:Core/Src/main.c ****   GPIOB->MODER = 0x5555;
+  54              		.loc 1 65 3 view .LVU7
+  55              		.loc 1 65 16 is_stmt 0 view .LVU8
+  56 001a 054B     		ldr	r3, .L3+4
+  57 001c 45F25552 		movw	r2, #21845
+  58 0020 1A60     		str	r2, [r3]
+  66:Core/Src/main.c ****   GPIOB->ODR = 0xFF;
+  59              		.loc 1 66 3 is_stmt 1 view .LVU9
+  60              		.loc 1 66 14 is_stmt 0 view .LVU10
+  61 0022 FF22     		movs	r2, #255
+  62 0024 5A61     		str	r2, [r3, #20]
+  67:Core/Src/main.c **** }
+  63              		.loc 1 67 1 view .LVU11
+  64 0026 02B0     		add	sp, sp, #8
+  65              		.cfi_def_cfa_offset 0
+  66              		@ sp needed
+  67 0028 7047     		bx	lr
+  68              	.L4:
+  69 002a 00BF     		.align	2
+  70              	.L3:
+  71 002c 00380240 		.word	1073887232
+  72 0030 00040240 		.word	1073873920
+  73              		.cfi_endproc
+  74              	.LFE138:
+  76              		.section	.text.main,"ax",%progbits
+  77              		.align	1
+  78              		.global	main
+  79              		.syntax unified
+  80              		.thumb
+  81              		.thumb_func
+  83              	main:
+  84              	.LFB137:
+  50:Core/Src/main.c **** 
+  85              		.loc 1 50 1 is_stmt 1 view -0
+  86              		.cfi_startproc
+  87              		@ Volatile: function does not return.
+  88              		@ args = 0, pretend = 0, frame = 0
+  89              		@ frame_needed = 0, uses_anonymous_args = 0
+  90 0000 08B5     		push	{r3, lr}
+  91              		.cfi_def_cfa_offset 8
+  92              		.cfi_offset 3, -8
+  93              		.cfi_offset 14, -4
+  52:Core/Src/main.c ****   initLEDs();
+  94              		.loc 1 52 3 view .LVU13
+  95 0002 FFF7FEFF 		bl	HAL_Init
+  96              	.LVL0:
+  53:Core/Src/main.c **** 
+  97              		.loc 1 53 3 view .LVU14
+  98 0006 FFF7FEFF 		bl	initLEDs
+  99              	.LVL1:
+ 100              	.L6:
+  55:Core/Src/main.c ****   {
+ 101              		.loc 1 55 3 view .LVU15
+  59:Core/Src/main.c ****   /* USER CODE END 3 */
+ 102              		.loc 1 59 3 view .LVU16
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s 			page 4
+
+
+  55:Core/Src/main.c ****   {
+ 103              		.loc 1 55 9 view .LVU17
+ 104 000a FEE7     		b	.L6
+ 105              		.cfi_endproc
+ 106              	.LFE137:
+ 108              		.global	hdma_tim2_ch1
+ 109              		.section	.bss.hdma_tim2_ch1,"aw",%nobits
+ 110              		.align	2
+ 113              	hdma_tim2_ch1:
+ 114 0000 00000000 		.space	96
+ 114      00000000 
+ 114      00000000 
+ 114      00000000 
+ 114      00000000 
+ 115              		.global	htim3
+ 116              		.section	.bss.htim3,"aw",%nobits
  117              		.align	2
- 120              	hdma_tim2_ch1:
- 121 0000 00000000 		.space	96
+ 120              	htim3:
+ 121 0000 00000000 		.space	72
  121      00000000 
  121      00000000 
  121      00000000 
  121      00000000 
- 122              		.global	htim3
- 123              		.section	.bss.htim3,"aw",%nobits
+ 122              		.global	htim2
+ 123              		.section	.bss.htim2,"aw",%nobits
  124              		.align	2
- 127              	htim3:
+ 127              	htim2:
  128 0000 00000000 		.space	72
  128      00000000 
  128      00000000 
  128      00000000 
  128      00000000 
- 129              		.global	htim2
- 130              		.section	.bss.htim2,"aw",%nobits
- 131              		.align	2
- 134              	htim2:
- 135 0000 00000000 		.space	72
- 135      00000000 
- 135      00000000 
- 135      00000000 
- 135      00000000 
- 136              		.text
- 137              	.Letext0:
- 138              		.file 2 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
- 139              		.file 3 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
- 140              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
- 141              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 142              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 143              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 144              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 145              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s 			page 5
+ 129              		.text
+ 130              	.Letext0:
+ 131              		.file 2 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
+ 132              		.file 3 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
+ 133              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ 134              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 135              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 136              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 137              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s:21     .text.main:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s:27     .text.main:00000000 main
-C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s:110    .text.main:0000005c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s:120    .bss.hdma_tim2_ch1:00000000 hdma_tim2_ch1
-C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s:117    .bss.hdma_tim2_ch1:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s:127    .bss.htim3:00000000 htim3
-C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s:124    .bss.htim3:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s:134    .bss.htim2:00000000 htim2
-C:\Users\PNGUBO~1\AppData\Local\Temp\cctckVxx.s:131    .bss.htim2:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:21     .text.initLEDs:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:27     .text.initLEDs:00000000 initLEDs
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:71     .text.initLEDs:0000002c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:77     .text.main:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:83     .text.main:00000000 main
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:113    .bss.hdma_tim2_ch1:00000000 hdma_tim2_ch1
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:110    .bss.hdma_tim2_ch1:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:120    .bss.htim3:00000000 htim3
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:117    .bss.htim3:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:127    .bss.htim2:00000000 htim2
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccxE7oT8.s:124    .bss.htim2:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_Init
-HAL_GPIO_Init
-HAL_GPIO_WritePin
-HAL_GPIO_TogglePin
