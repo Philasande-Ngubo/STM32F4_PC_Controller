@@ -65,10 +65,6 @@ int main(void)
 
   MX_GPIO_Init();
 
-  
-  init_LCD();
-  lcd_command(CLEAR);
-
   while (1)
   {
   
@@ -126,9 +122,6 @@ void SystemClock_Config(void)
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  /* USER CODE BEGIN MX_GPIO_Init_1 */
-
-  /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOH_CLK_ENABLE();
@@ -157,6 +150,13 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14 | GPIO_PIN_15, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_8 | GPIO_PIN_9, GPIO_PIN_RESET);
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12 | GPIO_PIN_15, GPIO_PIN_RESET);
+
+  init_LCD();
+  lcd_command(CLEAR);
+  lcd_putstring("Game Controller 1.0");
+  lcd_command(LINE_TWO);
+  lcd_putstring("not connected...");
+
 }
 
 
