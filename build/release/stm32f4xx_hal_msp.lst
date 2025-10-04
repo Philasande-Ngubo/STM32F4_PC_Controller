@@ -1,0 +1,255 @@
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32f4xx_hal_msp.c"
+  16              		.text
+  17              		.section	.text.HAL_MspInit,"ax",%progbits
+  18              		.align	1
+  19              		.global	HAL_MspInit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_MspInit:
+  25              		@ args = 0, pretend = 0, frame = 8
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 82B0     		sub	sp, sp, #8
+  29 0002 0021     		movs	r1, #0
+  30 0004 0091     		str	r1, [sp]
+  31 0006 0B4B     		ldr	r3, .L3
+  32 0008 5A6C     		ldr	r2, [r3, #68]
+  33 000a 42F48042 		orr	r2, r2, #16384
+  34 000e 5A64     		str	r2, [r3, #68]
+  35 0010 5A6C     		ldr	r2, [r3, #68]
+  36 0012 02F48042 		and	r2, r2, #16384
+  37 0016 0092     		str	r2, [sp]
+  38 0018 009A     		ldr	r2, [sp]
+  39 001a 0191     		str	r1, [sp, #4]
+  40 001c 1A6C     		ldr	r2, [r3, #64]
+  41 001e 42F08052 		orr	r2, r2, #268435456
+  42 0022 1A64     		str	r2, [r3, #64]
+  43 0024 1B6C     		ldr	r3, [r3, #64]
+  44 0026 03F08053 		and	r3, r3, #268435456
+  45 002a 0193     		str	r3, [sp, #4]
+  46 002c 019B     		ldr	r3, [sp, #4]
+  47 002e 02B0     		add	sp, sp, #8
+  48              		@ sp needed
+  49 0030 7047     		bx	lr
+  50              	.L4:
+  51 0032 00BF     		.align	2
+  52              	.L3:
+  53 0034 00380240 		.word	1073887232
+  55              		.section	.text.HAL_TIM_Base_MspInit,"ax",%progbits
+  56              		.align	1
+  57              		.global	HAL_TIM_Base_MspInit
+  58              		.syntax unified
+  59              		.thumb
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s 			page 2
+
+
+  60              		.thumb_func
+  62              	HAL_TIM_Base_MspInit:
+  63              		@ args = 0, pretend = 0, frame = 8
+  64              		@ frame_needed = 0, uses_anonymous_args = 0
+  65 0000 10B5     		push	{r4, lr}
+  66 0002 82B0     		sub	sp, sp, #8
+  67 0004 0368     		ldr	r3, [r0]
+  68 0006 B3F1804F 		cmp	r3, #1073741824
+  69 000a 04D0     		beq	.L10
+  70 000c 1E4A     		ldr	r2, .L13
+  71 000e 9342     		cmp	r3, r2
+  72 0010 2CD0     		beq	.L11
+  73              	.L5:
+  74 0012 02B0     		add	sp, sp, #8
+  75              		@ sp needed
+  76 0014 10BD     		pop	{r4, pc}
+  77              	.L10:
+  78 0016 0446     		mov	r4, r0
+  79 0018 0023     		movs	r3, #0
+  80 001a 0093     		str	r3, [sp]
+  81 001c 1B4A     		ldr	r2, .L13+4
+  82 001e 116C     		ldr	r1, [r2, #64]
+  83 0020 41F00101 		orr	r1, r1, #1
+  84 0024 1164     		str	r1, [r2, #64]
+  85 0026 126C     		ldr	r2, [r2, #64]
+  86 0028 02F00102 		and	r2, r2, #1
+  87 002c 0092     		str	r2, [sp]
+  88 002e 009A     		ldr	r2, [sp]
+  89 0030 1748     		ldr	r0, .L13+8
+  90 0032 184A     		ldr	r2, .L13+12
+  91 0034 0260     		str	r2, [r0]
+  92 0036 4FF0C062 		mov	r2, #100663296
+  93 003a 4260     		str	r2, [r0, #4]
+  94 003c 8360     		str	r3, [r0, #8]
+  95 003e C360     		str	r3, [r0, #12]
+  96 0040 4FF48062 		mov	r2, #1024
+  97 0044 0261     		str	r2, [r0, #16]
+  98 0046 4FF48052 		mov	r2, #4096
+  99 004a 4261     		str	r2, [r0, #20]
+ 100 004c 4FF48042 		mov	r2, #16384
+ 101 0050 8261     		str	r2, [r0, #24]
+ 102 0052 C361     		str	r3, [r0, #28]
+ 103 0054 0362     		str	r3, [r0, #32]
+ 104 0056 4362     		str	r3, [r0, #36]
+ 105 0058 FFF7FEFF 		bl	HAL_DMA_Init
+ 106 005c 18B9     		cbnz	r0, .L12
+ 107              	.L7:
+ 108 005e 0C4B     		ldr	r3, .L13+8
+ 109 0060 6362     		str	r3, [r4, #36]
+ 110 0062 9C63     		str	r4, [r3, #56]
+ 111 0064 D5E7     		b	.L5
+ 112              	.L12:
+ 113 0066 FFF7FEFF 		bl	Error_Handler
+ 114 006a F8E7     		b	.L7
+ 115              	.L11:
+ 116 006c 0023     		movs	r3, #0
+ 117 006e 0193     		str	r3, [sp, #4]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s 			page 3
+
+
+ 118 0070 064B     		ldr	r3, .L13+4
+ 119 0072 1A6C     		ldr	r2, [r3, #64]
+ 120 0074 42F00202 		orr	r2, r2, #2
+ 121 0078 1A64     		str	r2, [r3, #64]
+ 122 007a 1B6C     		ldr	r3, [r3, #64]
+ 123 007c 03F00203 		and	r3, r3, #2
+ 124 0080 0193     		str	r3, [sp, #4]
+ 125 0082 019B     		ldr	r3, [sp, #4]
+ 126 0084 C5E7     		b	.L5
+ 127              	.L14:
+ 128 0086 00BF     		.align	2
+ 129              	.L13:
+ 130 0088 00040040 		.word	1073742848
+ 131 008c 00380240 		.word	1073887232
+ 132 0090 00000000 		.word	hdma_tim2_ch1
+ 133 0094 88600240 		.word	1073897608
+ 135              		.section	.text.HAL_TIM_MspPostInit,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	HAL_TIM_MspPostInit
+ 138              		.syntax unified
+ 139              		.thumb
+ 140              		.thumb_func
+ 142              	HAL_TIM_MspPostInit:
+ 143              		@ args = 0, pretend = 0, frame = 24
+ 144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 145 0000 00B5     		push	{lr}
+ 146 0002 87B0     		sub	sp, sp, #28
+ 147 0004 0023     		movs	r3, #0
+ 148 0006 0193     		str	r3, [sp, #4]
+ 149 0008 0293     		str	r3, [sp, #8]
+ 150 000a 0393     		str	r3, [sp, #12]
+ 151 000c 0493     		str	r3, [sp, #16]
+ 152 000e 0593     		str	r3, [sp, #20]
+ 153 0010 0268     		ldr	r2, [r0]
+ 154 0012 0E4B     		ldr	r3, .L19
+ 155 0014 9A42     		cmp	r2, r3
+ 156 0016 02D0     		beq	.L18
+ 157              	.L15:
+ 158 0018 07B0     		add	sp, sp, #28
+ 159              		@ sp needed
+ 160 001a 5DF804FB 		ldr	pc, [sp], #4
+ 161              	.L18:
+ 162 001e 0023     		movs	r3, #0
+ 163 0020 0093     		str	r3, [sp]
+ 164 0022 0B4B     		ldr	r3, .L19+4
+ 165 0024 1A6B     		ldr	r2, [r3, #48]
+ 166 0026 42F00202 		orr	r2, r2, #2
+ 167 002a 1A63     		str	r2, [r3, #48]
+ 168 002c 1B6B     		ldr	r3, [r3, #48]
+ 169 002e 03F00203 		and	r3, r3, #2
+ 170 0032 0093     		str	r3, [sp]
+ 171 0034 009B     		ldr	r3, [sp]
+ 172 0036 0123     		movs	r3, #1
+ 173 0038 0193     		str	r3, [sp, #4]
+ 174 003a 0223     		movs	r3, #2
+ 175 003c 0293     		str	r3, [sp, #8]
+ 176 003e 0593     		str	r3, [sp, #20]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s 			page 4
+
+
+ 177 0040 01A9     		add	r1, sp, #4
+ 178 0042 0448     		ldr	r0, .L19+8
+ 179 0044 FFF7FEFF 		bl	HAL_GPIO_Init
+ 180 0048 E6E7     		b	.L15
+ 181              	.L20:
+ 182 004a 00BF     		.align	2
+ 183              	.L19:
+ 184 004c 00040040 		.word	1073742848
+ 185 0050 00380240 		.word	1073887232
+ 186 0054 00040240 		.word	1073873920
+ 188              		.section	.text.HAL_TIM_Base_MspDeInit,"ax",%progbits
+ 189              		.align	1
+ 190              		.global	HAL_TIM_Base_MspDeInit
+ 191              		.syntax unified
+ 192              		.thumb
+ 193              		.thumb_func
+ 195              	HAL_TIM_Base_MspDeInit:
+ 196              		@ args = 0, pretend = 0, frame = 0
+ 197              		@ frame_needed = 0, uses_anonymous_args = 0
+ 198 0000 08B5     		push	{r3, lr}
+ 199 0002 0368     		ldr	r3, [r0]
+ 200 0004 B3F1804F 		cmp	r3, #1073741824
+ 201 0008 03D0     		beq	.L25
+ 202 000a 0A4A     		ldr	r2, .L27
+ 203 000c 9342     		cmp	r3, r2
+ 204 000e 09D0     		beq	.L26
+ 205              	.L21:
+ 206 0010 08BD     		pop	{r3, pc}
+ 207              	.L25:
+ 208 0012 094A     		ldr	r2, .L27+4
+ 209 0014 136C     		ldr	r3, [r2, #64]
+ 210 0016 23F00103 		bic	r3, r3, #1
+ 211 001a 1364     		str	r3, [r2, #64]
+ 212 001c 406A     		ldr	r0, [r0, #36]
+ 213 001e FFF7FEFF 		bl	HAL_DMA_DeInit
+ 214 0022 F5E7     		b	.L21
+ 215              	.L26:
+ 216 0024 02F50D32 		add	r2, r2, #144384
+ 217 0028 136C     		ldr	r3, [r2, #64]
+ 218 002a 23F00203 		bic	r3, r3, #2
+ 219 002e 1364     		str	r3, [r2, #64]
+ 220 0030 EEE7     		b	.L21
+ 221              	.L28:
+ 222 0032 00BF     		.align	2
+ 223              	.L27:
+ 224 0034 00040040 		.word	1073742848
+ 225 0038 00380240 		.word	1073887232
+ 227              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f4xx_hal_msp.c
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:18     .text.HAL_MspInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:24     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:53     .text.HAL_MspInit:00000034 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:56     .text.HAL_TIM_Base_MspInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:62     .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:130    .text.HAL_TIM_Base_MspInit:00000088 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:136    .text.HAL_TIM_MspPostInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:142    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:184    .text.HAL_TIM_MspPostInit:0000004c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:189    .text.HAL_TIM_Base_MspDeInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:195    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc19MXqi.s:224    .text.HAL_TIM_Base_MspDeInit:00000034 $d
+
+UNDEFINED SYMBOLS
+HAL_DMA_Init
+Error_Handler
+hdma_tim2_ch1
+HAL_GPIO_Init
+HAL_DMA_DeInit

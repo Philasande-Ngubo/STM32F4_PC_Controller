@@ -1,0 +1,1241 @@
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"stm32f4xx_hal_rcc.c"
+  16              		.text
+  17              		.section	.text.HAL_RCC_DeInit,"ax",%progbits
+  18              		.align	1
+  19              		.weak	HAL_RCC_DeInit
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	HAL_RCC_DeInit:
+  25              		@ args = 0, pretend = 0, frame = 0
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 0020     		movs	r0, #0
+  29 0002 7047     		bx	lr
+  31              		.section	.text.HAL_RCC_OscConfig,"ax",%progbits
+  32              		.align	1
+  33              		.weak	HAL_RCC_OscConfig
+  34              		.syntax unified
+  35              		.thumb
+  36              		.thumb_func
+  38              	HAL_RCC_OscConfig:
+  39              		@ args = 0, pretend = 0, frame = 8
+  40              		@ frame_needed = 0, uses_anonymous_args = 0
+  41 0000 0028     		cmp	r0, #0
+  42 0002 00F0E681 		beq	.L52
+  43 0006 70B5     		push	{r4, r5, r6, lr}
+  44 0008 82B0     		sub	sp, sp, #8
+  45 000a 0446     		mov	r4, r0
+  46 000c 0368     		ldr	r3, [r0]
+  47 000e 13F0010F 		tst	r3, #1
+  48 0012 3BD0     		beq	.L4
+  49 0014 9F4B     		ldr	r3, .L94
+  50 0016 9B68     		ldr	r3, [r3, #8]
+  51 0018 03F00C03 		and	r3, r3, #12
+  52 001c 042B     		cmp	r3, #4
+  53 001e 2CD0     		beq	.L5
+  54 0020 9C4B     		ldr	r3, .L94
+  55 0022 9B68     		ldr	r3, [r3, #8]
+  56 0024 03F00C03 		and	r3, r3, #12
+  57 0028 082B     		cmp	r3, #8
+  58 002a 21D0     		beq	.L80
+  59              	.L6:
+  60 002c 6368     		ldr	r3, [r4, #4]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 2
+
+
+  61 002e B3F5803F 		cmp	r3, #65536
+  62 0032 4FD0     		beq	.L81
+  63 0034 B3F5A02F 		cmp	r3, #327680
+  64 0038 52D0     		beq	.L82
+  65 003a 964B     		ldr	r3, .L94
+  66 003c 1A68     		ldr	r2, [r3]
+  67 003e 22F48032 		bic	r2, r2, #65536
+  68 0042 1A60     		str	r2, [r3]
+  69 0044 1A68     		ldr	r2, [r3]
+  70 0046 22F48022 		bic	r2, r2, #262144
+  71 004a 1A60     		str	r2, [r3]
+  72              	.L8:
+  73 004c 6368     		ldr	r3, [r4, #4]
+  74 004e 002B     		cmp	r3, #0
+  75 0050 50D0     		beq	.L10
+  76 0052 FFF7FEFF 		bl	HAL_GetTick
+  77 0056 0546     		mov	r5, r0
+  78              	.L11:
+  79 0058 8E4B     		ldr	r3, .L94
+  80 005a 1B68     		ldr	r3, [r3]
+  81 005c 13F4003F 		tst	r3, #131072
+  82 0060 14D1     		bne	.L4
+  83 0062 FFF7FEFF 		bl	HAL_GetTick
+  84 0066 401B     		subs	r0, r0, r5
+  85 0068 6428     		cmp	r0, #100
+  86 006a F5D9     		bls	.L11
+  87 006c 0320     		movs	r0, #3
+  88 006e B7E1     		b	.L3
+  89              	.L80:
+  90 0070 884B     		ldr	r3, .L94
+  91 0072 5B68     		ldr	r3, [r3, #4]
+  92 0074 13F4800F 		tst	r3, #4194304
+  93 0078 D8D0     		beq	.L6
+  94              	.L5:
+  95 007a 864B     		ldr	r3, .L94
+  96 007c 1B68     		ldr	r3, [r3]
+  97 007e 13F4003F 		tst	r3, #131072
+  98 0082 03D0     		beq	.L4
+  99 0084 6368     		ldr	r3, [r4, #4]
+ 100 0086 002B     		cmp	r3, #0
+ 101 0088 00F0A581 		beq	.L83
+ 102              	.L4:
+ 103 008c 2368     		ldr	r3, [r4]
+ 104 008e 13F0020F 		tst	r3, #2
+ 105 0092 54D0     		beq	.L15
+ 106 0094 7F4B     		ldr	r3, .L94
+ 107 0096 9B68     		ldr	r3, [r3, #8]
+ 108 0098 13F00C0F 		tst	r3, #12
+ 109 009c 3ED0     		beq	.L16
+ 110 009e 7D4B     		ldr	r3, .L94
+ 111 00a0 9B68     		ldr	r3, [r3, #8]
+ 112 00a2 03F00C03 		and	r3, r3, #12
+ 113 00a6 082B     		cmp	r3, #8
+ 114 00a8 33D0     		beq	.L84
+ 115              	.L17:
+ 116 00aa E368     		ldr	r3, [r4, #12]
+ 117 00ac 002B     		cmp	r3, #0
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 3
+
+
+ 118 00ae 68D0     		beq	.L19
+ 119 00b0 794B     		ldr	r3, .L94+4
+ 120 00b2 0122     		movs	r2, #1
+ 121 00b4 1A60     		str	r2, [r3]
+ 122 00b6 FFF7FEFF 		bl	HAL_GetTick
+ 123 00ba 0546     		mov	r5, r0
+ 124              	.L20:
+ 125 00bc 754B     		ldr	r3, .L94
+ 126 00be 1B68     		ldr	r3, [r3]
+ 127 00c0 13F0020F 		tst	r3, #2
+ 128 00c4 54D1     		bne	.L85
+ 129 00c6 FFF7FEFF 		bl	HAL_GetTick
+ 130 00ca 401B     		subs	r0, r0, r5
+ 131 00cc 0228     		cmp	r0, #2
+ 132 00ce F5D9     		bls	.L20
+ 133 00d0 0320     		movs	r0, #3
+ 134 00d2 85E1     		b	.L3
+ 135              	.L81:
+ 136 00d4 6F4A     		ldr	r2, .L94
+ 137 00d6 1368     		ldr	r3, [r2]
+ 138 00d8 43F48033 		orr	r3, r3, #65536
+ 139 00dc 1360     		str	r3, [r2]
+ 140 00de B5E7     		b	.L8
+ 141              	.L82:
+ 142 00e0 6C4B     		ldr	r3, .L94
+ 143 00e2 1A68     		ldr	r2, [r3]
+ 144 00e4 42F48022 		orr	r2, r2, #262144
+ 145 00e8 1A60     		str	r2, [r3]
+ 146 00ea 1A68     		ldr	r2, [r3]
+ 147 00ec 42F48032 		orr	r2, r2, #65536
+ 148 00f0 1A60     		str	r2, [r3]
+ 149 00f2 ABE7     		b	.L8
+ 150              	.L10:
+ 151 00f4 FFF7FEFF 		bl	HAL_GetTick
+ 152 00f8 0546     		mov	r5, r0
+ 153              	.L13:
+ 154 00fa 664B     		ldr	r3, .L94
+ 155 00fc 1B68     		ldr	r3, [r3]
+ 156 00fe 13F4003F 		tst	r3, #131072
+ 157 0102 C3D0     		beq	.L4
+ 158 0104 FFF7FEFF 		bl	HAL_GetTick
+ 159 0108 401B     		subs	r0, r0, r5
+ 160 010a 6428     		cmp	r0, #100
+ 161 010c F5D9     		bls	.L13
+ 162 010e 0320     		movs	r0, #3
+ 163 0110 66E1     		b	.L3
+ 164              	.L84:
+ 165 0112 604B     		ldr	r3, .L94
+ 166 0114 5B68     		ldr	r3, [r3, #4]
+ 167 0116 13F4800F 		tst	r3, #4194304
+ 168 011a C6D1     		bne	.L17
+ 169              	.L16:
+ 170 011c 5D4B     		ldr	r3, .L94
+ 171 011e 1B68     		ldr	r3, [r3]
+ 172 0120 13F0020F 		tst	r3, #2
+ 173 0124 03D0     		beq	.L18
+ 174 0126 E368     		ldr	r3, [r4, #12]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 4
+
+
+ 175 0128 012B     		cmp	r3, #1
+ 176 012a 40F05681 		bne	.L56
+ 177              	.L18:
+ 178 012e 594A     		ldr	r2, .L94
+ 179 0130 1368     		ldr	r3, [r2]
+ 180 0132 23F0F803 		bic	r3, r3, #248
+ 181 0136 2169     		ldr	r1, [r4, #16]
+ 182 0138 43EAC103 		orr	r3, r3, r1, lsl #3
+ 183 013c 1360     		str	r3, [r2]
+ 184              	.L15:
+ 185 013e 2368     		ldr	r3, [r4]
+ 186 0140 13F0080F 		tst	r3, #8
+ 187 0144 42D0     		beq	.L24
+ 188 0146 6369     		ldr	r3, [r4, #20]
+ 189 0148 6BB3     		cbz	r3, .L25
+ 190 014a 534B     		ldr	r3, .L94+4
+ 191 014c 0122     		movs	r2, #1
+ 192 014e C3F8802E 		str	r2, [r3, #3712]
+ 193 0152 FFF7FEFF 		bl	HAL_GetTick
+ 194 0156 0546     		mov	r5, r0
+ 195              	.L26:
+ 196 0158 4E4B     		ldr	r3, .L94
+ 197 015a 5B6F     		ldr	r3, [r3, #116]
+ 198 015c 13F0020F 		tst	r3, #2
+ 199 0160 34D1     		bne	.L24
+ 200 0162 FFF7FEFF 		bl	HAL_GetTick
+ 201 0166 401B     		subs	r0, r0, r5
+ 202 0168 0228     		cmp	r0, #2
+ 203 016a F5D9     		bls	.L26
+ 204 016c 0320     		movs	r0, #3
+ 205 016e 37E1     		b	.L3
+ 206              	.L85:
+ 207 0170 484A     		ldr	r2, .L94
+ 208 0172 1368     		ldr	r3, [r2]
+ 209 0174 23F0F803 		bic	r3, r3, #248
+ 210 0178 2169     		ldr	r1, [r4, #16]
+ 211 017a 43EAC103 		orr	r3, r3, r1, lsl #3
+ 212 017e 1360     		str	r3, [r2]
+ 213 0180 DDE7     		b	.L15
+ 214              	.L19:
+ 215 0182 454B     		ldr	r3, .L94+4
+ 216 0184 0022     		movs	r2, #0
+ 217 0186 1A60     		str	r2, [r3]
+ 218 0188 FFF7FEFF 		bl	HAL_GetTick
+ 219 018c 0546     		mov	r5, r0
+ 220              	.L22:
+ 221 018e 414B     		ldr	r3, .L94
+ 222 0190 1B68     		ldr	r3, [r3]
+ 223 0192 13F0020F 		tst	r3, #2
+ 224 0196 D2D0     		beq	.L15
+ 225 0198 FFF7FEFF 		bl	HAL_GetTick
+ 226 019c 401B     		subs	r0, r0, r5
+ 227 019e 0228     		cmp	r0, #2
+ 228 01a0 F5D9     		bls	.L22
+ 229 01a2 0320     		movs	r0, #3
+ 230 01a4 1CE1     		b	.L3
+ 231              	.L25:
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 5
+
+
+ 232 01a6 3C4B     		ldr	r3, .L94+4
+ 233 01a8 0022     		movs	r2, #0
+ 234 01aa C3F8802E 		str	r2, [r3, #3712]
+ 235 01ae FFF7FEFF 		bl	HAL_GetTick
+ 236 01b2 0546     		mov	r5, r0
+ 237              	.L28:
+ 238 01b4 374B     		ldr	r3, .L94
+ 239 01b6 5B6F     		ldr	r3, [r3, #116]
+ 240 01b8 13F0020F 		tst	r3, #2
+ 241 01bc 06D0     		beq	.L24
+ 242 01be FFF7FEFF 		bl	HAL_GetTick
+ 243 01c2 401B     		subs	r0, r0, r5
+ 244 01c4 0228     		cmp	r0, #2
+ 245 01c6 F5D9     		bls	.L28
+ 246 01c8 0320     		movs	r0, #3
+ 247 01ca 09E1     		b	.L3
+ 248              	.L24:
+ 249 01cc 2368     		ldr	r3, [r4]
+ 250 01ce 13F0040F 		tst	r3, #4
+ 251 01d2 77D0     		beq	.L30
+ 252 01d4 2F4B     		ldr	r3, .L94
+ 253 01d6 1B6C     		ldr	r3, [r3, #64]
+ 254 01d8 13F0805F 		tst	r3, #268435456
+ 255 01dc 33D1     		bne	.L61
+ 256 01de 0023     		movs	r3, #0
+ 257 01e0 0193     		str	r3, [sp, #4]
+ 258 01e2 2C4B     		ldr	r3, .L94
+ 259 01e4 1A6C     		ldr	r2, [r3, #64]
+ 260 01e6 42F08052 		orr	r2, r2, #268435456
+ 261 01ea 1A64     		str	r2, [r3, #64]
+ 262 01ec 1B6C     		ldr	r3, [r3, #64]
+ 263 01ee 03F08053 		and	r3, r3, #268435456
+ 264 01f2 0193     		str	r3, [sp, #4]
+ 265 01f4 019B     		ldr	r3, [sp, #4]
+ 266 01f6 0125     		movs	r5, #1
+ 267              	.L31:
+ 268 01f8 284B     		ldr	r3, .L94+8
+ 269 01fa 1B68     		ldr	r3, [r3]
+ 270 01fc 13F4807F 		tst	r3, #256
+ 271 0200 23D0     		beq	.L86
+ 272              	.L32:
+ 273 0202 A368     		ldr	r3, [r4, #8]
+ 274 0204 012B     		cmp	r3, #1
+ 275 0206 34D0     		beq	.L87
+ 276 0208 052B     		cmp	r3, #5
+ 277 020a 38D0     		beq	.L88
+ 278 020c 214B     		ldr	r3, .L94
+ 279 020e 1A6F     		ldr	r2, [r3, #112]
+ 280 0210 22F00102 		bic	r2, r2, #1
+ 281 0214 1A67     		str	r2, [r3, #112]
+ 282 0216 1A6F     		ldr	r2, [r3, #112]
+ 283 0218 22F00402 		bic	r2, r2, #4
+ 284 021c 1A67     		str	r2, [r3, #112]
+ 285              	.L36:
+ 286 021e A368     		ldr	r3, [r4, #8]
+ 287 0220 002B     		cmp	r3, #0
+ 288 0222 3DD0     		beq	.L38
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 6
+
+
+ 289 0224 FFF7FEFF 		bl	HAL_GetTick
+ 290 0228 0646     		mov	r6, r0
+ 291              	.L39:
+ 292 022a 1A4B     		ldr	r3, .L94
+ 293 022c 1B6F     		ldr	r3, [r3, #112]
+ 294 022e 13F0020F 		tst	r3, #2
+ 295 0232 46D1     		bne	.L41
+ 296 0234 FFF7FEFF 		bl	HAL_GetTick
+ 297 0238 801B     		subs	r0, r0, r6
+ 298 023a 41F28833 		movw	r3, #5000
+ 299 023e 9842     		cmp	r0, r3
+ 300 0240 F3D9     		bls	.L39
+ 301 0242 0320     		movs	r0, #3
+ 302 0244 CCE0     		b	.L3
+ 303              	.L61:
+ 304 0246 0025     		movs	r5, #0
+ 305 0248 D6E7     		b	.L31
+ 306              	.L86:
+ 307 024a 144A     		ldr	r2, .L94+8
+ 308 024c 1368     		ldr	r3, [r2]
+ 309 024e 43F48073 		orr	r3, r3, #256
+ 310 0252 1360     		str	r3, [r2]
+ 311 0254 FFF7FEFF 		bl	HAL_GetTick
+ 312 0258 0646     		mov	r6, r0
+ 313              	.L33:
+ 314 025a 104B     		ldr	r3, .L94+8
+ 315 025c 1B68     		ldr	r3, [r3]
+ 316 025e 13F4807F 		tst	r3, #256
+ 317 0262 CED1     		bne	.L32
+ 318 0264 FFF7FEFF 		bl	HAL_GetTick
+ 319 0268 801B     		subs	r0, r0, r6
+ 320 026a 0228     		cmp	r0, #2
+ 321 026c F5D9     		bls	.L33
+ 322 026e 0320     		movs	r0, #3
+ 323 0270 B6E0     		b	.L3
+ 324              	.L87:
+ 325 0272 084A     		ldr	r2, .L94
+ 326 0274 136F     		ldr	r3, [r2, #112]
+ 327 0276 43F00103 		orr	r3, r3, #1
+ 328 027a 1367     		str	r3, [r2, #112]
+ 329 027c CFE7     		b	.L36
+ 330              	.L88:
+ 331 027e 054B     		ldr	r3, .L94
+ 332 0280 1A6F     		ldr	r2, [r3, #112]
+ 333 0282 42F00402 		orr	r2, r2, #4
+ 334 0286 1A67     		str	r2, [r3, #112]
+ 335 0288 1A6F     		ldr	r2, [r3, #112]
+ 336 028a 42F00102 		orr	r2, r2, #1
+ 337 028e 1A67     		str	r2, [r3, #112]
+ 338 0290 C5E7     		b	.L36
+ 339              	.L95:
+ 340 0292 00BF     		.align	2
+ 341              	.L94:
+ 342 0294 00380240 		.word	1073887232
+ 343 0298 00004742 		.word	1111949312
+ 344 029c 00700040 		.word	1073770496
+ 345              	.L38:
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 7
+
+
+ 346 02a0 FFF7FEFF 		bl	HAL_GetTick
+ 347 02a4 0646     		mov	r6, r0
+ 348              	.L42:
+ 349 02a6 564B     		ldr	r3, .L96
+ 350 02a8 1B6F     		ldr	r3, [r3, #112]
+ 351 02aa 13F0020F 		tst	r3, #2
+ 352 02ae 08D0     		beq	.L41
+ 353 02b0 FFF7FEFF 		bl	HAL_GetTick
+ 354 02b4 801B     		subs	r0, r0, r6
+ 355 02b6 41F28833 		movw	r3, #5000
+ 356 02ba 9842     		cmp	r0, r3
+ 357 02bc F3D9     		bls	.L42
+ 358 02be 0320     		movs	r0, #3
+ 359 02c0 8EE0     		b	.L3
+ 360              	.L41:
+ 361 02c2 EDB9     		cbnz	r5, .L89
+ 362              	.L30:
+ 363 02c4 A369     		ldr	r3, [r4, #24]
+ 364 02c6 002B     		cmp	r3, #0
+ 365 02c8 00F08980 		beq	.L65
+ 366 02cc 4C4A     		ldr	r2, .L96
+ 367 02ce 9268     		ldr	r2, [r2, #8]
+ 368 02d0 02F00C02 		and	r2, r2, #12
+ 369 02d4 082A     		cmp	r2, #8
+ 370 02d6 51D0     		beq	.L44
+ 371 02d8 022B     		cmp	r3, #2
+ 372 02da 17D0     		beq	.L90
+ 373 02dc 494B     		ldr	r3, .L96+4
+ 374 02de 0022     		movs	r2, #0
+ 375 02e0 1A66     		str	r2, [r3, #96]
+ 376 02e2 FFF7FEFF 		bl	HAL_GetTick
+ 377 02e6 0446     		mov	r4, r0
+ 378              	.L50:
+ 379 02e8 454B     		ldr	r3, .L96
+ 380 02ea 1B68     		ldr	r3, [r3]
+ 381 02ec 13F0007F 		tst	r3, #33554432
+ 382 02f0 42D0     		beq	.L91
+ 383 02f2 FFF7FEFF 		bl	HAL_GetTick
+ 384 02f6 001B     		subs	r0, r0, r4
+ 385 02f8 0228     		cmp	r0, #2
+ 386 02fa F5D9     		bls	.L50
+ 387 02fc 0320     		movs	r0, #3
+ 388 02fe 6FE0     		b	.L3
+ 389              	.L89:
+ 390 0300 3F4A     		ldr	r2, .L96
+ 391 0302 136C     		ldr	r3, [r2, #64]
+ 392 0304 23F08053 		bic	r3, r3, #268435456
+ 393 0308 1364     		str	r3, [r2, #64]
+ 394 030a DBE7     		b	.L30
+ 395              	.L90:
+ 396 030c 3D4B     		ldr	r3, .L96+4
+ 397 030e 0022     		movs	r2, #0
+ 398 0310 1A66     		str	r2, [r3, #96]
+ 399 0312 FFF7FEFF 		bl	HAL_GetTick
+ 400 0316 0546     		mov	r5, r0
+ 401              	.L46:
+ 402 0318 394B     		ldr	r3, .L96
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 8
+
+
+ 403 031a 1B68     		ldr	r3, [r3]
+ 404 031c 13F0007F 		tst	r3, #33554432
+ 405 0320 06D0     		beq	.L92
+ 406 0322 FFF7FEFF 		bl	HAL_GetTick
+ 407 0326 401B     		subs	r0, r0, r5
+ 408 0328 0228     		cmp	r0, #2
+ 409 032a F5D9     		bls	.L46
+ 410 032c 0320     		movs	r0, #3
+ 411 032e 57E0     		b	.L3
+ 412              	.L92:
+ 413 0330 E369     		ldr	r3, [r4, #28]
+ 414 0332 226A     		ldr	r2, [r4, #32]
+ 415 0334 1343     		orrs	r3, r3, r2
+ 416 0336 626A     		ldr	r2, [r4, #36]
+ 417 0338 43EA8213 		orr	r3, r3, r2, lsl #6
+ 418 033c A26A     		ldr	r2, [r4, #40]
+ 419 033e 5208     		lsrs	r2, r2, #1
+ 420 0340 013A     		subs	r2, r2, #1
+ 421 0342 43EA0243 		orr	r3, r3, r2, lsl #16
+ 422 0346 E26A     		ldr	r2, [r4, #44]
+ 423 0348 43EA0263 		orr	r3, r3, r2, lsl #24
+ 424 034c 2C4A     		ldr	r2, .L96
+ 425 034e 5360     		str	r3, [r2, #4]
+ 426 0350 2C4B     		ldr	r3, .L96+4
+ 427 0352 0122     		movs	r2, #1
+ 428 0354 1A66     		str	r2, [r3, #96]
+ 429 0356 FFF7FEFF 		bl	HAL_GetTick
+ 430 035a 0446     		mov	r4, r0
+ 431              	.L48:
+ 432 035c 284B     		ldr	r3, .L96
+ 433 035e 1B68     		ldr	r3, [r3]
+ 434 0360 13F0007F 		tst	r3, #33554432
+ 435 0364 06D1     		bne	.L93
+ 436 0366 FFF7FEFF 		bl	HAL_GetTick
+ 437 036a 001B     		subs	r0, r0, r4
+ 438 036c 0228     		cmp	r0, #2
+ 439 036e F5D9     		bls	.L48
+ 440 0370 0320     		movs	r0, #3
+ 441 0372 35E0     		b	.L3
+ 442              	.L93:
+ 443 0374 0020     		movs	r0, #0
+ 444 0376 33E0     		b	.L3
+ 445              	.L91:
+ 446 0378 0020     		movs	r0, #0
+ 447 037a 31E0     		b	.L3
+ 448              	.L44:
+ 449 037c 012B     		cmp	r3, #1
+ 450 037e 31D0     		beq	.L69
+ 451 0380 1F4B     		ldr	r3, .L96
+ 452 0382 5B68     		ldr	r3, [r3, #4]
+ 453 0384 03F48001 		and	r1, r3, #4194304
+ 454 0388 E269     		ldr	r2, [r4, #28]
+ 455 038a 9142     		cmp	r1, r2
+ 456 038c 2CD1     		bne	.L70
+ 457 038e 03F03F02 		and	r2, r3, #63
+ 458 0392 216A     		ldr	r1, [r4, #32]
+ 459 0394 8A42     		cmp	r2, r1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 9
+
+
+ 460 0396 29D1     		bne	.L71
+ 461 0398 616A     		ldr	r1, [r4, #36]
+ 462 039a 47F6C072 		movw	r2, #32704
+ 463 039e 1A40     		ands	r2, r2, r3
+ 464 03a0 B2EB811F 		cmp	r2, r1, lsl #6
+ 465 03a4 24D1     		bne	.L72
+ 466 03a6 03F44031 		and	r1, r3, #196608
+ 467 03aa A26A     		ldr	r2, [r4, #40]
+ 468 03ac 5208     		lsrs	r2, r2, #1
+ 469 03ae 013A     		subs	r2, r2, #1
+ 470 03b0 B1EB024F 		cmp	r1, r2, lsl #16
+ 471 03b4 1ED1     		bne	.L73
+ 472 03b6 03F07062 		and	r2, r3, #251658240
+ 473 03ba E16A     		ldr	r1, [r4, #44]
+ 474 03bc B2EB016F 		cmp	r2, r1, lsl #24
+ 475 03c0 1AD1     		bne	.L74
+ 476 03c2 03F0E043 		and	r3, r3, #1879048192
+ 477 03c6 226B     		ldr	r2, [r4, #48]
+ 478 03c8 B3EB027F 		cmp	r3, r2, lsl #28
+ 479 03cc 16D1     		bne	.L75
+ 480 03ce 0020     		movs	r0, #0
+ 481 03d0 06E0     		b	.L3
+ 482              	.L52:
+ 483 03d2 0120     		movs	r0, #1
+ 484 03d4 7047     		bx	lr
+ 485              	.L83:
+ 486 03d6 0120     		movs	r0, #1
+ 487 03d8 02E0     		b	.L3
+ 488              	.L56:
+ 489 03da 0120     		movs	r0, #1
+ 490 03dc 00E0     		b	.L3
+ 491              	.L65:
+ 492 03de 0020     		movs	r0, #0
+ 493              	.L3:
+ 494 03e0 02B0     		add	sp, sp, #8
+ 495              		@ sp needed
+ 496 03e2 70BD     		pop	{r4, r5, r6, pc}
+ 497              	.L69:
+ 498 03e4 0120     		movs	r0, #1
+ 499 03e6 FBE7     		b	.L3
+ 500              	.L70:
+ 501 03e8 0120     		movs	r0, #1
+ 502 03ea F9E7     		b	.L3
+ 503              	.L71:
+ 504 03ec 0120     		movs	r0, #1
+ 505 03ee F7E7     		b	.L3
+ 506              	.L72:
+ 507 03f0 0120     		movs	r0, #1
+ 508 03f2 F5E7     		b	.L3
+ 509              	.L73:
+ 510 03f4 0120     		movs	r0, #1
+ 511 03f6 F3E7     		b	.L3
+ 512              	.L74:
+ 513 03f8 0120     		movs	r0, #1
+ 514 03fa F1E7     		b	.L3
+ 515              	.L75:
+ 516 03fc 0120     		movs	r0, #1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 10
+
+
+ 517 03fe EFE7     		b	.L3
+ 518              	.L97:
+ 519              		.align	2
+ 520              	.L96:
+ 521 0400 00380240 		.word	1073887232
+ 522 0404 00004742 		.word	1111949312
+ 524              		.section	.text.HAL_RCC_MCOConfig,"ax",%progbits
+ 525              		.align	1
+ 526              		.global	HAL_RCC_MCOConfig
+ 527              		.syntax unified
+ 528              		.thumb
+ 529              		.thumb_func
+ 531              	HAL_RCC_MCOConfig:
+ 532              		@ args = 0, pretend = 0, frame = 32
+ 533              		@ frame_needed = 0, uses_anonymous_args = 0
+ 534 0000 70B5     		push	{r4, r5, r6, lr}
+ 535 0002 88B0     		sub	sp, sp, #32
+ 536 0004 0C46     		mov	r4, r1
+ 537 0006 1546     		mov	r5, r2
+ 538 0008 00BB     		cbnz	r0, .L99
+ 539 000a 0023     		movs	r3, #0
+ 540 000c 0193     		str	r3, [sp, #4]
+ 541 000e 204E     		ldr	r6, .L102
+ 542 0010 326B     		ldr	r2, [r6, #48]
+ 543 0012 42F00102 		orr	r2, r2, #1
+ 544 0016 3263     		str	r2, [r6, #48]
+ 545 0018 326B     		ldr	r2, [r6, #48]
+ 546 001a 02F00102 		and	r2, r2, #1
+ 547 001e 0192     		str	r2, [sp, #4]
+ 548 0020 019A     		ldr	r2, [sp, #4]
+ 549 0022 4FF48072 		mov	r2, #256
+ 550 0026 0392     		str	r2, [sp, #12]
+ 551 0028 0222     		movs	r2, #2
+ 552 002a 0492     		str	r2, [sp, #16]
+ 553 002c 0322     		movs	r2, #3
+ 554 002e 0692     		str	r2, [sp, #24]
+ 555 0030 0593     		str	r3, [sp, #20]
+ 556 0032 0793     		str	r3, [sp, #28]
+ 557 0034 03A9     		add	r1, sp, #12
+ 558 0036 1748     		ldr	r0, .L102+4
+ 559 0038 FFF7FEFF 		bl	HAL_GPIO_Init
+ 560 003c B368     		ldr	r3, [r6, #8]
+ 561 003e 23F0EC63 		bic	r3, r3, #123731968
+ 562 0042 2543     		orrs	r5, r5, r4
+ 563 0044 1D43     		orrs	r5, r5, r3
+ 564 0046 B560     		str	r5, [r6, #8]
+ 565              	.L98:
+ 566 0048 08B0     		add	sp, sp, #32
+ 567              		@ sp needed
+ 568 004a 70BD     		pop	{r4, r5, r6, pc}
+ 569              	.L99:
+ 570 004c 0023     		movs	r3, #0
+ 571 004e 0293     		str	r3, [sp, #8]
+ 572 0050 0F4E     		ldr	r6, .L102
+ 573 0052 326B     		ldr	r2, [r6, #48]
+ 574 0054 42F00402 		orr	r2, r2, #4
+ 575 0058 3263     		str	r2, [r6, #48]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 11
+
+
+ 576 005a 326B     		ldr	r2, [r6, #48]
+ 577 005c 02F00402 		and	r2, r2, #4
+ 578 0060 0292     		str	r2, [sp, #8]
+ 579 0062 029A     		ldr	r2, [sp, #8]
+ 580 0064 4FF40072 		mov	r2, #512
+ 581 0068 0392     		str	r2, [sp, #12]
+ 582 006a 0222     		movs	r2, #2
+ 583 006c 0492     		str	r2, [sp, #16]
+ 584 006e 0322     		movs	r2, #3
+ 585 0070 0692     		str	r2, [sp, #24]
+ 586 0072 0593     		str	r3, [sp, #20]
+ 587 0074 0793     		str	r3, [sp, #28]
+ 588 0076 03A9     		add	r1, sp, #12
+ 589 0078 0748     		ldr	r0, .L102+8
+ 590 007a FFF7FEFF 		bl	HAL_GPIO_Init
+ 591 007e B368     		ldr	r3, [r6, #8]
+ 592 0080 23F07843 		bic	r3, r3, #-134217728
+ 593 0084 44EAC504 		orr	r4, r4, r5, lsl #3
+ 594 0088 1C43     		orrs	r4, r4, r3
+ 595 008a B460     		str	r4, [r6, #8]
+ 596 008c DCE7     		b	.L98
+ 597              	.L103:
+ 598 008e 00BF     		.align	2
+ 599              	.L102:
+ 600 0090 00380240 		.word	1073887232
+ 601 0094 00000240 		.word	1073872896
+ 602 0098 00080240 		.word	1073874944
+ 604              		.section	.text.HAL_RCC_EnableCSS,"ax",%progbits
+ 605              		.align	1
+ 606              		.global	HAL_RCC_EnableCSS
+ 607              		.syntax unified
+ 608              		.thumb
+ 609              		.thumb_func
+ 611              	HAL_RCC_EnableCSS:
+ 612              		@ args = 0, pretend = 0, frame = 0
+ 613              		@ frame_needed = 0, uses_anonymous_args = 0
+ 614              		@ link register save eliminated.
+ 615 0000 014B     		ldr	r3, .L105
+ 616 0002 0122     		movs	r2, #1
+ 617 0004 DA64     		str	r2, [r3, #76]
+ 618 0006 7047     		bx	lr
+ 619              	.L106:
+ 620              		.align	2
+ 621              	.L105:
+ 622 0008 00004742 		.word	1111949312
+ 624              		.section	.text.HAL_RCC_DisableCSS,"ax",%progbits
+ 625              		.align	1
+ 626              		.global	HAL_RCC_DisableCSS
+ 627              		.syntax unified
+ 628              		.thumb
+ 629              		.thumb_func
+ 631              	HAL_RCC_DisableCSS:
+ 632              		@ args = 0, pretend = 0, frame = 0
+ 633              		@ frame_needed = 0, uses_anonymous_args = 0
+ 634              		@ link register save eliminated.
+ 635 0000 014B     		ldr	r3, .L108
+ 636 0002 0022     		movs	r2, #0
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 12
+
+
+ 637 0004 DA64     		str	r2, [r3, #76]
+ 638 0006 7047     		bx	lr
+ 639              	.L109:
+ 640              		.align	2
+ 641              	.L108:
+ 642 0008 00004742 		.word	1111949312
+ 644              		.section	.text.HAL_RCC_GetSysClockFreq,"ax",%progbits
+ 645              		.align	1
+ 646              		.weak	HAL_RCC_GetSysClockFreq
+ 647              		.syntax unified
+ 648              		.thumb
+ 649              		.thumb_func
+ 651              	HAL_RCC_GetSysClockFreq:
+ 652              		@ args = 0, pretend = 0, frame = 0
+ 653              		@ frame_needed = 0, uses_anonymous_args = 0
+ 654 0000 08B5     		push	{r3, lr}
+ 655 0002 264B     		ldr	r3, .L117
+ 656 0004 9B68     		ldr	r3, [r3, #8]
+ 657 0006 03F00C03 		and	r3, r3, #12
+ 658 000a 042B     		cmp	r3, #4
+ 659 000c 41D0     		beq	.L114
+ 660 000e 082B     		cmp	r3, #8
+ 661 0010 41D1     		bne	.L115
+ 662 0012 224B     		ldr	r3, .L117
+ 663 0014 5A68     		ldr	r2, [r3, #4]
+ 664 0016 02F03F02 		and	r2, r2, #63
+ 665 001a 5B68     		ldr	r3, [r3, #4]
+ 666 001c 13F4800F 		tst	r3, #4194304
+ 667 0020 12D0     		beq	.L112
+ 668 0022 1E4B     		ldr	r3, .L117
+ 669 0024 5968     		ldr	r1, [r3, #4]
+ 670 0026 C1F38811 		ubfx	r1, r1, #6, #9
+ 671 002a 1D48     		ldr	r0, .L117+4
+ 672 002c 0023     		movs	r3, #0
+ 673 002e A1FB0001 		umull	r0, r1, r1, r0
+ 674 0032 FFF7FEFF 		bl	__aeabi_uldivmod
+ 675              	.L113:
+ 676 0036 194B     		ldr	r3, .L117
+ 677 0038 5B68     		ldr	r3, [r3, #4]
+ 678 003a C3F30143 		ubfx	r3, r3, #16, #2
+ 679 003e 0133     		adds	r3, r3, #1
+ 680 0040 5B00     		lsls	r3, r3, #1
+ 681 0042 B0FBF3F0 		udiv	r0, r0, r3
+ 682              	.L110:
+ 683 0046 08BD     		pop	{r3, pc}
+ 684              	.L112:
+ 685 0048 144B     		ldr	r3, .L117
+ 686 004a 5868     		ldr	r0, [r3, #4]
+ 687 004c C0F38810 		ubfx	r0, r0, #6, #9
+ 688 0050 4FEA401C 		lsl	ip, r0, #5
+ 689 0054 BCEB000C 		subs	ip, ip, r0
+ 690 0058 6EEB0E0E 		sbc	lr, lr, lr
+ 691 005c 4FEA8E13 		lsl	r3, lr, #6
+ 692 0060 43EA9C63 		orr	r3, r3, ip, lsr #26
+ 693 0064 4FEA8C11 		lsl	r1, ip, #6
+ 694 0068 B1EB0C01 		subs	r1, r1, ip
+ 695 006c 63EB0E03 		sbc	r3, r3, lr
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 13
+
+
+ 696 0070 DB00     		lsls	r3, r3, #3
+ 697 0072 43EA5173 		orr	r3, r3, r1, lsr #29
+ 698 0076 C900     		lsls	r1, r1, #3
+ 699 0078 11EB000C 		adds	ip, r1, r0
+ 700 007c 43F10003 		adc	r3, r3, #0
+ 701 0080 9902     		lsls	r1, r3, #10
+ 702 0082 0023     		movs	r3, #0
+ 703 0084 4FEA8C20 		lsl	r0, ip, #10
+ 704 0088 41EA9C51 		orr	r1, r1, ip, lsr #22
+ 705 008c FFF7FEFF 		bl	__aeabi_uldivmod
+ 706 0090 D1E7     		b	.L113
+ 707              	.L114:
+ 708 0092 0348     		ldr	r0, .L117+4
+ 709 0094 D7E7     		b	.L110
+ 710              	.L115:
+ 711 0096 0348     		ldr	r0, .L117+8
+ 712 0098 D5E7     		b	.L110
+ 713              	.L118:
+ 714 009a 00BF     		.align	2
+ 715              	.L117:
+ 716 009c 00380240 		.word	1073887232
+ 717 00a0 40787D01 		.word	25000000
+ 718 00a4 0024F400 		.word	16000000
+ 720              		.section	.text.HAL_RCC_ClockConfig,"ax",%progbits
+ 721              		.align	1
+ 722              		.global	HAL_RCC_ClockConfig
+ 723              		.syntax unified
+ 724              		.thumb
+ 725              		.thumb_func
+ 727              	HAL_RCC_ClockConfig:
+ 728              		@ args = 0, pretend = 0, frame = 0
+ 729              		@ frame_needed = 0, uses_anonymous_args = 0
+ 730 0000 0028     		cmp	r0, #0
+ 731 0002 00F09B80 		beq	.L134
+ 732 0006 70B5     		push	{r4, r5, r6, lr}
+ 733 0008 0D46     		mov	r5, r1
+ 734 000a 0446     		mov	r4, r0
+ 735 000c 4F4B     		ldr	r3, .L147
+ 736 000e 1B68     		ldr	r3, [r3]
+ 737 0010 03F00F03 		and	r3, r3, #15
+ 738 0014 8B42     		cmp	r3, r1
+ 739 0016 08D2     		bcs	.L121
+ 740 0018 CBB2     		uxtb	r3, r1
+ 741 001a 4C4A     		ldr	r2, .L147
+ 742 001c 1370     		strb	r3, [r2]
+ 743 001e 1368     		ldr	r3, [r2]
+ 744 0020 03F00F03 		and	r3, r3, #15
+ 745 0024 8B42     		cmp	r3, r1
+ 746 0026 40F08B80 		bne	.L135
+ 747              	.L121:
+ 748 002a 2368     		ldr	r3, [r4]
+ 749 002c 13F0020F 		tst	r3, #2
+ 750 0030 17D0     		beq	.L122
+ 751 0032 13F0040F 		tst	r3, #4
+ 752 0036 04D0     		beq	.L123
+ 753 0038 454A     		ldr	r2, .L147+4
+ 754 003a 9368     		ldr	r3, [r2, #8]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 14
+
+
+ 755 003c 43F4E053 		orr	r3, r3, #7168
+ 756 0040 9360     		str	r3, [r2, #8]
+ 757              	.L123:
+ 758 0042 2368     		ldr	r3, [r4]
+ 759 0044 13F0080F 		tst	r3, #8
+ 760 0048 04D0     		beq	.L124
+ 761 004a 414A     		ldr	r2, .L147+4
+ 762 004c 9368     		ldr	r3, [r2, #8]
+ 763 004e 43F46043 		orr	r3, r3, #57344
+ 764 0052 9360     		str	r3, [r2, #8]
+ 765              	.L124:
+ 766 0054 3E4A     		ldr	r2, .L147+4
+ 767 0056 9368     		ldr	r3, [r2, #8]
+ 768 0058 23F0F003 		bic	r3, r3, #240
+ 769 005c A168     		ldr	r1, [r4, #8]
+ 770 005e 0B43     		orrs	r3, r3, r1
+ 771 0060 9360     		str	r3, [r2, #8]
+ 772              	.L122:
+ 773 0062 2368     		ldr	r3, [r4]
+ 774 0064 13F0010F 		tst	r3, #1
+ 775 0068 32D0     		beq	.L125
+ 776 006a 6368     		ldr	r3, [r4, #4]
+ 777 006c 012B     		cmp	r3, #1
+ 778 006e 21D0     		beq	.L145
+ 779 0070 9A1E     		subs	r2, r3, #2
+ 780 0072 012A     		cmp	r2, #1
+ 781 0074 25D9     		bls	.L146
+ 782 0076 364A     		ldr	r2, .L147+4
+ 783 0078 1268     		ldr	r2, [r2]
+ 784 007a 12F0020F 		tst	r2, #2
+ 785 007e 61D0     		beq	.L138
+ 786              	.L127:
+ 787 0080 3349     		ldr	r1, .L147+4
+ 788 0082 8A68     		ldr	r2, [r1, #8]
+ 789 0084 22F00302 		bic	r2, r2, #3
+ 790 0088 1343     		orrs	r3, r3, r2
+ 791 008a 8B60     		str	r3, [r1, #8]
+ 792 008c FFF7FEFF 		bl	HAL_GetTick
+ 793 0090 0646     		mov	r6, r0
+ 794              	.L129:
+ 795 0092 2F4B     		ldr	r3, .L147+4
+ 796 0094 9B68     		ldr	r3, [r3, #8]
+ 797 0096 03F00C03 		and	r3, r3, #12
+ 798 009a 6268     		ldr	r2, [r4, #4]
+ 799 009c B3EB820F 		cmp	r3, r2, lsl #2
+ 800 00a0 16D0     		beq	.L125
+ 801 00a2 FFF7FEFF 		bl	HAL_GetTick
+ 802 00a6 801B     		subs	r0, r0, r6
+ 803 00a8 41F28833 		movw	r3, #5000
+ 804 00ac 9842     		cmp	r0, r3
+ 805 00ae F0D9     		bls	.L129
+ 806 00b0 0320     		movs	r0, #3
+ 807 00b2 42E0     		b	.L120
+ 808              	.L145:
+ 809 00b4 264A     		ldr	r2, .L147+4
+ 810 00b6 1268     		ldr	r2, [r2]
+ 811 00b8 12F4003F 		tst	r2, #131072
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 15
+
+
+ 812 00bc E0D1     		bne	.L127
+ 813 00be 0120     		movs	r0, #1
+ 814 00c0 3BE0     		b	.L120
+ 815              	.L146:
+ 816 00c2 234A     		ldr	r2, .L147+4
+ 817 00c4 1268     		ldr	r2, [r2]
+ 818 00c6 12F0007F 		tst	r2, #33554432
+ 819 00ca D9D1     		bne	.L127
+ 820 00cc 0120     		movs	r0, #1
+ 821 00ce 34E0     		b	.L120
+ 822              	.L125:
+ 823 00d0 1E4B     		ldr	r3, .L147
+ 824 00d2 1B68     		ldr	r3, [r3]
+ 825 00d4 03F00F03 		and	r3, r3, #15
+ 826 00d8 AB42     		cmp	r3, r5
+ 827 00da 07D9     		bls	.L131
+ 828 00dc EAB2     		uxtb	r2, r5
+ 829 00de 1B4B     		ldr	r3, .L147
+ 830 00e0 1A70     		strb	r2, [r3]
+ 831 00e2 1B68     		ldr	r3, [r3]
+ 832 00e4 03F00F03 		and	r3, r3, #15
+ 833 00e8 AB42     		cmp	r3, r5
+ 834 00ea 2DD1     		bne	.L140
+ 835              	.L131:
+ 836 00ec 2368     		ldr	r3, [r4]
+ 837 00ee 13F0040F 		tst	r3, #4
+ 838 00f2 06D0     		beq	.L132
+ 839 00f4 164A     		ldr	r2, .L147+4
+ 840 00f6 9368     		ldr	r3, [r2, #8]
+ 841 00f8 23F4E053 		bic	r3, r3, #7168
+ 842 00fc E168     		ldr	r1, [r4, #12]
+ 843 00fe 0B43     		orrs	r3, r3, r1
+ 844 0100 9360     		str	r3, [r2, #8]
+ 845              	.L132:
+ 846 0102 2368     		ldr	r3, [r4]
+ 847 0104 13F0080F 		tst	r3, #8
+ 848 0108 07D0     		beq	.L133
+ 849 010a 114A     		ldr	r2, .L147+4
+ 850 010c 9368     		ldr	r3, [r2, #8]
+ 851 010e 23F46043 		bic	r3, r3, #57344
+ 852 0112 2169     		ldr	r1, [r4, #16]
+ 853 0114 43EAC103 		orr	r3, r3, r1, lsl #3
+ 854 0118 9360     		str	r3, [r2, #8]
+ 855              	.L133:
+ 856 011a FFF7FEFF 		bl	HAL_RCC_GetSysClockFreq
+ 857 011e 0C4B     		ldr	r3, .L147+4
+ 858 0120 9B68     		ldr	r3, [r3, #8]
+ 859 0122 C3F30313 		ubfx	r3, r3, #4, #4
+ 860 0126 0B4A     		ldr	r2, .L147+8
+ 861 0128 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 862 012a D840     		lsrs	r0, r0, r3
+ 863 012c 0A4B     		ldr	r3, .L147+12
+ 864 012e 1860     		str	r0, [r3]
+ 865 0130 0A4B     		ldr	r3, .L147+16
+ 866 0132 1868     		ldr	r0, [r3]
+ 867 0134 FFF7FEFF 		bl	HAL_InitTick
+ 868 0138 0020     		movs	r0, #0
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 16
+
+
+ 869              	.L120:
+ 870 013a 70BD     		pop	{r4, r5, r6, pc}
+ 871              	.L134:
+ 872 013c 0120     		movs	r0, #1
+ 873 013e 7047     		bx	lr
+ 874              	.L135:
+ 875 0140 0120     		movs	r0, #1
+ 876 0142 FAE7     		b	.L120
+ 877              	.L138:
+ 878 0144 0120     		movs	r0, #1
+ 879 0146 F8E7     		b	.L120
+ 880              	.L140:
+ 881 0148 0120     		movs	r0, #1
+ 882 014a F6E7     		b	.L120
+ 883              	.L148:
+ 884              		.align	2
+ 885              	.L147:
+ 886 014c 003C0240 		.word	1073888256
+ 887 0150 00380240 		.word	1073887232
+ 888 0154 00000000 		.word	AHBPrescTable
+ 889 0158 00000000 		.word	SystemCoreClock
+ 890 015c 00000000 		.word	uwTickPrio
+ 892              		.section	.text.HAL_RCC_GetHCLKFreq,"ax",%progbits
+ 893              		.align	1
+ 894              		.global	HAL_RCC_GetHCLKFreq
+ 895              		.syntax unified
+ 896              		.thumb
+ 897              		.thumb_func
+ 899              	HAL_RCC_GetHCLKFreq:
+ 900              		@ args = 0, pretend = 0, frame = 0
+ 901              		@ frame_needed = 0, uses_anonymous_args = 0
+ 902              		@ link register save eliminated.
+ 903 0000 014B     		ldr	r3, .L150
+ 904 0002 1868     		ldr	r0, [r3]
+ 905 0004 7047     		bx	lr
+ 906              	.L151:
+ 907 0006 00BF     		.align	2
+ 908              	.L150:
+ 909 0008 00000000 		.word	SystemCoreClock
+ 911              		.section	.text.HAL_RCC_GetPCLK1Freq,"ax",%progbits
+ 912              		.align	1
+ 913              		.global	HAL_RCC_GetPCLK1Freq
+ 914              		.syntax unified
+ 915              		.thumb
+ 916              		.thumb_func
+ 918              	HAL_RCC_GetPCLK1Freq:
+ 919              		@ args = 0, pretend = 0, frame = 0
+ 920              		@ frame_needed = 0, uses_anonymous_args = 0
+ 921 0000 08B5     		push	{r3, lr}
+ 922 0002 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 923 0006 044B     		ldr	r3, .L154
+ 924 0008 9B68     		ldr	r3, [r3, #8]
+ 925 000a C3F38223 		ubfx	r3, r3, #10, #3
+ 926 000e 034A     		ldr	r2, .L154+4
+ 927 0010 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 928 0012 D840     		lsrs	r0, r0, r3
+ 929 0014 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 17
+
+
+ 930              	.L155:
+ 931 0016 00BF     		.align	2
+ 932              	.L154:
+ 933 0018 00380240 		.word	1073887232
+ 934 001c 00000000 		.word	APBPrescTable
+ 936              		.section	.text.HAL_RCC_GetPCLK2Freq,"ax",%progbits
+ 937              		.align	1
+ 938              		.global	HAL_RCC_GetPCLK2Freq
+ 939              		.syntax unified
+ 940              		.thumb
+ 941              		.thumb_func
+ 943              	HAL_RCC_GetPCLK2Freq:
+ 944              		@ args = 0, pretend = 0, frame = 0
+ 945              		@ frame_needed = 0, uses_anonymous_args = 0
+ 946 0000 08B5     		push	{r3, lr}
+ 947 0002 FFF7FEFF 		bl	HAL_RCC_GetHCLKFreq
+ 948 0006 044B     		ldr	r3, .L158
+ 949 0008 9B68     		ldr	r3, [r3, #8]
+ 950 000a C3F34233 		ubfx	r3, r3, #13, #3
+ 951 000e 034A     		ldr	r2, .L158+4
+ 952 0010 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 953 0012 D840     		lsrs	r0, r0, r3
+ 954 0014 08BD     		pop	{r3, pc}
+ 955              	.L159:
+ 956 0016 00BF     		.align	2
+ 957              	.L158:
+ 958 0018 00380240 		.word	1073887232
+ 959 001c 00000000 		.word	APBPrescTable
+ 961              		.section	.text.HAL_RCC_GetOscConfig,"ax",%progbits
+ 962              		.align	1
+ 963              		.weak	HAL_RCC_GetOscConfig
+ 964              		.syntax unified
+ 965              		.thumb
+ 966              		.thumb_func
+ 968              	HAL_RCC_GetOscConfig:
+ 969              		@ args = 0, pretend = 0, frame = 0
+ 970              		@ frame_needed = 0, uses_anonymous_args = 0
+ 971              		@ link register save eliminated.
+ 972 0000 0F23     		movs	r3, #15
+ 973 0002 0360     		str	r3, [r0]
+ 974 0004 304B     		ldr	r3, .L173
+ 975 0006 1B68     		ldr	r3, [r3]
+ 976 0008 13F4802F 		tst	r3, #262144
+ 977 000c 3BD0     		beq	.L161
+ 978 000e 4FF4A023 		mov	r3, #327680
+ 979 0012 4360     		str	r3, [r0, #4]
+ 980              	.L162:
+ 981 0014 2C4B     		ldr	r3, .L173
+ 982 0016 1B68     		ldr	r3, [r3]
+ 983 0018 13F0010F 		tst	r3, #1
+ 984 001c 3FD0     		beq	.L164
+ 985 001e 0123     		movs	r3, #1
+ 986 0020 C360     		str	r3, [r0, #12]
+ 987              	.L165:
+ 988 0022 294A     		ldr	r2, .L173
+ 989 0024 1368     		ldr	r3, [r2]
+ 990 0026 C3F3C403 		ubfx	r3, r3, #3, #5
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 18
+
+
+ 991 002a 0361     		str	r3, [r0, #16]
+ 992 002c 136F     		ldr	r3, [r2, #112]
+ 993 002e 13F0040F 		tst	r3, #4
+ 994 0032 37D0     		beq	.L166
+ 995 0034 0523     		movs	r3, #5
+ 996 0036 8360     		str	r3, [r0, #8]
+ 997              	.L167:
+ 998 0038 234B     		ldr	r3, .L173
+ 999 003a 5B6F     		ldr	r3, [r3, #116]
+ 1000 003c 13F0010F 		tst	r3, #1
+ 1001 0040 3BD0     		beq	.L169
+ 1002 0042 0123     		movs	r3, #1
+ 1003 0044 4361     		str	r3, [r0, #20]
+ 1004              	.L170:
+ 1005 0046 204B     		ldr	r3, .L173
+ 1006 0048 1B68     		ldr	r3, [r3]
+ 1007 004a 13F0807F 		tst	r3, #16777216
+ 1008 004e 37D0     		beq	.L171
+ 1009 0050 0223     		movs	r3, #2
+ 1010 0052 8361     		str	r3, [r0, #24]
+ 1011              	.L172:
+ 1012 0054 1C4A     		ldr	r2, .L173
+ 1013 0056 5368     		ldr	r3, [r2, #4]
+ 1014 0058 03F48003 		and	r3, r3, #4194304
+ 1015 005c C361     		str	r3, [r0, #28]
+ 1016 005e 5368     		ldr	r3, [r2, #4]
+ 1017 0060 03F03F03 		and	r3, r3, #63
+ 1018 0064 0362     		str	r3, [r0, #32]
+ 1019 0066 5368     		ldr	r3, [r2, #4]
+ 1020 0068 C3F38813 		ubfx	r3, r3, #6, #9
+ 1021 006c 4362     		str	r3, [r0, #36]
+ 1022 006e 5368     		ldr	r3, [r2, #4]
+ 1023 0070 03F44033 		and	r3, r3, #196608
+ 1024 0074 03F58033 		add	r3, r3, #65536
+ 1025 0078 DB0B     		lsrs	r3, r3, #15
+ 1026 007a 8362     		str	r3, [r0, #40]
+ 1027 007c 5368     		ldr	r3, [r2, #4]
+ 1028 007e C3F30363 		ubfx	r3, r3, #24, #4
+ 1029 0082 C362     		str	r3, [r0, #44]
+ 1030 0084 7047     		bx	lr
+ 1031              	.L161:
+ 1032 0086 104B     		ldr	r3, .L173
+ 1033 0088 1B68     		ldr	r3, [r3]
+ 1034 008a 13F4803F 		tst	r3, #65536
+ 1035 008e 03D0     		beq	.L163
+ 1036 0090 4FF48033 		mov	r3, #65536
+ 1037 0094 4360     		str	r3, [r0, #4]
+ 1038 0096 BDE7     		b	.L162
+ 1039              	.L163:
+ 1040 0098 0023     		movs	r3, #0
+ 1041 009a 4360     		str	r3, [r0, #4]
+ 1042 009c BAE7     		b	.L162
+ 1043              	.L164:
+ 1044 009e 0023     		movs	r3, #0
+ 1045 00a0 C360     		str	r3, [r0, #12]
+ 1046 00a2 BEE7     		b	.L165
+ 1047              	.L166:
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 19
+
+
+ 1048 00a4 084B     		ldr	r3, .L173
+ 1049 00a6 1B6F     		ldr	r3, [r3, #112]
+ 1050 00a8 13F0010F 		tst	r3, #1
+ 1051 00ac 02D0     		beq	.L168
+ 1052 00ae 0123     		movs	r3, #1
+ 1053 00b0 8360     		str	r3, [r0, #8]
+ 1054 00b2 C1E7     		b	.L167
+ 1055              	.L168:
+ 1056 00b4 0023     		movs	r3, #0
+ 1057 00b6 8360     		str	r3, [r0, #8]
+ 1058 00b8 BEE7     		b	.L167
+ 1059              	.L169:
+ 1060 00ba 0023     		movs	r3, #0
+ 1061 00bc 4361     		str	r3, [r0, #20]
+ 1062 00be C2E7     		b	.L170
+ 1063              	.L171:
+ 1064 00c0 0123     		movs	r3, #1
+ 1065 00c2 8361     		str	r3, [r0, #24]
+ 1066 00c4 C6E7     		b	.L172
+ 1067              	.L174:
+ 1068 00c6 00BF     		.align	2
+ 1069              	.L173:
+ 1070 00c8 00380240 		.word	1073887232
+ 1072              		.section	.text.HAL_RCC_GetClockConfig,"ax",%progbits
+ 1073              		.align	1
+ 1074              		.global	HAL_RCC_GetClockConfig
+ 1075              		.syntax unified
+ 1076              		.thumb
+ 1077              		.thumb_func
+ 1079              	HAL_RCC_GetClockConfig:
+ 1080              		@ args = 0, pretend = 0, frame = 0
+ 1081              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1082              		@ link register save eliminated.
+ 1083 0000 0F23     		movs	r3, #15
+ 1084 0002 0360     		str	r3, [r0]
+ 1085 0004 0B4B     		ldr	r3, .L176
+ 1086 0006 9A68     		ldr	r2, [r3, #8]
+ 1087 0008 02F00302 		and	r2, r2, #3
+ 1088 000c 4260     		str	r2, [r0, #4]
+ 1089 000e 9A68     		ldr	r2, [r3, #8]
+ 1090 0010 02F0F002 		and	r2, r2, #240
+ 1091 0014 8260     		str	r2, [r0, #8]
+ 1092 0016 9A68     		ldr	r2, [r3, #8]
+ 1093 0018 02F4E052 		and	r2, r2, #7168
+ 1094 001c C260     		str	r2, [r0, #12]
+ 1095 001e 9B68     		ldr	r3, [r3, #8]
+ 1096 0020 DB08     		lsrs	r3, r3, #3
+ 1097 0022 03F4E053 		and	r3, r3, #7168
+ 1098 0026 0361     		str	r3, [r0, #16]
+ 1099 0028 034B     		ldr	r3, .L176+4
+ 1100 002a 1B68     		ldr	r3, [r3]
+ 1101 002c 03F00F03 		and	r3, r3, #15
+ 1102 0030 0B60     		str	r3, [r1]
+ 1103 0032 7047     		bx	lr
+ 1104              	.L177:
+ 1105              		.align	2
+ 1106              	.L176:
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 20
+
+
+ 1107 0034 00380240 		.word	1073887232
+ 1108 0038 003C0240 		.word	1073888256
+ 1110              		.section	.text.HAL_RCC_CSSCallback,"ax",%progbits
+ 1111              		.align	1
+ 1112              		.weak	HAL_RCC_CSSCallback
+ 1113              		.syntax unified
+ 1114              		.thumb
+ 1115              		.thumb_func
+ 1117              	HAL_RCC_CSSCallback:
+ 1118              		@ args = 0, pretend = 0, frame = 0
+ 1119              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1120              		@ link register save eliminated.
+ 1121 0000 7047     		bx	lr
+ 1123              		.section	.text.HAL_RCC_NMI_IRQHandler,"ax",%progbits
+ 1124              		.align	1
+ 1125              		.global	HAL_RCC_NMI_IRQHandler
+ 1126              		.syntax unified
+ 1127              		.thumb
+ 1128              		.thumb_func
+ 1130              	HAL_RCC_NMI_IRQHandler:
+ 1131              		@ args = 0, pretend = 0, frame = 0
+ 1132              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1133 0000 08B5     		push	{r3, lr}
+ 1134 0002 064B     		ldr	r3, .L183
+ 1135 0004 DB68     		ldr	r3, [r3, #12]
+ 1136 0006 13F0800F 		tst	r3, #128
+ 1137 000a 00D1     		bne	.L182
+ 1138              	.L179:
+ 1139 000c 08BD     		pop	{r3, pc}
+ 1140              	.L182:
+ 1141 000e FFF7FEFF 		bl	HAL_RCC_CSSCallback
+ 1142 0012 024B     		ldr	r3, .L183
+ 1143 0014 8022     		movs	r2, #128
+ 1144 0016 9A73     		strb	r2, [r3, #14]
+ 1145 0018 F8E7     		b	.L179
+ 1146              	.L184:
+ 1147 001a 00BF     		.align	2
+ 1148              	.L183:
+ 1149 001c 00380240 		.word	1073887232
+ 1151              		.global	__aeabi_uldivmod
+ 1152              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s 			page 21
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32f4xx_hal_rcc.c
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:18     .text.HAL_RCC_DeInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:24     .text.HAL_RCC_DeInit:00000000 HAL_RCC_DeInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:32     .text.HAL_RCC_OscConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:38     .text.HAL_RCC_OscConfig:00000000 HAL_RCC_OscConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:342    .text.HAL_RCC_OscConfig:00000294 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:346    .text.HAL_RCC_OscConfig:000002a0 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:521    .text.HAL_RCC_OscConfig:00000400 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:525    .text.HAL_RCC_MCOConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:531    .text.HAL_RCC_MCOConfig:00000000 HAL_RCC_MCOConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:600    .text.HAL_RCC_MCOConfig:00000090 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:605    .text.HAL_RCC_EnableCSS:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:611    .text.HAL_RCC_EnableCSS:00000000 HAL_RCC_EnableCSS
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:622    .text.HAL_RCC_EnableCSS:00000008 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:625    .text.HAL_RCC_DisableCSS:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:631    .text.HAL_RCC_DisableCSS:00000000 HAL_RCC_DisableCSS
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:642    .text.HAL_RCC_DisableCSS:00000008 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:645    .text.HAL_RCC_GetSysClockFreq:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:651    .text.HAL_RCC_GetSysClockFreq:00000000 HAL_RCC_GetSysClockFreq
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:716    .text.HAL_RCC_GetSysClockFreq:0000009c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:721    .text.HAL_RCC_ClockConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:727    .text.HAL_RCC_ClockConfig:00000000 HAL_RCC_ClockConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:886    .text.HAL_RCC_ClockConfig:0000014c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:893    .text.HAL_RCC_GetHCLKFreq:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:899    .text.HAL_RCC_GetHCLKFreq:00000000 HAL_RCC_GetHCLKFreq
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:909    .text.HAL_RCC_GetHCLKFreq:00000008 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:912    .text.HAL_RCC_GetPCLK1Freq:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:918    .text.HAL_RCC_GetPCLK1Freq:00000000 HAL_RCC_GetPCLK1Freq
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:933    .text.HAL_RCC_GetPCLK1Freq:00000018 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:937    .text.HAL_RCC_GetPCLK2Freq:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:943    .text.HAL_RCC_GetPCLK2Freq:00000000 HAL_RCC_GetPCLK2Freq
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:958    .text.HAL_RCC_GetPCLK2Freq:00000018 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:962    .text.HAL_RCC_GetOscConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:968    .text.HAL_RCC_GetOscConfig:00000000 HAL_RCC_GetOscConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:1070   .text.HAL_RCC_GetOscConfig:000000c8 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:1073   .text.HAL_RCC_GetClockConfig:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:1079   .text.HAL_RCC_GetClockConfig:00000000 HAL_RCC_GetClockConfig
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:1107   .text.HAL_RCC_GetClockConfig:00000034 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:1111   .text.HAL_RCC_CSSCallback:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:1117   .text.HAL_RCC_CSSCallback:00000000 HAL_RCC_CSSCallback
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:1124   .text.HAL_RCC_NMI_IRQHandler:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:1130   .text.HAL_RCC_NMI_IRQHandler:00000000 HAL_RCC_NMI_IRQHandler
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccQDOKTo.s:1149   .text.HAL_RCC_NMI_IRQHandler:0000001c $d
+
+UNDEFINED SYMBOLS
+HAL_GetTick
+HAL_GPIO_Init
+__aeabi_uldivmod
+HAL_InitTick
+AHBPrescTable
+SystemCoreClock
+uwTickPrio
+APBPrescTable

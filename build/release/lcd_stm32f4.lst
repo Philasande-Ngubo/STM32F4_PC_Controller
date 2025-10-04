@@ -1,0 +1,513 @@
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lcd_stm32f4.c"
+  16              		.text
+  17              		.section	.text.delay,"ax",%progbits
+  18              		.align	1
+  19              		.global	delay
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	delay:
+  25              		@ args = 0, pretend = 0, frame = 8
+  26              		@ frame_needed = 0, uses_anonymous_args = 0
+  27              		@ link register save eliminated.
+  28 0000 82B0     		sub	sp, sp, #8
+  29 0002 00EB4000 		add	r0, r0, r0, lsl #1
+  30 0006 0023     		movs	r3, #0
+  31 0008 0193     		str	r3, [sp, #4]
+  32 000a 04E0     		b	.L2
+  33              	.L3:
+  34              		.syntax unified
+  35              	@ 337 "Core/Src/lcd_stm32f4.c" 1
+  36 000c 00BF     		nop
+  37              	@ 0 "" 2
+  38              	@ 338 "Core/Src/lcd_stm32f4.c" 1
+  39 000e 00BF     		nop
+  40              	@ 0 "" 2
+  41              		.thumb
+  42              		.syntax unified
+  43 0010 019B     		ldr	r3, [sp, #4]
+  44 0012 0133     		adds	r3, r3, #1
+  45 0014 0193     		str	r3, [sp, #4]
+  46              	.L2:
+  47 0016 019B     		ldr	r3, [sp, #4]
+  48 0018 8342     		cmp	r3, r0
+  49 001a F7D3     		bcc	.L3
+  50 001c 02B0     		add	sp, sp, #8
+  51              		@ sp needed
+  52 001e 7047     		bx	lr
+  54              		.section	.text.pulse_strobe,"ax",%progbits
+  55              		.align	1
+  56              		.global	pulse_strobe
+  57              		.syntax unified
+  58              		.thumb
+  59              		.thumb_func
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 2
+
+
+  61              	pulse_strobe:
+  62              		@ args = 0, pretend = 0, frame = 0
+  63              		@ frame_needed = 0, uses_anonymous_args = 0
+  64 0000 10B5     		push	{r4, lr}
+  65 0002 1420     		movs	r0, #20
+  66 0004 FFF7FEFF 		bl	delay
+  67 0008 094C     		ldr	r4, .L7
+  68 000a A369     		ldr	r3, [r4, #24]
+  69 000c 43F40043 		orr	r3, r3, #32768
+  70 0010 A361     		str	r3, [r4, #24]
+  71 0012 1420     		movs	r0, #20
+  72 0014 FFF7FEFF 		bl	delay
+  73 0018 A369     		ldr	r3, [r4, #24]
+  74 001a 43F00043 		orr	r3, r3, #-2147483648
+  75 001e A361     		str	r3, [r4, #24]
+  76 0020 1420     		movs	r0, #20
+  77 0022 FFF7FEFF 		bl	delay
+  78 0026 A369     		ldr	r3, [r4, #24]
+  79 0028 43F40043 		orr	r3, r3, #32768
+  80 002c A361     		str	r3, [r4, #24]
+  81 002e 10BD     		pop	{r4, pc}
+  82              	.L8:
+  83              		.align	2
+  84              	.L7:
+  85 0030 00080240 		.word	1073874944
+  87              		.section	.text.lcd_putchar,"ax",%progbits
+  88              		.align	1
+  89              		.global	lcd_putchar
+  90              		.syntax unified
+  91              		.thumb
+  92              		.thumb_func
+  94              	lcd_putchar:
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97 0000 10B5     		push	{r4, lr}
+  98 0002 0446     		mov	r4, r0
+  99 0004 3D4A     		ldr	r2, .L28
+ 100 0006 9369     		ldr	r3, [r2, #24]
+ 101 0008 43F48043 		orr	r3, r3, #16384
+ 102 000c 9361     		str	r3, [r2, #24]
+ 103 000e 10F0800F 		tst	r0, #128
+ 104 0012 41D1     		bne	.L27
+ 105 0014 3A4A     		ldr	r2, .L28+4
+ 106 0016 9369     		ldr	r3, [r2, #24]
+ 107 0018 43F00043 		orr	r3, r3, #-2147483648
+ 108 001c 9361     		str	r3, [r2, #24]
+ 109              	.L11:
+ 110 001e 14F0400F 		tst	r4, #64
+ 111 0022 40D0     		beq	.L12
+ 112 0024 364A     		ldr	r2, .L28+4
+ 113 0026 9369     		ldr	r3, [r2, #24]
+ 114 0028 43F48053 		orr	r3, r3, #4096
+ 115 002c 9361     		str	r3, [r2, #24]
+ 116              	.L13:
+ 117 002e 14F0200F 		tst	r4, #32
+ 118 0032 3ED0     		beq	.L14
+ 119 0034 334A     		ldr	r2, .L28+8
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 3
+
+
+ 120 0036 9369     		ldr	r3, [r2, #24]
+ 121 0038 43F40073 		orr	r3, r3, #512
+ 122 003c 9361     		str	r3, [r2, #24]
+ 123              	.L15:
+ 124 003e 14F0100F 		tst	r4, #16
+ 125 0042 3CD0     		beq	.L16
+ 126 0044 2F4A     		ldr	r2, .L28+8
+ 127 0046 9369     		ldr	r3, [r2, #24]
+ 128 0048 43F48073 		orr	r3, r3, #256
+ 129 004c 9361     		str	r3, [r2, #24]
+ 130              	.L17:
+ 131 004e FFF7FEFF 		bl	pulse_strobe
+ 132 0052 14F0080F 		tst	r4, #8
+ 133 0056 38D0     		beq	.L18
+ 134 0058 294A     		ldr	r2, .L28+4
+ 135 005a 9369     		ldr	r3, [r2, #24]
+ 136 005c 43F40043 		orr	r3, r3, #32768
+ 137 0060 9361     		str	r3, [r2, #24]
+ 138              	.L19:
+ 139 0062 14F0040F 		tst	r4, #4
+ 140 0066 36D0     		beq	.L20
+ 141 0068 254A     		ldr	r2, .L28+4
+ 142 006a 9369     		ldr	r3, [r2, #24]
+ 143 006c 43F48053 		orr	r3, r3, #4096
+ 144 0070 9361     		str	r3, [r2, #24]
+ 145              	.L21:
+ 146 0072 14F0020F 		tst	r4, #2
+ 147 0076 34D0     		beq	.L22
+ 148 0078 224A     		ldr	r2, .L28+8
+ 149 007a 9369     		ldr	r3, [r2, #24]
+ 150 007c 43F40073 		orr	r3, r3, #512
+ 151 0080 9361     		str	r3, [r2, #24]
+ 152              	.L23:
+ 153 0082 14F0010F 		tst	r4, #1
+ 154 0086 32D0     		beq	.L24
+ 155 0088 1E4A     		ldr	r2, .L28+8
+ 156 008a 9369     		ldr	r3, [r2, #24]
+ 157 008c 43F48073 		orr	r3, r3, #256
+ 158 0090 9361     		str	r3, [r2, #24]
+ 159              	.L25:
+ 160 0092 FFF7FEFF 		bl	pulse_strobe
+ 161 0096 10BD     		pop	{r4, pc}
+ 162              	.L27:
+ 163 0098 A2F50062 		sub	r2, r2, #2048
+ 164 009c 9369     		ldr	r3, [r2, #24]
+ 165 009e 43F40043 		orr	r3, r3, #32768
+ 166 00a2 9361     		str	r3, [r2, #24]
+ 167 00a4 BBE7     		b	.L11
+ 168              	.L12:
+ 169 00a6 164A     		ldr	r2, .L28+4
+ 170 00a8 9369     		ldr	r3, [r2, #24]
+ 171 00aa 43F08053 		orr	r3, r3, #268435456
+ 172 00ae 9361     		str	r3, [r2, #24]
+ 173 00b0 BDE7     		b	.L13
+ 174              	.L14:
+ 175 00b2 144A     		ldr	r2, .L28+8
+ 176 00b4 9369     		ldr	r3, [r2, #24]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 4
+
+
+ 177 00b6 43F00073 		orr	r3, r3, #33554432
+ 178 00ba 9361     		str	r3, [r2, #24]
+ 179 00bc BFE7     		b	.L15
+ 180              	.L16:
+ 181 00be 114A     		ldr	r2, .L28+8
+ 182 00c0 9369     		ldr	r3, [r2, #24]
+ 183 00c2 43F08073 		orr	r3, r3, #16777216
+ 184 00c6 9361     		str	r3, [r2, #24]
+ 185 00c8 C1E7     		b	.L17
+ 186              	.L18:
+ 187 00ca 0D4A     		ldr	r2, .L28+4
+ 188 00cc 9369     		ldr	r3, [r2, #24]
+ 189 00ce 43F00043 		orr	r3, r3, #-2147483648
+ 190 00d2 9361     		str	r3, [r2, #24]
+ 191 00d4 C5E7     		b	.L19
+ 192              	.L20:
+ 193 00d6 0A4A     		ldr	r2, .L28+4
+ 194 00d8 9369     		ldr	r3, [r2, #24]
+ 195 00da 43F08053 		orr	r3, r3, #268435456
+ 196 00de 9361     		str	r3, [r2, #24]
+ 197 00e0 C7E7     		b	.L21
+ 198              	.L22:
+ 199 00e2 084A     		ldr	r2, .L28+8
+ 200 00e4 9369     		ldr	r3, [r2, #24]
+ 201 00e6 43F00073 		orr	r3, r3, #33554432
+ 202 00ea 9361     		str	r3, [r2, #24]
+ 203 00ec C9E7     		b	.L23
+ 204              	.L24:
+ 205 00ee 054A     		ldr	r2, .L28+8
+ 206 00f0 9369     		ldr	r3, [r2, #24]
+ 207 00f2 43F08073 		orr	r3, r3, #16777216
+ 208 00f6 9361     		str	r3, [r2, #24]
+ 209 00f8 CBE7     		b	.L25
+ 210              	.L29:
+ 211 00fa 00BF     		.align	2
+ 212              	.L28:
+ 213 00fc 00080240 		.word	1073874944
+ 214 0100 00000240 		.word	1073872896
+ 215 0104 00040240 		.word	1073873920
+ 217              		.section	.text.lcd_putstring,"ax",%progbits
+ 218              		.align	1
+ 219              		.global	lcd_putstring
+ 220              		.syntax unified
+ 221              		.thumb
+ 222              		.thumb_func
+ 224              	lcd_putstring:
+ 225              		@ args = 0, pretend = 0, frame = 0
+ 226              		@ frame_needed = 0, uses_anonymous_args = 0
+ 227 0000 38B5     		push	{r3, r4, r5, lr}
+ 228 0002 0546     		mov	r5, r0
+ 229 0004 0024     		movs	r4, #0
+ 230 0006 03E0     		b	.L31
+ 231              	.L32:
+ 232 0008 FFF7FEFF 		bl	lcd_putchar
+ 233 000c 0134     		adds	r4, r4, #1
+ 234 000e E4B2     		uxtb	r4, r4
+ 235              	.L31:
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 5
+
+
+ 236 0010 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
+ 237 0012 0028     		cmp	r0, #0
+ 238 0014 F8D1     		bne	.L32
+ 239 0016 38BD     		pop	{r3, r4, r5, pc}
+ 241              		.section	.text.lcd_command,"ax",%progbits
+ 242              		.align	1
+ 243              		.global	lcd_command
+ 244              		.syntax unified
+ 245              		.thumb
+ 246              		.thumb_func
+ 248              	lcd_command:
+ 249              		@ args = 0, pretend = 0, frame = 0
+ 250              		@ frame_needed = 0, uses_anonymous_args = 0
+ 251 0000 10B5     		push	{r4, lr}
+ 252 0002 0446     		mov	r4, r0
+ 253 0004 3F4A     		ldr	r2, .L53
+ 254 0006 9369     		ldr	r3, [r2, #24]
+ 255 0008 43F08043 		orr	r3, r3, #1073741824
+ 256 000c 9361     		str	r3, [r2, #24]
+ 257 000e 10F0800F 		tst	r0, #128
+ 258 0012 45D1     		bne	.L52
+ 259 0014 3C4A     		ldr	r2, .L53+4
+ 260 0016 9369     		ldr	r3, [r2, #24]
+ 261 0018 43F00043 		orr	r3, r3, #-2147483648
+ 262 001c 9361     		str	r3, [r2, #24]
+ 263              	.L36:
+ 264 001e 14F0400F 		tst	r4, #64
+ 265 0022 44D0     		beq	.L37
+ 266 0024 384A     		ldr	r2, .L53+4
+ 267 0026 9369     		ldr	r3, [r2, #24]
+ 268 0028 43F48053 		orr	r3, r3, #4096
+ 269 002c 9361     		str	r3, [r2, #24]
+ 270              	.L38:
+ 271 002e 14F0200F 		tst	r4, #32
+ 272 0032 42D0     		beq	.L39
+ 273 0034 354A     		ldr	r2, .L53+8
+ 274 0036 9369     		ldr	r3, [r2, #24]
+ 275 0038 43F40073 		orr	r3, r3, #512
+ 276 003c 9361     		str	r3, [r2, #24]
+ 277              	.L40:
+ 278 003e 14F0100F 		tst	r4, #16
+ 279 0042 40D0     		beq	.L41
+ 280 0044 314A     		ldr	r2, .L53+8
+ 281 0046 9369     		ldr	r3, [r2, #24]
+ 282 0048 43F48073 		orr	r3, r3, #256
+ 283 004c 9361     		str	r3, [r2, #24]
+ 284              	.L42:
+ 285 004e FFF7FEFF 		bl	pulse_strobe
+ 286 0052 14F0080F 		tst	r4, #8
+ 287 0056 3CD0     		beq	.L43
+ 288 0058 2B4A     		ldr	r2, .L53+4
+ 289 005a 9369     		ldr	r3, [r2, #24]
+ 290 005c 43F40043 		orr	r3, r3, #32768
+ 291 0060 9361     		str	r3, [r2, #24]
+ 292              	.L44:
+ 293 0062 14F0040F 		tst	r4, #4
+ 294 0066 3AD0     		beq	.L45
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 6
+
+
+ 295 0068 274A     		ldr	r2, .L53+4
+ 296 006a 9369     		ldr	r3, [r2, #24]
+ 297 006c 43F48053 		orr	r3, r3, #4096
+ 298 0070 9361     		str	r3, [r2, #24]
+ 299              	.L46:
+ 300 0072 14F0020F 		tst	r4, #2
+ 301 0076 38D0     		beq	.L47
+ 302 0078 244A     		ldr	r2, .L53+8
+ 303 007a 9369     		ldr	r3, [r2, #24]
+ 304 007c 43F40073 		orr	r3, r3, #512
+ 305 0080 9361     		str	r3, [r2, #24]
+ 306              	.L48:
+ 307 0082 14F0010F 		tst	r4, #1
+ 308 0086 36D0     		beq	.L49
+ 309 0088 204A     		ldr	r2, .L53+8
+ 310 008a 9369     		ldr	r3, [r2, #24]
+ 311 008c 43F48073 		orr	r3, r3, #256
+ 312 0090 9361     		str	r3, [r2, #24]
+ 313              	.L50:
+ 314 0092 FFF7FEFF 		bl	pulse_strobe
+ 315 0096 40F6B830 		movw	r0, #3000
+ 316 009a FFF7FEFF 		bl	delay
+ 317 009e 10BD     		pop	{r4, pc}
+ 318              	.L52:
+ 319 00a0 A2F50062 		sub	r2, r2, #2048
+ 320 00a4 9369     		ldr	r3, [r2, #24]
+ 321 00a6 43F40043 		orr	r3, r3, #32768
+ 322 00aa 9361     		str	r3, [r2, #24]
+ 323 00ac B7E7     		b	.L36
+ 324              	.L37:
+ 325 00ae 164A     		ldr	r2, .L53+4
+ 326 00b0 9369     		ldr	r3, [r2, #24]
+ 327 00b2 43F08053 		orr	r3, r3, #268435456
+ 328 00b6 9361     		str	r3, [r2, #24]
+ 329 00b8 B9E7     		b	.L38
+ 330              	.L39:
+ 331 00ba 144A     		ldr	r2, .L53+8
+ 332 00bc 9369     		ldr	r3, [r2, #24]
+ 333 00be 43F00073 		orr	r3, r3, #33554432
+ 334 00c2 9361     		str	r3, [r2, #24]
+ 335 00c4 BBE7     		b	.L40
+ 336              	.L41:
+ 337 00c6 114A     		ldr	r2, .L53+8
+ 338 00c8 9369     		ldr	r3, [r2, #24]
+ 339 00ca 43F08073 		orr	r3, r3, #16777216
+ 340 00ce 9361     		str	r3, [r2, #24]
+ 341 00d0 BDE7     		b	.L42
+ 342              	.L43:
+ 343 00d2 0D4A     		ldr	r2, .L53+4
+ 344 00d4 9369     		ldr	r3, [r2, #24]
+ 345 00d6 43F00043 		orr	r3, r3, #-2147483648
+ 346 00da 9361     		str	r3, [r2, #24]
+ 347 00dc C1E7     		b	.L44
+ 348              	.L45:
+ 349 00de 0A4A     		ldr	r2, .L53+4
+ 350 00e0 9369     		ldr	r3, [r2, #24]
+ 351 00e2 43F08053 		orr	r3, r3, #268435456
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 7
+
+
+ 352 00e6 9361     		str	r3, [r2, #24]
+ 353 00e8 C3E7     		b	.L46
+ 354              	.L47:
+ 355 00ea 084A     		ldr	r2, .L53+8
+ 356 00ec 9369     		ldr	r3, [r2, #24]
+ 357 00ee 43F00073 		orr	r3, r3, #33554432
+ 358 00f2 9361     		str	r3, [r2, #24]
+ 359 00f4 C5E7     		b	.L48
+ 360              	.L49:
+ 361 00f6 054A     		ldr	r2, .L53+8
+ 362 00f8 9369     		ldr	r3, [r2, #24]
+ 363 00fa 43F08073 		orr	r3, r3, #16777216
+ 364 00fe 9361     		str	r3, [r2, #24]
+ 365 0100 C7E7     		b	.L50
+ 366              	.L54:
+ 367 0102 00BF     		.align	2
+ 368              	.L53:
+ 369 0104 00080240 		.word	1073874944
+ 370 0108 00000240 		.word	1073872896
+ 371 010c 00040240 		.word	1073873920
+ 373              		.section	.text.init_LCD,"ax",%progbits
+ 374              		.align	1
+ 375              		.global	init_LCD
+ 376              		.syntax unified
+ 377              		.thumb
+ 378              		.thumb_func
+ 380              	init_LCD:
+ 381              		@ args = 0, pretend = 0, frame = 0
+ 382              		@ frame_needed = 0, uses_anonymous_args = 0
+ 383 0000 08B5     		push	{r3, lr}
+ 384 0002 194B     		ldr	r3, .L57
+ 385 0004 1A6B     		ldr	r2, [r3, #48]
+ 386 0006 42F00102 		orr	r2, r2, #1
+ 387 000a 1A63     		str	r2, [r3, #48]
+ 388 000c 1A6B     		ldr	r2, [r3, #48]
+ 389 000e 42F00202 		orr	r2, r2, #2
+ 390 0012 1A63     		str	r2, [r3, #48]
+ 391 0014 1A6B     		ldr	r2, [r3, #48]
+ 392 0016 42F00402 		orr	r2, r2, #4
+ 393 001a 1A63     		str	r2, [r3, #48]
+ 394 001c 134A     		ldr	r2, .L57+4
+ 395 001e 1368     		ldr	r3, [r2]
+ 396 0020 43F08243 		orr	r3, r3, #1090519040
+ 397 0024 1360     		str	r3, [r2]
+ 398 0026 02F58062 		add	r2, r2, #1024
+ 399 002a 1368     		ldr	r3, [r2]
+ 400 002c 43F4A023 		orr	r3, r3, #327680
+ 401 0030 1360     		str	r3, [r2]
+ 402 0032 02F58062 		add	r2, r2, #1024
+ 403 0036 1368     		ldr	r3, [r2]
+ 404 0038 43F0A043 		orr	r3, r3, #1342177280
+ 405 003c 1360     		str	r3, [r2]
+ 406 003e 47F23050 		movw	r0, #30000
+ 407 0042 FFF7FEFF 		bl	delay
+ 408 0046 3320     		movs	r0, #51
+ 409 0048 FFF7FEFF 		bl	lcd_command
+ 410 004c 3220     		movs	r0, #50
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 8
+
+
+ 411 004e FFF7FEFF 		bl	lcd_command
+ 412 0052 0C20     		movs	r0, #12
+ 413 0054 FFF7FEFF 		bl	lcd_command
+ 414 0058 2820     		movs	r0, #40
+ 415 005a FFF7FEFF 		bl	lcd_command
+ 416 005e 0120     		movs	r0, #1
+ 417 0060 FFF7FEFF 		bl	lcd_command
+ 418 0064 08BD     		pop	{r3, pc}
+ 419              	.L58:
+ 420 0066 00BF     		.align	2
+ 421              	.L57:
+ 422 0068 00380240 		.word	1073887232
+ 423 006c 00000240 		.word	1073872896
+ 425              		.section	.rodata.lcd_clear_line.str1.4,"aMS",%progbits,1
+ 426              		.align	2
+ 427              	.LC0:
+ 428 0000 20202020 		.ascii	"                \000"
+ 428      20202020 
+ 428      20202020 
+ 428      20202020 
+ 428      00
+ 429              		.section	.text.lcd_clear_line,"ax",%progbits
+ 430              		.align	1
+ 431              		.global	lcd_clear_line
+ 432              		.syntax unified
+ 433              		.thumb
+ 434              		.thumb_func
+ 436              	lcd_clear_line:
+ 437              		@ args = 0, pretend = 0, frame = 0
+ 438              		@ frame_needed = 0, uses_anonymous_args = 0
+ 439 0000 08B5     		push	{r3, lr}
+ 440 0002 0248     		ldr	r0, .L61
+ 441 0004 FFF7FEFF 		bl	lcd_putstring
+ 442 0008 08BD     		pop	{r3, pc}
+ 443              	.L62:
+ 444 000a 00BF     		.align	2
+ 445              	.L61:
+ 446 000c 00000000 		.word	.LC0
+ 448              		.section	.text.lcd_update_line,"ax",%progbits
+ 449              		.align	1
+ 450              		.global	lcd_update_line
+ 451              		.syntax unified
+ 452              		.thumb
+ 453              		.thumb_func
+ 455              	lcd_update_line:
+ 456              		@ args = 0, pretend = 0, frame = 0
+ 457              		@ frame_needed = 0, uses_anonymous_args = 0
+ 458 0000 10B5     		push	{r4, lr}
+ 459 0002 0446     		mov	r4, r0
+ 460 0004 8020     		movs	r0, #128
+ 461 0006 FFF7FEFF 		bl	lcd_command
+ 462 000a FFF7FEFF 		bl	lcd_clear_line
+ 463 000e 8020     		movs	r0, #128
+ 464 0010 FFF7FEFF 		bl	lcd_command
+ 465 0014 2046     		mov	r0, r4
+ 466 0016 FFF7FEFF 		bl	lcd_putstring
+ 467 001a 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 9
+
+
+ 469              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lcd_stm32f4.c
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:18     .text.delay:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:24     .text.delay:00000000 delay
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:55     .text.pulse_strobe:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:61     .text.pulse_strobe:00000000 pulse_strobe
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:85     .text.pulse_strobe:00000030 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:88     .text.lcd_putchar:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:94     .text.lcd_putchar:00000000 lcd_putchar
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:213    .text.lcd_putchar:000000fc $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:218    .text.lcd_putstring:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:224    .text.lcd_putstring:00000000 lcd_putstring
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:242    .text.lcd_command:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:248    .text.lcd_command:00000000 lcd_command
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:369    .text.lcd_command:00000104 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:374    .text.init_LCD:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:380    .text.init_LCD:00000000 init_LCD
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:422    .text.init_LCD:00000068 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:426    .rodata.lcd_clear_line.str1.4:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:430    .text.lcd_clear_line:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:436    .text.lcd_clear_line:00000000 lcd_clear_line
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:446    .text.lcd_clear_line:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:449    .text.lcd_update_line:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cc8n6Cfe.s:455    .text.lcd_update_line:00000000 lcd_update_line
+
+NO UNDEFINED SYMBOLS
