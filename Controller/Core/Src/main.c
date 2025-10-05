@@ -119,9 +119,10 @@ int main(void)
 
     if (stringReady)
         {
+            stringReady = 0; 
             char * Recieved =  (char*)rxBuffer;
             handle(Recieved);
-            stringReady = 0; 
+            memset(rxBuffer, 0, RX_BUFFER_SIZE);
         }
     
   
@@ -289,7 +290,7 @@ void EXTI3_IRQHandler(void)
 }
 
 uint32_t lastInterruptTime[4] = {0};
-#define DEBOUNCE_DELAY 200  // 200ms debounce
+#define DEBOUNCE_DELAY 300  // 200ms debounce
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
@@ -300,7 +301,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         case GPIO_PIN_0:  // SW0
             if((currentTime - lastInterruptTime[0]) > DEBOUNCE_DELAY)
             {
-                lastInterruptTime[3] = currentTime;
+                lastInterruptTime[0] = currentTime;
                 char msg[] = "BTN0\r\n";
                 HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
             }
@@ -309,7 +310,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         case GPIO_PIN_1:  // SW1
             if((currentTime - lastInterruptTime[1]) > DEBOUNCE_DELAY)
             {
-                lastInterruptTime[3] = currentTime;
+                lastInterruptTime[1] = currentTime;
                 char msg[] = "BTN1\r\n";
                 HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
             }
@@ -318,7 +319,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         case GPIO_PIN_2:  // SW2
             if((currentTime - lastInterruptTime[2]) > DEBOUNCE_DELAY)
             {
-                lastInterruptTime[3] = currentTime;
+                lastInterruptTime[2] = currentTime;
                 char msg[] = "BTN2\r\n";
                 HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
             }
@@ -432,7 +433,7 @@ void ADC1_Init(void)
     ADC->CCR |= (1U << 16);                       // Divide by 4
 
     ADC1->CR1 = 0;                                // 12-bit, single conversion
-    ADC1->CR2 = ADC_CR2_EOCS | ADC_CR2_CONT;      // EOC after each, continuous mode
+    ADC1->CR2 = ADC_CR2_EOCS;      // EOC after each, continuous mode
     ADC1->SQR1 = 0;                               // One conversion per sequence
 
     // Sampling time for channels 5 and 6: 56 cycles (enough for stable reads)
