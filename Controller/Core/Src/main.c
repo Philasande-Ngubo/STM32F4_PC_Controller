@@ -51,6 +51,7 @@ void ADC1_Start(uint8_t channel);
 void ADC_IRQHandler(void);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 void handle(char* Msg);
+int parseLIValue(const char *msg);
 
 volatile uint16_t pot0_value = 0;
 volatile uint16_t pot1_value = 0;
@@ -464,11 +465,21 @@ void Error_Handler(void)
 void handle(char* Msg){
 
   if ( (Msg[0] == 'H') && (Msg[1] == 'I') ){
+    lcd_command(CLEAR);
+    lcd_putstring("Controller");
+    lcd_command(CLEAR);
+    lcd_putstring("Connected");
+    
     char msg[] = "HEY\r\n";
     HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
   }
 
   if ( (Msg[0] == 'U') && (Msg[1] == 'P') ){
+    lcd_command(CLEAR);
+    lcd_putstring("Controller");
+    lcd_command(CLEAR);
+    lcd_putstring("Connected");
+
     char msg[] = "YES\r\n";
     HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
   }
@@ -480,6 +491,10 @@ void handle(char* Msg){
   }
 
   if ( (Msg[0] == 'L') && (Msg[1] == 'I') ){
+    int Led = parseLIValue(Msg);
+    if (Led != -1){
+      GPIOB->ODR = Led;
+    }
     char msg[] = "LIT\r\n";
     HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
   }
@@ -489,8 +504,33 @@ void handle(char* Msg){
     HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
   }
 
+}
 
+void rtrim(char *str) {
+    int len = strlen(str);
+    while(len > 0 && ((unsigned char)str[len - 1]) == ' ') {
+        str[len - 1] = '\0';
+        len--;
+    }
+}
 
+int parseLIValue(const char *msg) {
+    char buffer[20];
+    strncpy(buffer, msg, sizeof(buffer)-1);
+    buffer[sizeof(buffer)-1] = '\0';
+
+    rtrim(buffer);
+
+    char cmd[3] = {0};
+    int value = -1;
+
+    if (sscanf(buffer, "%2s %d", cmd, &value) == 2) {
+        if (strcmp(cmd, "LI") == 0 && value >= 0 && value <= 255) {
+            return value;
+        }
+    }
+
+    return -1; // Invalid format or out of range
 }
 
 #ifdef USE_FULL_ASSERT
