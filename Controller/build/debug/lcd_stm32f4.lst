@@ -1,0 +1,1435 @@
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.arch armv7e-m
+   3              		.fpu fpv4-sp-d16
+   4              		.eabi_attribute 27, 1
+   5              		.eabi_attribute 28, 1
+   6              		.eabi_attribute 20, 1
+   7              		.eabi_attribute 21, 1
+   8              		.eabi_attribute 23, 3
+   9              		.eabi_attribute 24, 1
+  10              		.eabi_attribute 25, 1
+  11              		.eabi_attribute 26, 1
+  12              		.eabi_attribute 30, 1
+  13              		.eabi_attribute 34, 1
+  14              		.eabi_attribute 18, 4
+  15              		.file	"lcd_stm32f4.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.file 1 "Core/Src/lcd_stm32f4.c"
+  20              		.section	.text.delay,"ax",%progbits
+  21              		.align	1
+  22              		.global	delay
+  23              		.syntax unified
+  24              		.thumb
+  25              		.thumb_func
+  27              	delay:
+  28              	.LVL0:
+  29              	.LFB139:
+   1:Core/Src/lcd_stm32f4.c **** //********************************************************************
+   2:Core/Src/lcd_stm32f4.c **** //*                      EEE2046F STM32F0                            *
+   3:Core/Src/lcd_stm32f4.c **** //*                         LCD MODULE                               *
+   4:Core/Src/lcd_stm32f4.c **** //*==================================================================*
+   5:Core/Src/lcd_stm32f4.c **** //* WRITTEN BY:    Copyright (C) Samuel Ginsberg 2004                *
+   6:Core/Src/lcd_stm32f4.c **** //* PORTED TO STM32F0 dev board by James Gowans, 2014                *
+   7:Core/Src/lcd_stm32f4.c **** //* MODIFIED BY:   Robyn Verrinder                                   *
+   8:Core/Src/lcd_stm32f4.c **** //* DATE CREATED:  2004                                              *
+   9:Core/Src/lcd_stm32f4.c **** //* PORTED:	   2014						     *
+  10:Core/Src/lcd_stm32f4.c **** //* MODIFIED:      03-08-2015                                        *
+  11:Core/Src/lcd_stm32f4.c **** //*==================================================================*
+  12:Core/Src/lcd_stm32f4.c **** //* PROGRAMMED IN: ECLIPSE IDE Luna Service Release 1 (4.4.1)        *
+  13:Core/Src/lcd_stm32f4.c **** //* DEV. BOARD:    UCT STM32 Development Board                       *
+  14:Core/Src/lcd_stm32f4.c **** //* TARGET:	   STMicroelectronics STM32F051C6                    *
+  15:Core/Src/lcd_stm32f4.c **** //*==================================================================*
+  16:Core/Src/lcd_stm32f4.c **** //* DESCRIPTION:   This code contains common functions to communicate*
+  17:Core/Src/lcd_stm32f4.c **** //*                with the LCD module connected to the STM32 uC.    *
+  18:Core/Src/lcd_stm32f4.c **** //*==================================================================*
+  19:Core/Src/lcd_stm32f4.c **** //* LCD SETUP:     - 4 bit mode      (Upper 4 data lines D4-D7 used) *
+  20:Core/Src/lcd_stm32f4.c **** //*                - Two lines used                                  *
+  21:Core/Src/lcd_stm32f4.c **** //*                - Flashing cursor                                 *
+  22:Core/Src/lcd_stm32f4.c **** //*==================================================================*
+  23:Core/Src/lcd_stm32f4.c **** //* CONNECTIONS:                                                     *
+  24:Core/Src/lcd_stm32f4.c **** //*------------------------------------------------------------------*
+  25:Core/Src/lcd_stm32f4.c **** //* LCD PINS   | NAME                    | CONNECTED TO              *
+  26:Core/Src/lcd_stm32f4.c **** //*------------------------------------------------------------------*
+  27:Core/Src/lcd_stm32f4.c **** //* 1............VSS.......................GND                       *
+  28:Core/Src/lcd_stm32f4.c **** //* 2............VDD.......................+5V                       *
+  29:Core/Src/lcd_stm32f4.c **** //* 3............CONTRAST..................POT 2                     *
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 2
+
+
+  30:Core/Src/lcd_stm32f4.c **** //* 4............RS  - Register Select.....PC14 (LCD_RS)             *
+  31:Core/Src/lcd_stm32f4.c **** //* 5............RW  - Read/Write..........GND                       *
+  32:Core/Src/lcd_stm32f4.c **** //* 6............E   - Enable..............PC15 (LCD_E)              *
+  33:Core/Src/lcd_stm32f4.c **** //* 7............D0  - Data line 0.........GND                       *
+  34:Core/Src/lcd_stm32f4.c **** //* 8............D1  - Data line 1.........GND                       *
+  35:Core/Src/lcd_stm32f4.c **** //* 9............D2  - Data line 2.........GND                       *
+  36:Core/Src/lcd_stm32f4.c **** //* 10...........D3  - Data line 3.........GND                       *
+  37:Core/Src/lcd_stm32f4.c **** //* 11...........D4  - Data line 4.........PB8  (LCD_D4)             *
+  38:Core/Src/lcd_stm32f4.c **** //* 12...........D5  - Data line 5.........PB9  (LCD_D5)             *
+  39:Core/Src/lcd_stm32f4.c **** //* 13...........D6  - Data line 6.........PA12 (LCD_D6)             *
+  40:Core/Src/lcd_stm32f4.c **** //* 14...........D7  - Data line 7.........PA15 (LCD_D7)             *
+  41:Core/Src/lcd_stm32f4.c **** //* 15...........CATHLED...................NC                        *
+  42:Core/Src/lcd_stm32f4.c **** //* 16...........ANODELED..................NC                        *
+  43:Core/Src/lcd_stm32f4.c **** //********************************************************************
+  44:Core/Src/lcd_stm32f4.c **** // INCLUDE FILES
+  45:Core/Src/lcd_stm32f4.c **** //====================================================================
+  46:Core/Src/lcd_stm32f4.c **** #include <lcd_stm32f4.h>
+  47:Core/Src/lcd_stm32f4.c **** 
+  48:Core/Src/lcd_stm32f4.c **** #include "stm32f4xx.h"
+  49:Core/Src/lcd_stm32f4.c **** //====================================================================
+  50:Core/Src/lcd_stm32f4.c **** // SEND COMMAND CODE TO LCD - LCD_Command(command)
+  51:Core/Src/lcd_stm32f4.c **** //====================================================================
+  52:Core/Src/lcd_stm32f4.c **** // DESCRIPTION: This function sends a command to the LCD. Care is taken
+  53:Core/Src/lcd_stm32f4.c **** //              not to interfere with the other lines on the port.
+  54:Core/Src/lcd_stm32f4.c **** //
+  55:Core/Src/lcd_stm32f4.c **** //              As we are using a microcontroller to control the LCD
+  56:Core/Src/lcd_stm32f4.c **** //              we use 4-bit mode to save on number of lines used to
+  57:Core/Src/lcd_stm32f4.c **** //              connect to the LCD. This means that an 8-bit command
+  58:Core/Src/lcd_stm32f4.c **** //              must be split into two sets of 4-bits (upper and lower)
+  59:Core/Src/lcd_stm32f4.c **** //              These sets must be transmitted
+  60:Core/Src/lcd_stm32f4.c **** //====================================================================
+  61:Core/Src/lcd_stm32f4.c **** // USEFUL COMMANDS:
+  62:Core/Src/lcd_stm32f4.c **** //                  - POWER_UP:      Power up initialization for the lcd
+  63:Core/Src/lcd_stm32f4.c **** //                  - FOURBIT_MODE:  Sets LCD for 4-bit mode
+  64:Core/Src/lcd_stm32f4.c **** //                  - TWOLINE_MODE:  Sets up 2 lines and character size
+  65:Core/Src/lcd_stm32f4.c **** //                  - SETUP_CURSOR:  Turn display on and set up cursor
+  66:Core/Src/lcd_stm32f4.c **** //                  - CLEAR:         Clear screen
+  67:Core/Src/lcd_stm32f4.c **** //                  - CURSOR_HOME:   Cursor home
+  68:Core/Src/lcd_stm32f4.c **** //                  - LINE_TWO:      Line 2
+  69:Core/Src/lcd_stm32f4.c **** //
+  70:Core/Src/lcd_stm32f4.c **** //====================================================================
+  71:Core/Src/lcd_stm32f4.c **** 
+  72:Core/Src/lcd_stm32f4.c **** void lcd_command(unsigned char command)
+  73:Core/Src/lcd_stm32f4.c **** {
+  74:Core/Src/lcd_stm32f4.c ****     GPIOC->BSRR |= LCD_RS_RESET;	// Register Select (RS)line low (data sent will now be read as com
+  75:Core/Src/lcd_stm32f4.c **** 
+  76:Core/Src/lcd_stm32f4.c **** // Put upper nibble (upper 4-bits) on data lines, command mode
+  77:Core/Src/lcd_stm32f4.c **** // DATALINE 7
+  78:Core/Src/lcd_stm32f4.c ****     if ((command & 0x80) != 0)		// Select bit 7 of command, if HIGH set Data line 7 (D7) 
+  79:Core/Src/lcd_stm32f4.c ****     {
+  80:Core/Src/lcd_stm32f4.c ****     	GPIOA->BSRR |= LCD_D7_SET;
+  81:Core/Src/lcd_stm32f4.c ****     }
+  82:Core/Src/lcd_stm32f4.c ****     else				// else RESET D7
+  83:Core/Src/lcd_stm32f4.c ****     {
+  84:Core/Src/lcd_stm32f4.c ****     	GPIOA->BSRR |= LCD_D7_RESET;
+  85:Core/Src/lcd_stm32f4.c ****     }
+  86:Core/Src/lcd_stm32f4.c **** // DATALINE 6
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 3
+
+
+  87:Core/Src/lcd_stm32f4.c ****     if ((command & 0x40) != 0)		// Select bit 6 of command, if HIGH set Data line 6 (D6) 
+  88:Core/Src/lcd_stm32f4.c ****     {
+  89:Core/Src/lcd_stm32f4.c ****         GPIOA->BSRR |= LCD_D6_SET;
+  90:Core/Src/lcd_stm32f4.c ****     }
+  91:Core/Src/lcd_stm32f4.c ****     else				// else RESET D6
+  92:Core/Src/lcd_stm32f4.c ****     {
+  93:Core/Src/lcd_stm32f4.c ****         GPIOA->BSRR |= LCD_D6_RESET;
+  94:Core/Src/lcd_stm32f4.c ****     }
+  95:Core/Src/lcd_stm32f4.c **** // DATALINE 5
+  96:Core/Src/lcd_stm32f4.c ****     if ((command & 0x20) != 0)		// Select bit 5 of command, if HIGH set Data line 5 (D5)
+  97:Core/Src/lcd_stm32f4.c ****     {
+  98:Core/Src/lcd_stm32f4.c ****     	GPIOB->BSRR |= LCD_D5_SET;	
+  99:Core/Src/lcd_stm32f4.c ****     }
+ 100:Core/Src/lcd_stm32f4.c ****     else				// else RESET D5
+ 101:Core/Src/lcd_stm32f4.c ****     {
+ 102:Core/Src/lcd_stm32f4.c ****     	GPIOB->BSRR |= LCD_D5_RESET;
+ 103:Core/Src/lcd_stm32f4.c ****     }
+ 104:Core/Src/lcd_stm32f4.c **** // DATALINE 4
+ 105:Core/Src/lcd_stm32f4.c ****     if ((command & 0x10) != 0)		// Select bit 4 of command, if HIGH set Data line 4 (D4)
+ 106:Core/Src/lcd_stm32f4.c ****     {
+ 107:Core/Src/lcd_stm32f4.c ****     	GPIOB->BSRR |= LCD_D4_SET;
+ 108:Core/Src/lcd_stm32f4.c ****     }
+ 109:Core/Src/lcd_stm32f4.c ****     else				//  else RESET D4
+ 110:Core/Src/lcd_stm32f4.c ****     {
+ 111:Core/Src/lcd_stm32f4.c ****     	GPIOB->BSRR |= LCD_D4_RESET;
+ 112:Core/Src/lcd_stm32f4.c ****     }
+ 113:Core/Src/lcd_stm32f4.c **** 
+ 114:Core/Src/lcd_stm32f4.c ****     pulse_strobe ();			// Send data
+ 115:Core/Src/lcd_stm32f4.c **** 
+ 116:Core/Src/lcd_stm32f4.c **** // lower nibble to data lines
+ 117:Core/Src/lcd_stm32f4.c ****     if ((command & 0x08) != 0)		// Select bit 3 of command, if HIGH set Data line 7 (D7) 
+ 118:Core/Src/lcd_stm32f4.c ****     {
+ 119:Core/Src/lcd_stm32f4.c ****     	GPIOA->BSRR |= LCD_D7_SET;
+ 120:Core/Src/lcd_stm32f4.c ****     }
+ 121:Core/Src/lcd_stm32f4.c ****     else				// else RESET D7
+ 122:Core/Src/lcd_stm32f4.c ****     {
+ 123:Core/Src/lcd_stm32f4.c ****     	GPIOA->BSRR |= LCD_D7_RESET;
+ 124:Core/Src/lcd_stm32f4.c ****     }
+ 125:Core/Src/lcd_stm32f4.c **** // DATALINE 6
+ 126:Core/Src/lcd_stm32f4.c ****     if ((command & 0x04) != 0)		// Select bit 2 of command, if HIGH set Data line 6 (D6)
+ 127:Core/Src/lcd_stm32f4.c ****     {
+ 128:Core/Src/lcd_stm32f4.c ****         GPIOA->BSRR |= LCD_D6_SET;
+ 129:Core/Src/lcd_stm32f4.c ****     }
+ 130:Core/Src/lcd_stm32f4.c ****     else				//  else RESET D6
+ 131:Core/Src/lcd_stm32f4.c ****     {
+ 132:Core/Src/lcd_stm32f4.c ****         GPIOA->BSRR |= LCD_D6_RESET;
+ 133:Core/Src/lcd_stm32f4.c ****     }
+ 134:Core/Src/lcd_stm32f4.c ****     // DATALINE 5
+ 135:Core/Src/lcd_stm32f4.c ****     if ((command & 0x02) != 0)		// Select bit 1 of command, if HIGH set Data line 5 (D5)
+ 136:Core/Src/lcd_stm32f4.c ****     {
+ 137:Core/Src/lcd_stm32f4.c ****     	GPIOB->BSRR |= LCD_D5_SET;         
+ 138:Core/Src/lcd_stm32f4.c ****     }
+ 139:Core/Src/lcd_stm32f4.c ****     else				//  else RESET D5
+ 140:Core/Src/lcd_stm32f4.c ****     {
+ 141:Core/Src/lcd_stm32f4.c ****     	GPIOB->BSRR |= LCD_D5_RESET;
+ 142:Core/Src/lcd_stm32f4.c ****     }
+ 143:Core/Src/lcd_stm32f4.c ****     // DATALINE 4
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 4
+
+
+ 144:Core/Src/lcd_stm32f4.c ****     if ((command & 0x01) != 0)		// Select bit 0 of command, if HIGH set Data line 4 (D4)
+ 145:Core/Src/lcd_stm32f4.c ****     {
+ 146:Core/Src/lcd_stm32f4.c ****     	GPIOB->BSRR |= LCD_D4_SET;
+ 147:Core/Src/lcd_stm32f4.c ****     }
+ 148:Core/Src/lcd_stm32f4.c ****     else				//  else RESET D4
+ 149:Core/Src/lcd_stm32f4.c ****     {
+ 150:Core/Src/lcd_stm32f4.c ****     	GPIOB->BSRR |= LCD_D4_RESET;
+ 151:Core/Src/lcd_stm32f4.c ****     }
+ 152:Core/Src/lcd_stm32f4.c **** 
+ 153:Core/Src/lcd_stm32f4.c ****     pulse_strobe();			// Send data
+ 154:Core/Src/lcd_stm32f4.c ****     delay(3000);
+ 155:Core/Src/lcd_stm32f4.c **** }
+ 156:Core/Src/lcd_stm32f4.c **** 
+ 157:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 158:Core/Src/lcd_stm32f4.c **** // INITIALISE LCD - LCD_Init()
+ 159:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 160:Core/Src/lcd_stm32f4.c **** // DESCRIPTION: This function sets up the port lines for the LCD and
+ 161:Core/Src/lcd_stm32f4.c **** //              intialises the module for use.
+ 162:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 163:Core/Src/lcd_stm32f4.c **** // LCD SETUP:     - 4 bit mode      (Upper 4 data lines D4-D7 used)
+ 164:Core/Src/lcd_stm32f4.c **** //                - Two lines used
+ 165:Core/Src/lcd_stm32f4.c **** //                - Flashing cursor
+ 166:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 167:Core/Src/lcd_stm32f4.c **** 
+ 168:Core/Src/lcd_stm32f4.c **** void init_LCD(void)
+ 169:Core/Src/lcd_stm32f4.c **** {
+ 170:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+ 171:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+ 172:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+ 173:Core/Src/lcd_stm32f4.c **** 
+ 174:Core/Src/lcd_stm32f4.c ****     GPIOA->MODER |= (GPIO_MODER_MODER12_0|GPIO_MODER_MODER15_0); // D6 and D7
+ 175:Core/Src/lcd_stm32f4.c ****     GPIOB->MODER |= (GPIO_MODER_MODER8_0|GPIO_MODER_MODER9_0);   // D4 and D5
+ 176:Core/Src/lcd_stm32f4.c ****     GPIOC->MODER |= (GPIO_MODER_MODER14_0|GPIO_MODER_MODER15_0); // RS and EN
+ 177:Core/Src/lcd_stm32f4.c **** 
+ 178:Core/Src/lcd_stm32f4.c ****     delay(30000);			// Allow the LCD some power up time (~30ms)
+ 179:Core/Src/lcd_stm32f4.c **** 
+ 180:Core/Src/lcd_stm32f4.c ****     lcd_command(POWER_UP);		// Power up initialization for the lcd
+ 181:Core/Src/lcd_stm32f4.c ****     lcd_command(FOURBIT_MODE);		// Set LCD into 4 bit mode
+ 182:Core/Src/lcd_stm32f4.c ****     lcd_command(DISPLAY_ON);		// Turn display on and set up cursor
+ 183:Core/Src/lcd_stm32f4.c ****     lcd_command(TWOLINE_MODE);		// Set up 2 lines and character size
+ 184:Core/Src/lcd_stm32f4.c ****     lcd_command(CLEAR);			// Clear display
+ 185:Core/Src/lcd_stm32f4.c **** }
+ 186:Core/Src/lcd_stm32f4.c **** 
+ 187:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 188:Core/Src/lcd_stm32f4.c **** // WRITE A SINGLE CHARACTER TO THE LCD - LCD_PutChar(character)
+ 189:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 190:Core/Src/lcd_stm32f4.c **** // DESCRIPTION: Puts a single character on the LCD at the next position
+ 191:Core/Src/lcd_stm32f4.c **** //              on the screen. The character to be printed is in the input
+ 192:Core/Src/lcd_stm32f4.c **** //              parameter. For numbers, letters and other common characters
+ 193:Core/Src/lcd_stm32f4.c **** //              the ASCII code will produce correct display.
+ 194:Core/Src/lcd_stm32f4.c **** //
+ 195:Core/Src/lcd_stm32f4.c **** //              Refer to the Hitachi HD44780 datasheet for full character
+ 196:Core/Src/lcd_stm32f4.c **** //              set information.
+ 197:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 198:Core/Src/lcd_stm32f4.c **** 
+ 199:Core/Src/lcd_stm32f4.c ****  void lcd_putchar(unsigned char character)
+ 200:Core/Src/lcd_stm32f4.c **** {
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 5
+
+
+ 201:Core/Src/lcd_stm32f4.c **** 	GPIOC->BSRR |= LCD_RS_SET;	// Register Select (RS) line HIGH (data sent will now be read as text);
+ 202:Core/Src/lcd_stm32f4.c **** // Put upper nibble (upper 4-bits) on data lines, command mode
+ 203:Core/Src/lcd_stm32f4.c **** // DATALINE 7
+ 204:Core/Src/lcd_stm32f4.c ****         if ((character & 0x80) != 0) 	// Select bit 7 of command, if HIGH set Data line 7 (D7)
+ 205:Core/Src/lcd_stm32f4.c ****         {
+ 206:Core/Src/lcd_stm32f4.c ****         	GPIOA->BSRR |= LCD_D7_SET;
+ 207:Core/Src/lcd_stm32f4.c ****         }
+ 208:Core/Src/lcd_stm32f4.c ****         else				//  else RESET D7
+ 209:Core/Src/lcd_stm32f4.c ****         {
+ 210:Core/Src/lcd_stm32f4.c ****         	GPIOA->BSRR |= LCD_D7_RESET;
+ 211:Core/Src/lcd_stm32f4.c ****         }
+ 212:Core/Src/lcd_stm32f4.c ****         // DATALINE 6
+ 213:Core/Src/lcd_stm32f4.c ****         if ((character & 0x40) != 0)	// Select bit 6 of command, if HIGH set Data line 6 (D6)      
+ 214:Core/Src/lcd_stm32f4.c **** 	{
+ 215:Core/Src/lcd_stm32f4.c ****             GPIOA->BSRR |= LCD_D6_SET;
+ 216:Core/Src/lcd_stm32f4.c ****         }
+ 217:Core/Src/lcd_stm32f4.c ****         else				//  else RESET D6
+ 218:Core/Src/lcd_stm32f4.c **** 
+ 219:Core/Src/lcd_stm32f4.c ****         {
+ 220:Core/Src/lcd_stm32f4.c ****             GPIOA->BSRR |= LCD_D6_RESET;
+ 221:Core/Src/lcd_stm32f4.c ****         }
+ 222:Core/Src/lcd_stm32f4.c **** // DATALINE 5
+ 223:Core/Src/lcd_stm32f4.c ****         if ((character & 0x20) != 0)	// Select bit 5 of command, if HIGH set Data line 5 (D5)
+ 224:Core/Src/lcd_stm32f4.c **** 
+ 225:Core/Src/lcd_stm32f4.c ****         {
+ 226:Core/Src/lcd_stm32f4.c ****         	GPIOB->BSRR |= LCD_D5_SET;                 
+ 227:Core/Src/lcd_stm32f4.c **** 	}
+ 228:Core/Src/lcd_stm32f4.c ****         else				//  else RESET D5
+ 229:Core/Src/lcd_stm32f4.c ****         {
+ 230:Core/Src/lcd_stm32f4.c ****         	GPIOB->BSRR |= LCD_D5_RESET;
+ 231:Core/Src/lcd_stm32f4.c ****         }
+ 232:Core/Src/lcd_stm32f4.c **** // DATALINE 4
+ 233:Core/Src/lcd_stm32f4.c ****         if ((character & 0x10) != 0)	// Select bit 4 of command, if HIGH set Data line 4 (D4) 
+ 234:Core/Src/lcd_stm32f4.c ****         {
+ 235:Core/Src/lcd_stm32f4.c ****         	GPIOB->BSRR |= LCD_D4_SET;
+ 236:Core/Src/lcd_stm32f4.c ****         }
+ 237:Core/Src/lcd_stm32f4.c ****         else				// else RESET D4
+ 238:Core/Src/lcd_stm32f4.c ****         {
+ 239:Core/Src/lcd_stm32f4.c ****         	GPIOB->BSRR |= LCD_D4_RESET;
+ 240:Core/Src/lcd_stm32f4.c ****         }
+ 241:Core/Src/lcd_stm32f4.c **** 
+ 242:Core/Src/lcd_stm32f4.c ****         pulse_strobe ();		// Send data
+ 243:Core/Src/lcd_stm32f4.c **** 
+ 244:Core/Src/lcd_stm32f4.c **** // lower nibble to data lines
+ 245:Core/Src/lcd_stm32f4.c ****         if ((character & 0x08) != 0)	// Select bit 3 of command, if HIGH set Data line 7 (D7) 
+ 246:Core/Src/lcd_stm32f4.c ****         {
+ 247:Core/Src/lcd_stm32f4.c ****         	GPIOA->BSRR |= LCD_D7_SET;
+ 248:Core/Src/lcd_stm32f4.c ****         }
+ 249:Core/Src/lcd_stm32f4.c ****         else				// else RESET D7
+ 250:Core/Src/lcd_stm32f4.c ****         {
+ 251:Core/Src/lcd_stm32f4.c ****         	GPIOA->BSRR |= LCD_D7_RESET;
+ 252:Core/Src/lcd_stm32f4.c ****         }
+ 253:Core/Src/lcd_stm32f4.c **** // DATALINE 6
+ 254:Core/Src/lcd_stm32f4.c ****         if ((character & 0x04) != 0)	// Select bit 2 of command, if HIGH set Data line 6 (D6)      
+ 255:Core/Src/lcd_stm32f4.c **** 	{
+ 256:Core/Src/lcd_stm32f4.c ****             GPIOA->BSRR |= LCD_D6_SET;
+ 257:Core/Src/lcd_stm32f4.c ****         }
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 6
+
+
+ 258:Core/Src/lcd_stm32f4.c ****         else				// else RESET D6
+ 259:Core/Src/lcd_stm32f4.c **** 
+ 260:Core/Src/lcd_stm32f4.c ****         {
+ 261:Core/Src/lcd_stm32f4.c ****             GPIOA->BSRR |= LCD_D6_RESET;
+ 262:Core/Src/lcd_stm32f4.c ****         }
+ 263:Core/Src/lcd_stm32f4.c **** // DATALINE 5
+ 264:Core/Src/lcd_stm32f4.c ****         if ((character & 0x02) != 0)	// Select bit 1 of command, if HIGH set Data line 5 (D5)  
+ 265:Core/Src/lcd_stm32f4.c ****         {
+ 266:Core/Src/lcd_stm32f4.c ****         	GPIOB->BSRR |= LCD_D5_SET;       
+ 267:Core/Src/lcd_stm32f4.c **** 	}
+ 268:Core/Src/lcd_stm32f4.c ****         else				// else RESET D5
+ 269:Core/Src/lcd_stm32f4.c ****         {
+ 270:Core/Src/lcd_stm32f4.c ****         	GPIOB->BSRR |= LCD_D5_RESET;
+ 271:Core/Src/lcd_stm32f4.c ****         }
+ 272:Core/Src/lcd_stm32f4.c **** // DATALINE 4
+ 273:Core/Src/lcd_stm32f4.c ****         if ((character & 0x01) != 0)	// Select bit 0 of command, if HIGH set Data line 4 (D4)
+ 274:Core/Src/lcd_stm32f4.c ****         {
+ 275:Core/Src/lcd_stm32f4.c ****         	GPIOB->BSRR |= LCD_D4_SET;
+ 276:Core/Src/lcd_stm32f4.c ****         }
+ 277:Core/Src/lcd_stm32f4.c ****         else				//  else RESET D4
+ 278:Core/Src/lcd_stm32f4.c ****         {
+ 279:Core/Src/lcd_stm32f4.c ****         	GPIOB->BSRR |= LCD_D4_RESET;
+ 280:Core/Src/lcd_stm32f4.c ****         }
+ 281:Core/Src/lcd_stm32f4.c **** 
+ 282:Core/Src/lcd_stm32f4.c ****         pulse_strobe();			// Send data
+ 283:Core/Src/lcd_stm32f4.c **** }
+ 284:Core/Src/lcd_stm32f4.c **** 
+ 285:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 286:Core/Src/lcd_stm32f4.c **** // WRITE A STRING TO THE LCD - LCD_PutString(ptr_String)
+ 287:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 288:Core/Src/lcd_stm32f4.c **** // DESCRIPTION: Writes a string to the LCD
+ 289:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 290:Core/Src/lcd_stm32f4.c **** 
+ 291:Core/Src/lcd_stm32f4.c **** void lcd_putstring(char *instring)
+ 292:Core/Src/lcd_stm32f4.c **** {
+ 293:Core/Src/lcd_stm32f4.c ****     unsigned char count = 0;
+ 294:Core/Src/lcd_stm32f4.c **** 
+ 295:Core/Src/lcd_stm32f4.c ****     while (instring[count])		// Until the null terminator is reached
+ 296:Core/Src/lcd_stm32f4.c ****     {
+ 297:Core/Src/lcd_stm32f4.c ****     	lcd_putchar(instring[count]);	// Write each character to LCD
+ 298:Core/Src/lcd_stm32f4.c **** 	    count++;
+ 299:Core/Src/lcd_stm32f4.c **** 	 }
+ 300:Core/Src/lcd_stm32f4.c **** }
+ 301:Core/Src/lcd_stm32f4.c **** 
+ 302:Core/Src/lcd_stm32f4.c **** 
+ 303:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 304:Core/Src/lcd_stm32f4.c **** // PULSE STROBE - Pulse_Strobe()
+ 305:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 306:Core/Src/lcd_stm32f4.c **** // DESCRIPTION: Pulse the strobe line of the LCD to indicate that data is ready.
+ 307:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 308:Core/Src/lcd_stm32f4.c **** 
+ 309:Core/Src/lcd_stm32f4.c **** void pulse_strobe(void)
+ 310:Core/Src/lcd_stm32f4.c **** {
+ 311:Core/Src/lcd_stm32f4.c ****     delay(20);				// Delay
+ 312:Core/Src/lcd_stm32f4.c **** 
+ 313:Core/Src/lcd_stm32f4.c ****     GPIOC->BSRR |= LCD_EN_SET;		// pull E (PC15) HIGH
+ 314:Core/Src/lcd_stm32f4.c **** 
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 7
+
+
+ 315:Core/Src/lcd_stm32f4.c ****     delay(20);				// Delay
+ 316:Core/Src/lcd_stm32f4.c **** 
+ 317:Core/Src/lcd_stm32f4.c ****     GPIOC->BSRR |= LCD_EN_RESET;	// Take EN LOW
+ 318:Core/Src/lcd_stm32f4.c **** 
+ 319:Core/Src/lcd_stm32f4.c ****     delay(20);				// Delay
+ 320:Core/Src/lcd_stm32f4.c **** 
+ 321:Core/Src/lcd_stm32f4.c ****     GPIOC->BSRR |= LCD_EN_SET;		// Take EN HIGH
+ 322:Core/Src/lcd_stm32f4.c **** }
+ 323:Core/Src/lcd_stm32f4.c **** 
+ 324:Core/Src/lcd_stm32f4.c **** 
+ 325:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 326:Core/Src/lcd_stm32f4.c **** // LOOP DELAY - delay(microseconds)
+ 327:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 328:Core/Src/lcd_stm32f4.c **** // DESCRIPTION: A delay used by the LCD functions.
+ 329:Core/Src/lcd_stm32f4.c **** //====================================================================
+ 330:Core/Src/lcd_stm32f4.c **** 
+ 331:Core/Src/lcd_stm32f4.c **** void delay(unsigned int microseconds)
+ 332:Core/Src/lcd_stm32f4.c **** {
+  30              		.loc 1 332 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 8
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              		.loc 1 332 1 is_stmt 0 view .LVU1
+  36 0000 82B0     		sub	sp, sp, #8
+  37              		.cfi_def_cfa_offset 8
+ 333:Core/Src/lcd_stm32f4.c **** 	  volatile unsigned int counter;
+  38              		.loc 1 333 4 is_stmt 1 view .LVU2
+ 334:Core/Src/lcd_stm32f4.c **** 	  microseconds *= 3;
+  39              		.loc 1 334 4 view .LVU3
+  40              		.loc 1 334 17 is_stmt 0 view .LVU4
+  41 0002 00EB4000 		add	r0, r0, r0, lsl #1
+  42              	.LVL1:
+ 335:Core/Src/lcd_stm32f4.c **** 	  for(counter = 0; counter<microseconds; counter++)
+  43              		.loc 1 335 4 is_stmt 1 view .LVU5
+  44              		.loc 1 335 16 is_stmt 0 view .LVU6
+  45 0006 0023     		movs	r3, #0
+  46 0008 0193     		str	r3, [sp, #4]
+  47              		.loc 1 335 4 view .LVU7
+  48 000a 04E0     		b	.L2
+  49              	.L3:
+ 336:Core/Src/lcd_stm32f4.c **** 	  {
+ 337:Core/Src/lcd_stm32f4.c **** 	    __asm("nop");
+  50              		.loc 1 337 6 is_stmt 1 view .LVU8
+  51              		.syntax unified
+  52              	@ 337 "Core/Src/lcd_stm32f4.c" 1
+  53 000c 00BF     		nop
+  54              	@ 0 "" 2
+ 338:Core/Src/lcd_stm32f4.c **** 	    __asm("nop");
+  55              		.loc 1 338 6 view .LVU9
+  56              	@ 338 "Core/Src/lcd_stm32f4.c" 1
+  57 000e 00BF     		nop
+  58              	@ 0 "" 2
+ 335:Core/Src/lcd_stm32f4.c **** 	  for(counter = 0; counter<microseconds; counter++)
+  59              		.loc 1 335 50 discriminator 3 view .LVU10
+  60              		.thumb
+  61              		.syntax unified
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 8
+
+
+  62 0010 019B     		ldr	r3, [sp, #4]
+  63 0012 0133     		adds	r3, r3, #1
+  64 0014 0193     		str	r3, [sp, #4]
+  65              	.L2:
+ 335:Core/Src/lcd_stm32f4.c **** 	  for(counter = 0; counter<microseconds; counter++)
+  66              		.loc 1 335 28 discriminator 1 view .LVU11
+  67 0016 019B     		ldr	r3, [sp, #4]
+  68 0018 8342     		cmp	r3, r0
+  69 001a F7D3     		bcc	.L3
+ 339:Core/Src/lcd_stm32f4.c **** 	  }
+ 340:Core/Src/lcd_stm32f4.c **** }
+  70              		.loc 1 340 1 is_stmt 0 view .LVU12
+  71 001c 02B0     		add	sp, sp, #8
+  72              		.cfi_def_cfa_offset 0
+  73              		@ sp needed
+  74 001e 7047     		bx	lr
+  75              		.cfi_endproc
+  76              	.LFE139:
+  78              		.section	.text.pulse_strobe,"ax",%progbits
+  79              		.align	1
+  80              		.global	pulse_strobe
+  81              		.syntax unified
+  82              		.thumb
+  83              		.thumb_func
+  85              	pulse_strobe:
+  86              	.LFB138:
+ 310:Core/Src/lcd_stm32f4.c ****     delay(20);				// Delay
+  87              		.loc 1 310 1 is_stmt 1 view -0
+  88              		.cfi_startproc
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91 0000 10B5     		push	{r4, lr}
+  92              		.cfi_def_cfa_offset 8
+  93              		.cfi_offset 4, -8
+  94              		.cfi_offset 14, -4
+ 311:Core/Src/lcd_stm32f4.c **** 
+  95              		.loc 1 311 5 view .LVU14
+  96 0002 1420     		movs	r0, #20
+  97 0004 FFF7FEFF 		bl	delay
+  98              	.LVL2:
+ 313:Core/Src/lcd_stm32f4.c **** 
+  99              		.loc 1 313 5 view .LVU15
+ 313:Core/Src/lcd_stm32f4.c **** 
+ 100              		.loc 1 313 10 is_stmt 0 view .LVU16
+ 101 0008 094C     		ldr	r4, .L7
+ 102 000a A369     		ldr	r3, [r4, #24]
+ 313:Core/Src/lcd_stm32f4.c **** 
+ 103              		.loc 1 313 17 view .LVU17
+ 104 000c 43F40043 		orr	r3, r3, #32768
+ 105 0010 A361     		str	r3, [r4, #24]
+ 315:Core/Src/lcd_stm32f4.c **** 
+ 106              		.loc 1 315 5 is_stmt 1 view .LVU18
+ 107 0012 1420     		movs	r0, #20
+ 108 0014 FFF7FEFF 		bl	delay
+ 109              	.LVL3:
+ 317:Core/Src/lcd_stm32f4.c **** 
+ 110              		.loc 1 317 5 view .LVU19
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 9
+
+
+ 317:Core/Src/lcd_stm32f4.c **** 
+ 111              		.loc 1 317 10 is_stmt 0 view .LVU20
+ 112 0018 A369     		ldr	r3, [r4, #24]
+ 317:Core/Src/lcd_stm32f4.c **** 
+ 113              		.loc 1 317 17 view .LVU21
+ 114 001a 43F00043 		orr	r3, r3, #-2147483648
+ 115 001e A361     		str	r3, [r4, #24]
+ 319:Core/Src/lcd_stm32f4.c **** 
+ 116              		.loc 1 319 5 is_stmt 1 view .LVU22
+ 117 0020 1420     		movs	r0, #20
+ 118 0022 FFF7FEFF 		bl	delay
+ 119              	.LVL4:
+ 321:Core/Src/lcd_stm32f4.c **** }
+ 120              		.loc 1 321 5 view .LVU23
+ 321:Core/Src/lcd_stm32f4.c **** }
+ 121              		.loc 1 321 10 is_stmt 0 view .LVU24
+ 122 0026 A369     		ldr	r3, [r4, #24]
+ 321:Core/Src/lcd_stm32f4.c **** }
+ 123              		.loc 1 321 17 view .LVU25
+ 124 0028 43F40043 		orr	r3, r3, #32768
+ 125 002c A361     		str	r3, [r4, #24]
+ 322:Core/Src/lcd_stm32f4.c **** 
+ 126              		.loc 1 322 1 view .LVU26
+ 127 002e 10BD     		pop	{r4, pc}
+ 128              	.L8:
+ 129              		.align	2
+ 130              	.L7:
+ 131 0030 00080240 		.word	1073874944
+ 132              		.cfi_endproc
+ 133              	.LFE138:
+ 135              		.section	.text.lcd_putchar,"ax",%progbits
+ 136              		.align	1
+ 137              		.global	lcd_putchar
+ 138              		.syntax unified
+ 139              		.thumb
+ 140              		.thumb_func
+ 142              	lcd_putchar:
+ 143              	.LVL5:
+ 144              	.LFB136:
+ 200:Core/Src/lcd_stm32f4.c **** 	GPIOC->BSRR |= LCD_RS_SET;	// Register Select (RS) line HIGH (data sent will now be read as text);
+ 145              		.loc 1 200 1 is_stmt 1 view -0
+ 146              		.cfi_startproc
+ 147              		@ args = 0, pretend = 0, frame = 0
+ 148              		@ frame_needed = 0, uses_anonymous_args = 0
+ 200:Core/Src/lcd_stm32f4.c **** 	GPIOC->BSRR |= LCD_RS_SET;	// Register Select (RS) line HIGH (data sent will now be read as text);
+ 149              		.loc 1 200 1 is_stmt 0 view .LVU28
+ 150 0000 10B5     		push	{r4, lr}
+ 151              		.cfi_def_cfa_offset 8
+ 152              		.cfi_offset 4, -8
+ 153              		.cfi_offset 14, -4
+ 154 0002 0446     		mov	r4, r0
+ 201:Core/Src/lcd_stm32f4.c **** // Put upper nibble (upper 4-bits) on data lines, command mode
+ 155              		.loc 1 201 2 is_stmt 1 view .LVU29
+ 201:Core/Src/lcd_stm32f4.c **** // Put upper nibble (upper 4-bits) on data lines, command mode
+ 156              		.loc 1 201 7 is_stmt 0 view .LVU30
+ 157 0004 3D4A     		ldr	r2, .L28
+ 158 0006 9369     		ldr	r3, [r2, #24]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 10
+
+
+ 201:Core/Src/lcd_stm32f4.c **** // Put upper nibble (upper 4-bits) on data lines, command mode
+ 159              		.loc 1 201 14 view .LVU31
+ 160 0008 43F48043 		orr	r3, r3, #16384
+ 161 000c 9361     		str	r3, [r2, #24]
+ 204:Core/Src/lcd_stm32f4.c ****         {
+ 162              		.loc 1 204 9 is_stmt 1 view .LVU32
+ 204:Core/Src/lcd_stm32f4.c ****         {
+ 163              		.loc 1 204 12 is_stmt 0 view .LVU33
+ 164 000e 10F0800F 		tst	r0, #128
+ 165 0012 41D1     		bne	.L27
+ 210:Core/Src/lcd_stm32f4.c ****         }
+ 166              		.loc 1 210 10 is_stmt 1 view .LVU34
+ 210:Core/Src/lcd_stm32f4.c ****         }
+ 167              		.loc 1 210 15 is_stmt 0 view .LVU35
+ 168 0014 3A4A     		ldr	r2, .L28+4
+ 169 0016 9369     		ldr	r3, [r2, #24]
+ 210:Core/Src/lcd_stm32f4.c ****         }
+ 170              		.loc 1 210 22 view .LVU36
+ 171 0018 43F00043 		orr	r3, r3, #-2147483648
+ 172 001c 9361     		str	r3, [r2, #24]
+ 173              	.L11:
+ 213:Core/Src/lcd_stm32f4.c **** 	{
+ 174              		.loc 1 213 9 is_stmt 1 view .LVU37
+ 213:Core/Src/lcd_stm32f4.c **** 	{
+ 175              		.loc 1 213 12 is_stmt 0 view .LVU38
+ 176 001e 14F0400F 		tst	r4, #64
+ 177 0022 40D0     		beq	.L12
+ 215:Core/Src/lcd_stm32f4.c ****         }
+ 178              		.loc 1 215 13 is_stmt 1 view .LVU39
+ 215:Core/Src/lcd_stm32f4.c ****         }
+ 179              		.loc 1 215 18 is_stmt 0 view .LVU40
+ 180 0024 364A     		ldr	r2, .L28+4
+ 181 0026 9369     		ldr	r3, [r2, #24]
+ 215:Core/Src/lcd_stm32f4.c ****         }
+ 182              		.loc 1 215 25 view .LVU41
+ 183 0028 43F48053 		orr	r3, r3, #4096
+ 184 002c 9361     		str	r3, [r2, #24]
+ 185              	.L13:
+ 223:Core/Src/lcd_stm32f4.c **** 
+ 186              		.loc 1 223 9 is_stmt 1 view .LVU42
+ 223:Core/Src/lcd_stm32f4.c **** 
+ 187              		.loc 1 223 12 is_stmt 0 view .LVU43
+ 188 002e 14F0200F 		tst	r4, #32
+ 189 0032 3ED0     		beq	.L14
+ 226:Core/Src/lcd_stm32f4.c **** 	}
+ 190              		.loc 1 226 10 is_stmt 1 view .LVU44
+ 226:Core/Src/lcd_stm32f4.c **** 	}
+ 191              		.loc 1 226 15 is_stmt 0 view .LVU45
+ 192 0034 334A     		ldr	r2, .L28+8
+ 193 0036 9369     		ldr	r3, [r2, #24]
+ 226:Core/Src/lcd_stm32f4.c **** 	}
+ 194              		.loc 1 226 22 view .LVU46
+ 195 0038 43F40073 		orr	r3, r3, #512
+ 196 003c 9361     		str	r3, [r2, #24]
+ 197              	.L15:
+ 233:Core/Src/lcd_stm32f4.c ****         {
+ 198              		.loc 1 233 9 is_stmt 1 view .LVU47
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 11
+
+
+ 233:Core/Src/lcd_stm32f4.c ****         {
+ 199              		.loc 1 233 12 is_stmt 0 view .LVU48
+ 200 003e 14F0100F 		tst	r4, #16
+ 201 0042 3CD0     		beq	.L16
+ 235:Core/Src/lcd_stm32f4.c ****         }
+ 202              		.loc 1 235 10 is_stmt 1 view .LVU49
+ 235:Core/Src/lcd_stm32f4.c ****         }
+ 203              		.loc 1 235 15 is_stmt 0 view .LVU50
+ 204 0044 2F4A     		ldr	r2, .L28+8
+ 205 0046 9369     		ldr	r3, [r2, #24]
+ 235:Core/Src/lcd_stm32f4.c ****         }
+ 206              		.loc 1 235 22 view .LVU51
+ 207 0048 43F48073 		orr	r3, r3, #256
+ 208 004c 9361     		str	r3, [r2, #24]
+ 209              	.L17:
+ 242:Core/Src/lcd_stm32f4.c **** 
+ 210              		.loc 1 242 9 is_stmt 1 view .LVU52
+ 211 004e FFF7FEFF 		bl	pulse_strobe
+ 212              	.LVL6:
+ 245:Core/Src/lcd_stm32f4.c ****         {
+ 213              		.loc 1 245 9 view .LVU53
+ 245:Core/Src/lcd_stm32f4.c ****         {
+ 214              		.loc 1 245 12 is_stmt 0 view .LVU54
+ 215 0052 14F0080F 		tst	r4, #8
+ 216 0056 38D0     		beq	.L18
+ 247:Core/Src/lcd_stm32f4.c ****         }
+ 217              		.loc 1 247 10 is_stmt 1 view .LVU55
+ 247:Core/Src/lcd_stm32f4.c ****         }
+ 218              		.loc 1 247 15 is_stmt 0 view .LVU56
+ 219 0058 294A     		ldr	r2, .L28+4
+ 220 005a 9369     		ldr	r3, [r2, #24]
+ 247:Core/Src/lcd_stm32f4.c ****         }
+ 221              		.loc 1 247 22 view .LVU57
+ 222 005c 43F40043 		orr	r3, r3, #32768
+ 223 0060 9361     		str	r3, [r2, #24]
+ 224              	.L19:
+ 254:Core/Src/lcd_stm32f4.c **** 	{
+ 225              		.loc 1 254 9 is_stmt 1 view .LVU58
+ 254:Core/Src/lcd_stm32f4.c **** 	{
+ 226              		.loc 1 254 12 is_stmt 0 view .LVU59
+ 227 0062 14F0040F 		tst	r4, #4
+ 228 0066 36D0     		beq	.L20
+ 256:Core/Src/lcd_stm32f4.c ****         }
+ 229              		.loc 1 256 13 is_stmt 1 view .LVU60
+ 256:Core/Src/lcd_stm32f4.c ****         }
+ 230              		.loc 1 256 18 is_stmt 0 view .LVU61
+ 231 0068 254A     		ldr	r2, .L28+4
+ 232 006a 9369     		ldr	r3, [r2, #24]
+ 256:Core/Src/lcd_stm32f4.c ****         }
+ 233              		.loc 1 256 25 view .LVU62
+ 234 006c 43F48053 		orr	r3, r3, #4096
+ 235 0070 9361     		str	r3, [r2, #24]
+ 236              	.L21:
+ 264:Core/Src/lcd_stm32f4.c ****         {
+ 237              		.loc 1 264 9 is_stmt 1 view .LVU63
+ 264:Core/Src/lcd_stm32f4.c ****         {
+ 238              		.loc 1 264 12 is_stmt 0 view .LVU64
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 12
+
+
+ 239 0072 14F0020F 		tst	r4, #2
+ 240 0076 34D0     		beq	.L22
+ 266:Core/Src/lcd_stm32f4.c **** 	}
+ 241              		.loc 1 266 10 is_stmt 1 view .LVU65
+ 266:Core/Src/lcd_stm32f4.c **** 	}
+ 242              		.loc 1 266 15 is_stmt 0 view .LVU66
+ 243 0078 224A     		ldr	r2, .L28+8
+ 244 007a 9369     		ldr	r3, [r2, #24]
+ 266:Core/Src/lcd_stm32f4.c **** 	}
+ 245              		.loc 1 266 22 view .LVU67
+ 246 007c 43F40073 		orr	r3, r3, #512
+ 247 0080 9361     		str	r3, [r2, #24]
+ 248              	.L23:
+ 273:Core/Src/lcd_stm32f4.c ****         {
+ 249              		.loc 1 273 9 is_stmt 1 view .LVU68
+ 273:Core/Src/lcd_stm32f4.c ****         {
+ 250              		.loc 1 273 12 is_stmt 0 view .LVU69
+ 251 0082 14F0010F 		tst	r4, #1
+ 252 0086 32D0     		beq	.L24
+ 275:Core/Src/lcd_stm32f4.c ****         }
+ 253              		.loc 1 275 10 is_stmt 1 view .LVU70
+ 275:Core/Src/lcd_stm32f4.c ****         }
+ 254              		.loc 1 275 15 is_stmt 0 view .LVU71
+ 255 0088 1E4A     		ldr	r2, .L28+8
+ 256 008a 9369     		ldr	r3, [r2, #24]
+ 275:Core/Src/lcd_stm32f4.c ****         }
+ 257              		.loc 1 275 22 view .LVU72
+ 258 008c 43F48073 		orr	r3, r3, #256
+ 259 0090 9361     		str	r3, [r2, #24]
+ 260              	.L25:
+ 282:Core/Src/lcd_stm32f4.c **** }
+ 261              		.loc 1 282 9 is_stmt 1 view .LVU73
+ 262 0092 FFF7FEFF 		bl	pulse_strobe
+ 263              	.LVL7:
+ 283:Core/Src/lcd_stm32f4.c **** 
+ 264              		.loc 1 283 1 is_stmt 0 view .LVU74
+ 265 0096 10BD     		pop	{r4, pc}
+ 266              	.LVL8:
+ 267              	.L27:
+ 206:Core/Src/lcd_stm32f4.c ****         }
+ 268              		.loc 1 206 10 is_stmt 1 view .LVU75
+ 206:Core/Src/lcd_stm32f4.c ****         }
+ 269              		.loc 1 206 15 is_stmt 0 view .LVU76
+ 270 0098 A2F50062 		sub	r2, r2, #2048
+ 271 009c 9369     		ldr	r3, [r2, #24]
+ 206:Core/Src/lcd_stm32f4.c ****         }
+ 272              		.loc 1 206 22 view .LVU77
+ 273 009e 43F40043 		orr	r3, r3, #32768
+ 274 00a2 9361     		str	r3, [r2, #24]
+ 275 00a4 BBE7     		b	.L11
+ 276              	.L12:
+ 220:Core/Src/lcd_stm32f4.c ****         }
+ 277              		.loc 1 220 13 is_stmt 1 view .LVU78
+ 220:Core/Src/lcd_stm32f4.c ****         }
+ 278              		.loc 1 220 18 is_stmt 0 view .LVU79
+ 279 00a6 164A     		ldr	r2, .L28+4
+ 280 00a8 9369     		ldr	r3, [r2, #24]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 13
+
+
+ 220:Core/Src/lcd_stm32f4.c ****         }
+ 281              		.loc 1 220 25 view .LVU80
+ 282 00aa 43F08053 		orr	r3, r3, #268435456
+ 283 00ae 9361     		str	r3, [r2, #24]
+ 284 00b0 BDE7     		b	.L13
+ 285              	.L14:
+ 230:Core/Src/lcd_stm32f4.c ****         }
+ 286              		.loc 1 230 10 is_stmt 1 view .LVU81
+ 230:Core/Src/lcd_stm32f4.c ****         }
+ 287              		.loc 1 230 15 is_stmt 0 view .LVU82
+ 288 00b2 144A     		ldr	r2, .L28+8
+ 289 00b4 9369     		ldr	r3, [r2, #24]
+ 230:Core/Src/lcd_stm32f4.c ****         }
+ 290              		.loc 1 230 22 view .LVU83
+ 291 00b6 43F00073 		orr	r3, r3, #33554432
+ 292 00ba 9361     		str	r3, [r2, #24]
+ 293 00bc BFE7     		b	.L15
+ 294              	.L16:
+ 239:Core/Src/lcd_stm32f4.c ****         }
+ 295              		.loc 1 239 10 is_stmt 1 view .LVU84
+ 239:Core/Src/lcd_stm32f4.c ****         }
+ 296              		.loc 1 239 15 is_stmt 0 view .LVU85
+ 297 00be 114A     		ldr	r2, .L28+8
+ 298 00c0 9369     		ldr	r3, [r2, #24]
+ 239:Core/Src/lcd_stm32f4.c ****         }
+ 299              		.loc 1 239 22 view .LVU86
+ 300 00c2 43F08073 		orr	r3, r3, #16777216
+ 301 00c6 9361     		str	r3, [r2, #24]
+ 302 00c8 C1E7     		b	.L17
+ 303              	.LVL9:
+ 304              	.L18:
+ 251:Core/Src/lcd_stm32f4.c ****         }
+ 305              		.loc 1 251 10 is_stmt 1 view .LVU87
+ 251:Core/Src/lcd_stm32f4.c ****         }
+ 306              		.loc 1 251 15 is_stmt 0 view .LVU88
+ 307 00ca 0D4A     		ldr	r2, .L28+4
+ 308 00cc 9369     		ldr	r3, [r2, #24]
+ 251:Core/Src/lcd_stm32f4.c ****         }
+ 309              		.loc 1 251 22 view .LVU89
+ 310 00ce 43F00043 		orr	r3, r3, #-2147483648
+ 311 00d2 9361     		str	r3, [r2, #24]
+ 312 00d4 C5E7     		b	.L19
+ 313              	.L20:
+ 261:Core/Src/lcd_stm32f4.c ****         }
+ 314              		.loc 1 261 13 is_stmt 1 view .LVU90
+ 261:Core/Src/lcd_stm32f4.c ****         }
+ 315              		.loc 1 261 18 is_stmt 0 view .LVU91
+ 316 00d6 0A4A     		ldr	r2, .L28+4
+ 317 00d8 9369     		ldr	r3, [r2, #24]
+ 261:Core/Src/lcd_stm32f4.c ****         }
+ 318              		.loc 1 261 25 view .LVU92
+ 319 00da 43F08053 		orr	r3, r3, #268435456
+ 320 00de 9361     		str	r3, [r2, #24]
+ 321 00e0 C7E7     		b	.L21
+ 322              	.L22:
+ 270:Core/Src/lcd_stm32f4.c ****         }
+ 323              		.loc 1 270 10 is_stmt 1 view .LVU93
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 14
+
+
+ 270:Core/Src/lcd_stm32f4.c ****         }
+ 324              		.loc 1 270 15 is_stmt 0 view .LVU94
+ 325 00e2 084A     		ldr	r2, .L28+8
+ 326 00e4 9369     		ldr	r3, [r2, #24]
+ 270:Core/Src/lcd_stm32f4.c ****         }
+ 327              		.loc 1 270 22 view .LVU95
+ 328 00e6 43F00073 		orr	r3, r3, #33554432
+ 329 00ea 9361     		str	r3, [r2, #24]
+ 330 00ec C9E7     		b	.L23
+ 331              	.L24:
+ 279:Core/Src/lcd_stm32f4.c ****         }
+ 332              		.loc 1 279 10 is_stmt 1 view .LVU96
+ 279:Core/Src/lcd_stm32f4.c ****         }
+ 333              		.loc 1 279 15 is_stmt 0 view .LVU97
+ 334 00ee 054A     		ldr	r2, .L28+8
+ 335 00f0 9369     		ldr	r3, [r2, #24]
+ 279:Core/Src/lcd_stm32f4.c ****         }
+ 336              		.loc 1 279 22 view .LVU98
+ 337 00f2 43F08073 		orr	r3, r3, #16777216
+ 338 00f6 9361     		str	r3, [r2, #24]
+ 339 00f8 CBE7     		b	.L25
+ 340              	.L29:
+ 341 00fa 00BF     		.align	2
+ 342              	.L28:
+ 343 00fc 00080240 		.word	1073874944
+ 344 0100 00000240 		.word	1073872896
+ 345 0104 00040240 		.word	1073873920
+ 346              		.cfi_endproc
+ 347              	.LFE136:
+ 349              		.section	.text.lcd_putstring,"ax",%progbits
+ 350              		.align	1
+ 351              		.global	lcd_putstring
+ 352              		.syntax unified
+ 353              		.thumb
+ 354              		.thumb_func
+ 356              	lcd_putstring:
+ 357              	.LVL10:
+ 358              	.LFB137:
+ 292:Core/Src/lcd_stm32f4.c ****     unsigned char count = 0;
+ 359              		.loc 1 292 1 is_stmt 1 view -0
+ 360              		.cfi_startproc
+ 361              		@ args = 0, pretend = 0, frame = 0
+ 362              		@ frame_needed = 0, uses_anonymous_args = 0
+ 292:Core/Src/lcd_stm32f4.c ****     unsigned char count = 0;
+ 363              		.loc 1 292 1 is_stmt 0 view .LVU100
+ 364 0000 38B5     		push	{r3, r4, r5, lr}
+ 365              		.cfi_def_cfa_offset 16
+ 366              		.cfi_offset 3, -16
+ 367              		.cfi_offset 4, -12
+ 368              		.cfi_offset 5, -8
+ 369              		.cfi_offset 14, -4
+ 370 0002 0546     		mov	r5, r0
+ 293:Core/Src/lcd_stm32f4.c **** 
+ 371              		.loc 1 293 5 is_stmt 1 view .LVU101
+ 372              	.LVL11:
+ 295:Core/Src/lcd_stm32f4.c ****     {
+ 373              		.loc 1 295 5 view .LVU102
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 15
+
+
+ 293:Core/Src/lcd_stm32f4.c **** 
+ 374              		.loc 1 293 19 is_stmt 0 view .LVU103
+ 375 0004 0024     		movs	r4, #0
+ 295:Core/Src/lcd_stm32f4.c ****     {
+ 376              		.loc 1 295 11 view .LVU104
+ 377 0006 03E0     		b	.L31
+ 378              	.LVL12:
+ 379              	.L32:
+ 297:Core/Src/lcd_stm32f4.c **** 	    count++;
+ 380              		.loc 1 297 6 is_stmt 1 view .LVU105
+ 381 0008 FFF7FEFF 		bl	lcd_putchar
+ 382              	.LVL13:
+ 298:Core/Src/lcd_stm32f4.c **** 	 }
+ 383              		.loc 1 298 6 view .LVU106
+ 298:Core/Src/lcd_stm32f4.c **** 	 }
+ 384              		.loc 1 298 11 is_stmt 0 view .LVU107
+ 385 000c 0134     		adds	r4, r4, #1
+ 386              	.LVL14:
+ 298:Core/Src/lcd_stm32f4.c **** 	 }
+ 387              		.loc 1 298 11 view .LVU108
+ 388 000e E4B2     		uxtb	r4, r4
+ 389              	.LVL15:
+ 390              	.L31:
+ 295:Core/Src/lcd_stm32f4.c ****     {
+ 391              		.loc 1 295 12 is_stmt 1 view .LVU109
+ 295:Core/Src/lcd_stm32f4.c ****     {
+ 392              		.loc 1 295 20 is_stmt 0 view .LVU110
+ 393 0010 285D     		ldrb	r0, [r5, r4]	@ zero_extendqisi2
+ 295:Core/Src/lcd_stm32f4.c ****     {
+ 394              		.loc 1 295 12 view .LVU111
+ 395 0012 0028     		cmp	r0, #0
+ 396 0014 F8D1     		bne	.L32
+ 300:Core/Src/lcd_stm32f4.c **** 
+ 397              		.loc 1 300 1 view .LVU112
+ 398 0016 38BD     		pop	{r3, r4, r5, pc}
+ 300:Core/Src/lcd_stm32f4.c **** 
+ 399              		.loc 1 300 1 view .LVU113
+ 400              		.cfi_endproc
+ 401              	.LFE137:
+ 403              		.section	.text.lcd_command,"ax",%progbits
+ 404              		.align	1
+ 405              		.global	lcd_command
+ 406              		.syntax unified
+ 407              		.thumb
+ 408              		.thumb_func
+ 410              	lcd_command:
+ 411              	.LVL16:
+ 412              	.LFB134:
+  73:Core/Src/lcd_stm32f4.c ****     GPIOC->BSRR |= LCD_RS_RESET;	// Register Select (RS)line low (data sent will now be read as com
+ 413              		.loc 1 73 1 is_stmt 1 view -0
+ 414              		.cfi_startproc
+ 415              		@ args = 0, pretend = 0, frame = 0
+ 416              		@ frame_needed = 0, uses_anonymous_args = 0
+  73:Core/Src/lcd_stm32f4.c ****     GPIOC->BSRR |= LCD_RS_RESET;	// Register Select (RS)line low (data sent will now be read as com
+ 417              		.loc 1 73 1 is_stmt 0 view .LVU115
+ 418 0000 10B5     		push	{r4, lr}
+ 419              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 16
+
+
+ 420              		.cfi_offset 4, -8
+ 421              		.cfi_offset 14, -4
+ 422 0002 0446     		mov	r4, r0
+  74:Core/Src/lcd_stm32f4.c **** 
+ 423              		.loc 1 74 5 is_stmt 1 view .LVU116
+  74:Core/Src/lcd_stm32f4.c **** 
+ 424              		.loc 1 74 10 is_stmt 0 view .LVU117
+ 425 0004 3F4A     		ldr	r2, .L53
+ 426 0006 9369     		ldr	r3, [r2, #24]
+  74:Core/Src/lcd_stm32f4.c **** 
+ 427              		.loc 1 74 17 view .LVU118
+ 428 0008 43F08043 		orr	r3, r3, #1073741824
+ 429 000c 9361     		str	r3, [r2, #24]
+  78:Core/Src/lcd_stm32f4.c ****     {
+ 430              		.loc 1 78 5 is_stmt 1 view .LVU119
+  78:Core/Src/lcd_stm32f4.c ****     {
+ 431              		.loc 1 78 8 is_stmt 0 view .LVU120
+ 432 000e 10F0800F 		tst	r0, #128
+ 433 0012 45D1     		bne	.L52
+  84:Core/Src/lcd_stm32f4.c ****     }
+ 434              		.loc 1 84 6 is_stmt 1 view .LVU121
+  84:Core/Src/lcd_stm32f4.c ****     }
+ 435              		.loc 1 84 11 is_stmt 0 view .LVU122
+ 436 0014 3C4A     		ldr	r2, .L53+4
+ 437 0016 9369     		ldr	r3, [r2, #24]
+  84:Core/Src/lcd_stm32f4.c ****     }
+ 438              		.loc 1 84 18 view .LVU123
+ 439 0018 43F00043 		orr	r3, r3, #-2147483648
+ 440 001c 9361     		str	r3, [r2, #24]
+ 441              	.L36:
+  87:Core/Src/lcd_stm32f4.c ****     {
+ 442              		.loc 1 87 5 is_stmt 1 view .LVU124
+  87:Core/Src/lcd_stm32f4.c ****     {
+ 443              		.loc 1 87 8 is_stmt 0 view .LVU125
+ 444 001e 14F0400F 		tst	r4, #64
+ 445 0022 44D0     		beq	.L37
+  89:Core/Src/lcd_stm32f4.c ****     }
+ 446              		.loc 1 89 9 is_stmt 1 view .LVU126
+  89:Core/Src/lcd_stm32f4.c ****     }
+ 447              		.loc 1 89 14 is_stmt 0 view .LVU127
+ 448 0024 384A     		ldr	r2, .L53+4
+ 449 0026 9369     		ldr	r3, [r2, #24]
+  89:Core/Src/lcd_stm32f4.c ****     }
+ 450              		.loc 1 89 21 view .LVU128
+ 451 0028 43F48053 		orr	r3, r3, #4096
+ 452 002c 9361     		str	r3, [r2, #24]
+ 453              	.L38:
+  96:Core/Src/lcd_stm32f4.c ****     {
+ 454              		.loc 1 96 5 is_stmt 1 view .LVU129
+  96:Core/Src/lcd_stm32f4.c ****     {
+ 455              		.loc 1 96 8 is_stmt 0 view .LVU130
+ 456 002e 14F0200F 		tst	r4, #32
+ 457 0032 42D0     		beq	.L39
+  98:Core/Src/lcd_stm32f4.c ****     }
+ 458              		.loc 1 98 6 is_stmt 1 view .LVU131
+  98:Core/Src/lcd_stm32f4.c ****     }
+ 459              		.loc 1 98 11 is_stmt 0 view .LVU132
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 17
+
+
+ 460 0034 354A     		ldr	r2, .L53+8
+ 461 0036 9369     		ldr	r3, [r2, #24]
+  98:Core/Src/lcd_stm32f4.c ****     }
+ 462              		.loc 1 98 18 view .LVU133
+ 463 0038 43F40073 		orr	r3, r3, #512
+ 464 003c 9361     		str	r3, [r2, #24]
+ 465              	.L40:
+ 105:Core/Src/lcd_stm32f4.c ****     {
+ 466              		.loc 1 105 5 is_stmt 1 view .LVU134
+ 105:Core/Src/lcd_stm32f4.c ****     {
+ 467              		.loc 1 105 8 is_stmt 0 view .LVU135
+ 468 003e 14F0100F 		tst	r4, #16
+ 469 0042 40D0     		beq	.L41
+ 107:Core/Src/lcd_stm32f4.c ****     }
+ 470              		.loc 1 107 6 is_stmt 1 view .LVU136
+ 107:Core/Src/lcd_stm32f4.c ****     }
+ 471              		.loc 1 107 11 is_stmt 0 view .LVU137
+ 472 0044 314A     		ldr	r2, .L53+8
+ 473 0046 9369     		ldr	r3, [r2, #24]
+ 107:Core/Src/lcd_stm32f4.c ****     }
+ 474              		.loc 1 107 18 view .LVU138
+ 475 0048 43F48073 		orr	r3, r3, #256
+ 476 004c 9361     		str	r3, [r2, #24]
+ 477              	.L42:
+ 114:Core/Src/lcd_stm32f4.c **** 
+ 478              		.loc 1 114 5 is_stmt 1 view .LVU139
+ 479 004e FFF7FEFF 		bl	pulse_strobe
+ 480              	.LVL17:
+ 117:Core/Src/lcd_stm32f4.c ****     {
+ 481              		.loc 1 117 5 view .LVU140
+ 117:Core/Src/lcd_stm32f4.c ****     {
+ 482              		.loc 1 117 8 is_stmt 0 view .LVU141
+ 483 0052 14F0080F 		tst	r4, #8
+ 484 0056 3CD0     		beq	.L43
+ 119:Core/Src/lcd_stm32f4.c ****     }
+ 485              		.loc 1 119 6 is_stmt 1 view .LVU142
+ 119:Core/Src/lcd_stm32f4.c ****     }
+ 486              		.loc 1 119 11 is_stmt 0 view .LVU143
+ 487 0058 2B4A     		ldr	r2, .L53+4
+ 488 005a 9369     		ldr	r3, [r2, #24]
+ 119:Core/Src/lcd_stm32f4.c ****     }
+ 489              		.loc 1 119 18 view .LVU144
+ 490 005c 43F40043 		orr	r3, r3, #32768
+ 491 0060 9361     		str	r3, [r2, #24]
+ 492              	.L44:
+ 126:Core/Src/lcd_stm32f4.c ****     {
+ 493              		.loc 1 126 5 is_stmt 1 view .LVU145
+ 126:Core/Src/lcd_stm32f4.c ****     {
+ 494              		.loc 1 126 8 is_stmt 0 view .LVU146
+ 495 0062 14F0040F 		tst	r4, #4
+ 496 0066 3AD0     		beq	.L45
+ 128:Core/Src/lcd_stm32f4.c ****     }
+ 497              		.loc 1 128 9 is_stmt 1 view .LVU147
+ 128:Core/Src/lcd_stm32f4.c ****     }
+ 498              		.loc 1 128 14 is_stmt 0 view .LVU148
+ 499 0068 274A     		ldr	r2, .L53+4
+ 500 006a 9369     		ldr	r3, [r2, #24]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 18
+
+
+ 128:Core/Src/lcd_stm32f4.c ****     }
+ 501              		.loc 1 128 21 view .LVU149
+ 502 006c 43F48053 		orr	r3, r3, #4096
+ 503 0070 9361     		str	r3, [r2, #24]
+ 504              	.L46:
+ 135:Core/Src/lcd_stm32f4.c ****     {
+ 505              		.loc 1 135 5 is_stmt 1 view .LVU150
+ 135:Core/Src/lcd_stm32f4.c ****     {
+ 506              		.loc 1 135 8 is_stmt 0 view .LVU151
+ 507 0072 14F0020F 		tst	r4, #2
+ 508 0076 38D0     		beq	.L47
+ 137:Core/Src/lcd_stm32f4.c ****     }
+ 509              		.loc 1 137 6 is_stmt 1 view .LVU152
+ 137:Core/Src/lcd_stm32f4.c ****     }
+ 510              		.loc 1 137 11 is_stmt 0 view .LVU153
+ 511 0078 244A     		ldr	r2, .L53+8
+ 512 007a 9369     		ldr	r3, [r2, #24]
+ 137:Core/Src/lcd_stm32f4.c ****     }
+ 513              		.loc 1 137 18 view .LVU154
+ 514 007c 43F40073 		orr	r3, r3, #512
+ 515 0080 9361     		str	r3, [r2, #24]
+ 516              	.L48:
+ 144:Core/Src/lcd_stm32f4.c ****     {
+ 517              		.loc 1 144 5 is_stmt 1 view .LVU155
+ 144:Core/Src/lcd_stm32f4.c ****     {
+ 518              		.loc 1 144 8 is_stmt 0 view .LVU156
+ 519 0082 14F0010F 		tst	r4, #1
+ 520 0086 36D0     		beq	.L49
+ 146:Core/Src/lcd_stm32f4.c ****     }
+ 521              		.loc 1 146 6 is_stmt 1 view .LVU157
+ 146:Core/Src/lcd_stm32f4.c ****     }
+ 522              		.loc 1 146 11 is_stmt 0 view .LVU158
+ 523 0088 204A     		ldr	r2, .L53+8
+ 524 008a 9369     		ldr	r3, [r2, #24]
+ 146:Core/Src/lcd_stm32f4.c ****     }
+ 525              		.loc 1 146 18 view .LVU159
+ 526 008c 43F48073 		orr	r3, r3, #256
+ 527 0090 9361     		str	r3, [r2, #24]
+ 528              	.L50:
+ 153:Core/Src/lcd_stm32f4.c ****     delay(3000);
+ 529              		.loc 1 153 5 is_stmt 1 view .LVU160
+ 530 0092 FFF7FEFF 		bl	pulse_strobe
+ 531              	.LVL18:
+ 154:Core/Src/lcd_stm32f4.c **** }
+ 532              		.loc 1 154 5 view .LVU161
+ 533 0096 40F6B830 		movw	r0, #3000
+ 534 009a FFF7FEFF 		bl	delay
+ 535              	.LVL19:
+ 155:Core/Src/lcd_stm32f4.c **** 
+ 536              		.loc 1 155 1 is_stmt 0 view .LVU162
+ 537 009e 10BD     		pop	{r4, pc}
+ 538              	.LVL20:
+ 539              	.L52:
+  80:Core/Src/lcd_stm32f4.c ****     }
+ 540              		.loc 1 80 6 is_stmt 1 view .LVU163
+  80:Core/Src/lcd_stm32f4.c ****     }
+ 541              		.loc 1 80 11 is_stmt 0 view .LVU164
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 19
+
+
+ 542 00a0 A2F50062 		sub	r2, r2, #2048
+ 543 00a4 9369     		ldr	r3, [r2, #24]
+  80:Core/Src/lcd_stm32f4.c ****     }
+ 544              		.loc 1 80 18 view .LVU165
+ 545 00a6 43F40043 		orr	r3, r3, #32768
+ 546 00aa 9361     		str	r3, [r2, #24]
+ 547 00ac B7E7     		b	.L36
+ 548              	.L37:
+  93:Core/Src/lcd_stm32f4.c ****     }
+ 549              		.loc 1 93 9 is_stmt 1 view .LVU166
+  93:Core/Src/lcd_stm32f4.c ****     }
+ 550              		.loc 1 93 14 is_stmt 0 view .LVU167
+ 551 00ae 164A     		ldr	r2, .L53+4
+ 552 00b0 9369     		ldr	r3, [r2, #24]
+  93:Core/Src/lcd_stm32f4.c ****     }
+ 553              		.loc 1 93 21 view .LVU168
+ 554 00b2 43F08053 		orr	r3, r3, #268435456
+ 555 00b6 9361     		str	r3, [r2, #24]
+ 556 00b8 B9E7     		b	.L38
+ 557              	.L39:
+ 102:Core/Src/lcd_stm32f4.c ****     }
+ 558              		.loc 1 102 6 is_stmt 1 view .LVU169
+ 102:Core/Src/lcd_stm32f4.c ****     }
+ 559              		.loc 1 102 11 is_stmt 0 view .LVU170
+ 560 00ba 144A     		ldr	r2, .L53+8
+ 561 00bc 9369     		ldr	r3, [r2, #24]
+ 102:Core/Src/lcd_stm32f4.c ****     }
+ 562              		.loc 1 102 18 view .LVU171
+ 563 00be 43F00073 		orr	r3, r3, #33554432
+ 564 00c2 9361     		str	r3, [r2, #24]
+ 565 00c4 BBE7     		b	.L40
+ 566              	.L41:
+ 111:Core/Src/lcd_stm32f4.c ****     }
+ 567              		.loc 1 111 6 is_stmt 1 view .LVU172
+ 111:Core/Src/lcd_stm32f4.c ****     }
+ 568              		.loc 1 111 11 is_stmt 0 view .LVU173
+ 569 00c6 114A     		ldr	r2, .L53+8
+ 570 00c8 9369     		ldr	r3, [r2, #24]
+ 111:Core/Src/lcd_stm32f4.c ****     }
+ 571              		.loc 1 111 18 view .LVU174
+ 572 00ca 43F08073 		orr	r3, r3, #16777216
+ 573 00ce 9361     		str	r3, [r2, #24]
+ 574 00d0 BDE7     		b	.L42
+ 575              	.LVL21:
+ 576              	.L43:
+ 123:Core/Src/lcd_stm32f4.c ****     }
+ 577              		.loc 1 123 6 is_stmt 1 view .LVU175
+ 123:Core/Src/lcd_stm32f4.c ****     }
+ 578              		.loc 1 123 11 is_stmt 0 view .LVU176
+ 579 00d2 0D4A     		ldr	r2, .L53+4
+ 580 00d4 9369     		ldr	r3, [r2, #24]
+ 123:Core/Src/lcd_stm32f4.c ****     }
+ 581              		.loc 1 123 18 view .LVU177
+ 582 00d6 43F00043 		orr	r3, r3, #-2147483648
+ 583 00da 9361     		str	r3, [r2, #24]
+ 584 00dc C1E7     		b	.L44
+ 585              	.L45:
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 20
+
+
+ 132:Core/Src/lcd_stm32f4.c ****     }
+ 586              		.loc 1 132 9 is_stmt 1 view .LVU178
+ 132:Core/Src/lcd_stm32f4.c ****     }
+ 587              		.loc 1 132 14 is_stmt 0 view .LVU179
+ 588 00de 0A4A     		ldr	r2, .L53+4
+ 589 00e0 9369     		ldr	r3, [r2, #24]
+ 132:Core/Src/lcd_stm32f4.c ****     }
+ 590              		.loc 1 132 21 view .LVU180
+ 591 00e2 43F08053 		orr	r3, r3, #268435456
+ 592 00e6 9361     		str	r3, [r2, #24]
+ 593 00e8 C3E7     		b	.L46
+ 594              	.L47:
+ 141:Core/Src/lcd_stm32f4.c ****     }
+ 595              		.loc 1 141 6 is_stmt 1 view .LVU181
+ 141:Core/Src/lcd_stm32f4.c ****     }
+ 596              		.loc 1 141 11 is_stmt 0 view .LVU182
+ 597 00ea 084A     		ldr	r2, .L53+8
+ 598 00ec 9369     		ldr	r3, [r2, #24]
+ 141:Core/Src/lcd_stm32f4.c ****     }
+ 599              		.loc 1 141 18 view .LVU183
+ 600 00ee 43F00073 		orr	r3, r3, #33554432
+ 601 00f2 9361     		str	r3, [r2, #24]
+ 602 00f4 C5E7     		b	.L48
+ 603              	.L49:
+ 150:Core/Src/lcd_stm32f4.c ****     }
+ 604              		.loc 1 150 6 is_stmt 1 view .LVU184
+ 150:Core/Src/lcd_stm32f4.c ****     }
+ 605              		.loc 1 150 11 is_stmt 0 view .LVU185
+ 606 00f6 054A     		ldr	r2, .L53+8
+ 607 00f8 9369     		ldr	r3, [r2, #24]
+ 150:Core/Src/lcd_stm32f4.c ****     }
+ 608              		.loc 1 150 18 view .LVU186
+ 609 00fa 43F08073 		orr	r3, r3, #16777216
+ 610 00fe 9361     		str	r3, [r2, #24]
+ 611 0100 C7E7     		b	.L50
+ 612              	.L54:
+ 613 0102 00BF     		.align	2
+ 614              	.L53:
+ 615 0104 00080240 		.word	1073874944
+ 616 0108 00000240 		.word	1073872896
+ 617 010c 00040240 		.word	1073873920
+ 618              		.cfi_endproc
+ 619              	.LFE134:
+ 621              		.section	.text.init_LCD,"ax",%progbits
+ 622              		.align	1
+ 623              		.global	init_LCD
+ 624              		.syntax unified
+ 625              		.thumb
+ 626              		.thumb_func
+ 628              	init_LCD:
+ 629              	.LFB135:
+ 169:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
+ 630              		.loc 1 169 1 is_stmt 1 view -0
+ 631              		.cfi_startproc
+ 632              		@ args = 0, pretend = 0, frame = 0
+ 633              		@ frame_needed = 0, uses_anonymous_args = 0
+ 634 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 21
+
+
+ 635              		.cfi_def_cfa_offset 8
+ 636              		.cfi_offset 3, -8
+ 637              		.cfi_offset 14, -4
+ 170:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+ 638              		.loc 1 170 2 view .LVU188
+ 170:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+ 639              		.loc 1 170 5 is_stmt 0 view .LVU189
+ 640 0002 194B     		ldr	r3, .L57
+ 641 0004 1A6B     		ldr	r2, [r3, #48]
+ 170:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOBEN;
+ 642              		.loc 1 170 15 view .LVU190
+ 643 0006 42F00102 		orr	r2, r2, #1
+ 644 000a 1A63     		str	r2, [r3, #48]
+ 171:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+ 645              		.loc 1 171 2 is_stmt 1 view .LVU191
+ 171:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+ 646              		.loc 1 171 5 is_stmt 0 view .LVU192
+ 647 000c 1A6B     		ldr	r2, [r3, #48]
+ 171:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOCEN;
+ 648              		.loc 1 171 15 view .LVU193
+ 649 000e 42F00202 		orr	r2, r2, #2
+ 650 0012 1A63     		str	r2, [r3, #48]
+ 172:Core/Src/lcd_stm32f4.c **** 
+ 651              		.loc 1 172 2 is_stmt 1 view .LVU194
+ 172:Core/Src/lcd_stm32f4.c **** 
+ 652              		.loc 1 172 5 is_stmt 0 view .LVU195
+ 653 0014 1A6B     		ldr	r2, [r3, #48]
+ 172:Core/Src/lcd_stm32f4.c **** 
+ 654              		.loc 1 172 15 view .LVU196
+ 655 0016 42F00402 		orr	r2, r2, #4
+ 656 001a 1A63     		str	r2, [r3, #48]
+ 174:Core/Src/lcd_stm32f4.c ****     GPIOB->MODER |= (GPIO_MODER_MODER8_0|GPIO_MODER_MODER9_0);   // D4 and D5
+ 657              		.loc 1 174 5 is_stmt 1 view .LVU197
+ 174:Core/Src/lcd_stm32f4.c ****     GPIOB->MODER |= (GPIO_MODER_MODER8_0|GPIO_MODER_MODER9_0);   // D4 and D5
+ 658              		.loc 1 174 10 is_stmt 0 view .LVU198
+ 659 001c 134A     		ldr	r2, .L57+4
+ 660 001e 1368     		ldr	r3, [r2]
+ 174:Core/Src/lcd_stm32f4.c ****     GPIOB->MODER |= (GPIO_MODER_MODER8_0|GPIO_MODER_MODER9_0);   // D4 and D5
+ 661              		.loc 1 174 18 view .LVU199
+ 662 0020 43F08243 		orr	r3, r3, #1090519040
+ 663 0024 1360     		str	r3, [r2]
+ 175:Core/Src/lcd_stm32f4.c ****     GPIOC->MODER |= (GPIO_MODER_MODER14_0|GPIO_MODER_MODER15_0); // RS and EN
+ 664              		.loc 1 175 5 is_stmt 1 view .LVU200
+ 175:Core/Src/lcd_stm32f4.c ****     GPIOC->MODER |= (GPIO_MODER_MODER14_0|GPIO_MODER_MODER15_0); // RS and EN
+ 665              		.loc 1 175 10 is_stmt 0 view .LVU201
+ 666 0026 02F58062 		add	r2, r2, #1024
+ 667 002a 1368     		ldr	r3, [r2]
+ 175:Core/Src/lcd_stm32f4.c ****     GPIOC->MODER |= (GPIO_MODER_MODER14_0|GPIO_MODER_MODER15_0); // RS and EN
+ 668              		.loc 1 175 18 view .LVU202
+ 669 002c 43F4A023 		orr	r3, r3, #327680
+ 670 0030 1360     		str	r3, [r2]
+ 176:Core/Src/lcd_stm32f4.c **** 
+ 671              		.loc 1 176 5 is_stmt 1 view .LVU203
+ 176:Core/Src/lcd_stm32f4.c **** 
+ 672              		.loc 1 176 10 is_stmt 0 view .LVU204
+ 673 0032 02F58062 		add	r2, r2, #1024
+ 674 0036 1368     		ldr	r3, [r2]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 22
+
+
+ 176:Core/Src/lcd_stm32f4.c **** 
+ 675              		.loc 1 176 18 view .LVU205
+ 676 0038 43F0A043 		orr	r3, r3, #1342177280
+ 677 003c 1360     		str	r3, [r2]
+ 178:Core/Src/lcd_stm32f4.c **** 
+ 678              		.loc 1 178 5 is_stmt 1 view .LVU206
+ 679 003e 47F23050 		movw	r0, #30000
+ 680 0042 FFF7FEFF 		bl	delay
+ 681              	.LVL22:
+ 180:Core/Src/lcd_stm32f4.c ****     lcd_command(FOURBIT_MODE);		// Set LCD into 4 bit mode
+ 682              		.loc 1 180 5 view .LVU207
+ 683 0046 3320     		movs	r0, #51
+ 684 0048 FFF7FEFF 		bl	lcd_command
+ 685              	.LVL23:
+ 181:Core/Src/lcd_stm32f4.c ****     lcd_command(DISPLAY_ON);		// Turn display on and set up cursor
+ 686              		.loc 1 181 5 view .LVU208
+ 687 004c 3220     		movs	r0, #50
+ 688 004e FFF7FEFF 		bl	lcd_command
+ 689              	.LVL24:
+ 182:Core/Src/lcd_stm32f4.c ****     lcd_command(TWOLINE_MODE);		// Set up 2 lines and character size
+ 690              		.loc 1 182 5 view .LVU209
+ 691 0052 0C20     		movs	r0, #12
+ 692 0054 FFF7FEFF 		bl	lcd_command
+ 693              	.LVL25:
+ 183:Core/Src/lcd_stm32f4.c ****     lcd_command(CLEAR);			// Clear display
+ 694              		.loc 1 183 5 view .LVU210
+ 695 0058 2820     		movs	r0, #40
+ 696 005a FFF7FEFF 		bl	lcd_command
+ 697              	.LVL26:
+ 184:Core/Src/lcd_stm32f4.c **** }
+ 698              		.loc 1 184 5 view .LVU211
+ 699 005e 0120     		movs	r0, #1
+ 700 0060 FFF7FEFF 		bl	lcd_command
+ 701              	.LVL27:
+ 185:Core/Src/lcd_stm32f4.c **** 
+ 702              		.loc 1 185 1 is_stmt 0 view .LVU212
+ 703 0064 08BD     		pop	{r3, pc}
+ 704              	.L58:
+ 705 0066 00BF     		.align	2
+ 706              	.L57:
+ 707 0068 00380240 		.word	1073887232
+ 708 006c 00000240 		.word	1073872896
+ 709              		.cfi_endproc
+ 710              	.LFE135:
+ 712              		.section	.rodata.lcd_clear_line.str1.4,"aMS",%progbits,1
+ 713              		.align	2
+ 714              	.LC0:
+ 715 0000 20202020 		.ascii	"                \000"
+ 715      20202020 
+ 715      20202020 
+ 715      20202020 
+ 715      00
+ 716              		.section	.text.lcd_clear_line,"ax",%progbits
+ 717              		.align	1
+ 718              		.global	lcd_clear_line
+ 719              		.syntax unified
+ 720              		.thumb
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 23
+
+
+ 721              		.thumb_func
+ 723              	lcd_clear_line:
+ 724              	.LFB140:
+ 341:Core/Src/lcd_stm32f4.c **** 
+ 342:Core/Src/lcd_stm32f4.c **** void lcd_clear_line(void) {
+ 725              		.loc 1 342 27 is_stmt 1 view -0
+ 726              		.cfi_startproc
+ 727              		@ args = 0, pretend = 0, frame = 0
+ 728              		@ frame_needed = 0, uses_anonymous_args = 0
+ 729 0000 08B5     		push	{r3, lr}
+ 730              		.cfi_def_cfa_offset 8
+ 731              		.cfi_offset 3, -8
+ 732              		.cfi_offset 14, -4
+ 343:Core/Src/lcd_stm32f4.c ****     lcd_putstring("                "); // Assuming a 16x2 LCD, write 16 spaces
+ 733              		.loc 1 343 5 view .LVU214
+ 734 0002 0248     		ldr	r0, .L61
+ 735 0004 FFF7FEFF 		bl	lcd_putstring
+ 736              	.LVL28:
+ 344:Core/Src/lcd_stm32f4.c **** }
+ 737              		.loc 1 344 1 is_stmt 0 view .LVU215
+ 738 0008 08BD     		pop	{r3, pc}
+ 739              	.L62:
+ 740 000a 00BF     		.align	2
+ 741              	.L61:
+ 742 000c 00000000 		.word	.LC0
+ 743              		.cfi_endproc
+ 744              	.LFE140:
+ 746              		.section	.text.lcd_update_line,"ax",%progbits
+ 747              		.align	1
+ 748              		.global	lcd_update_line
+ 749              		.syntax unified
+ 750              		.thumb
+ 751              		.thumb_func
+ 753              	lcd_update_line:
+ 754              	.LVL29:
+ 755              	.LFB141:
+ 345:Core/Src/lcd_stm32f4.c **** 
+ 346:Core/Src/lcd_stm32f4.c **** void lcd_update_line(char* new_string) {
+ 756              		.loc 1 346 40 is_stmt 1 view -0
+ 757              		.cfi_startproc
+ 758              		@ args = 0, pretend = 0, frame = 0
+ 759              		@ frame_needed = 0, uses_anonymous_args = 0
+ 760              		.loc 1 346 40 is_stmt 0 view .LVU217
+ 761 0000 10B5     		push	{r4, lr}
+ 762              		.cfi_def_cfa_offset 8
+ 763              		.cfi_offset 4, -8
+ 764              		.cfi_offset 14, -4
+ 765 0002 0446     		mov	r4, r0
+ 347:Core/Src/lcd_stm32f4.c ****     lcd_command(0x80); // Set cursor to the beginning of the line (first line)
+ 766              		.loc 1 347 5 is_stmt 1 view .LVU218
+ 767 0004 8020     		movs	r0, #128
+ 768              	.LVL30:
+ 769              		.loc 1 347 5 is_stmt 0 view .LVU219
+ 770 0006 FFF7FEFF 		bl	lcd_command
+ 771              	.LVL31:
+ 348:Core/Src/lcd_stm32f4.c ****     lcd_clear_line();  // Clear the line
+ 772              		.loc 1 348 5 is_stmt 1 view .LVU220
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 24
+
+
+ 773 000a FFF7FEFF 		bl	lcd_clear_line
+ 774              	.LVL32:
+ 349:Core/Src/lcd_stm32f4.c ****     lcd_command(0x80); // Return cursor to the beginning again
+ 775              		.loc 1 349 5 view .LVU221
+ 776 000e 8020     		movs	r0, #128
+ 777 0010 FFF7FEFF 		bl	lcd_command
+ 778              	.LVL33:
+ 350:Core/Src/lcd_stm32f4.c ****     lcd_putstring(new_string); // Write new content
+ 779              		.loc 1 350 5 view .LVU222
+ 780 0014 2046     		mov	r0, r4
+ 781 0016 FFF7FEFF 		bl	lcd_putstring
+ 782              	.LVL34:
+ 351:Core/Src/lcd_stm32f4.c **** }
+ 783              		.loc 1 351 1 is_stmt 0 view .LVU223
+ 784 001a 10BD     		pop	{r4, pc}
+ 785              		.loc 1 351 1 view .LVU224
+ 786              		.cfi_endproc
+ 787              	.LFE141:
+ 789              		.text
+ 790              	.Letext0:
+ 791              		.file 2 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
+ 792              		.file 3 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
+ 793              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 lcd_stm32f4.c
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:21     .text.delay:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:27     .text.delay:00000000 delay
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:79     .text.pulse_strobe:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:85     .text.pulse_strobe:00000000 pulse_strobe
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:131    .text.pulse_strobe:00000030 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:136    .text.lcd_putchar:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:142    .text.lcd_putchar:00000000 lcd_putchar
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:343    .text.lcd_putchar:000000fc $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:350    .text.lcd_putstring:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:356    .text.lcd_putstring:00000000 lcd_putstring
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:404    .text.lcd_command:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:410    .text.lcd_command:00000000 lcd_command
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:615    .text.lcd_command:00000104 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:622    .text.init_LCD:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:628    .text.init_LCD:00000000 init_LCD
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:707    .text.init_LCD:00000068 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:713    .rodata.lcd_clear_line.str1.4:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:717    .text.lcd_clear_line:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:723    .text.lcd_clear_line:00000000 lcd_clear_line
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:742    .text.lcd_clear_line:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:747    .text.lcd_update_line:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:753    .text.lcd_update_line:00000000 lcd_update_line
+
+NO UNDEFINED SYMBOLS
