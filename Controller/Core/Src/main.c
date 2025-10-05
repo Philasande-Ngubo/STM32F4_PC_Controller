@@ -437,7 +437,8 @@ void ADC1_Init(void)
     ADC1->SQR1 = 0;                               // One conversion per sequence
 
     // Sampling time for channels 5 and 6: 56 cycles (enough for stable reads)
-    ADC1->SMPR2 |= (3U << (5 * 3)) | (3U << (6 * 3));
+    ADC1->SMPR2 &= ~((7U << (5 * 3)) | (7U << (6 * 3)));
+    ADC1->SMPR2 |=  (7U << (5 * 3)) | (7U << (6 * 3));  // 480 cycles
 
     // Enable EOC interrupt
     ADC1->CR1 |= ADC_CR1_EOCIE;
