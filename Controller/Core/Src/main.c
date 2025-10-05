@@ -475,10 +475,7 @@ void handle(char* Msg){
   }
 
   if ( (Msg[0] == 'U') && (Msg[1] == 'P') ){
-    lcd_command(CLEAR);
-    lcd_putstring("Controller");
-    lcd_command(LINE_TWO);
-    lcd_putstring("Connected");
+
 
     char msg[] = "YES\r\n";
     HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
