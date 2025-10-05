@@ -1327,7 +1327,7 @@ Disassembly of section .text:
  8000e42:	2b00      	cmp	r3, #0
  8000e44:	bfb8      	it	lt
  8000e46:	425b      	neglt	r3, r3
- 8000e48:	2b64      	cmp	r3, #100	@ 0x64
+ 8000e48:	2bcd      	cmp	r3, #205	@ 0xcd
  8000e4a:	dc26      	bgt.n	8000e9a <main+0x9e>
  8000e4c:	4b29      	ldr	r3, [pc, #164]	@ (8000ef4 <main+0xf8>)
  8000e4e:	781b      	ldrb	r3, [r3, #0]
@@ -1343,7 +1343,7 @@ Disassembly of section .text:
  8000e62:	2b00      	cmp	r3, #0
  8000e64:	bfb8      	it	lt
  8000e66:	425b      	neglt	r3, r3
- 8000e68:	2b64      	cmp	r3, #100	@ 0x64
+ 8000e68:	2bcd      	cmp	r3, #205	@ 0xcd
  8000e6a:	dde3      	ble.n	8000e34 <main+0x38>
  8000e6c:	4a22      	ldr	r2, [pc, #136]	@ (8000ef8 <main+0xfc>)
  8000e6e:	8813      	ldrh	r3, [r2, #0]

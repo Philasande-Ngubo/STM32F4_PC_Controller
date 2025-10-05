@@ -102,7 +102,7 @@ int main(void)
   {
 
     //Checks For pots rotations
-    if ( abs(pot0_value - old_pot0_value) > 100){
+    if ( abs(pot0_value - old_pot0_value) > 205){
         old_pot0_value = pot0_value;
         
         sprintf(buf, "POT0 %4u\r\n", pot0_value);
@@ -110,7 +110,7 @@ int main(void)
         HAL_UART_Transmit(&huart1, (uint8_t*)buf, strlen(buf), HAL_MAX_DELAY);
     }
 
-    if ( abs(pot1_value - old_pot1_value) > 100){
+    if ( abs(pot1_value - old_pot1_value) > 205){
         old_pot1_value = pot1_value;
 
         sprintf(buf, "POT1 %4u\r\n",pot1_value);
