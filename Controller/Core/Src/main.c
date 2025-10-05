@@ -49,12 +49,21 @@ static void UART1_Init(void);
 void ADC1_Init(void);
 void ADC1_Start(uint8_t channel);
 void ADC_IRQHandler(void);
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+void handle(char* Msg);
 
 volatile uint16_t pot0_value = 0;
 volatile uint16_t pot1_value = 0;
 volatile uint16_t old_pot0_value = 0;
 volatile uint16_t old_pot1_value = 0;
 /* USER CODE BEGIN PFP */
+
+#define RX_BUFFER_SIZE 50
+#define RX_SIZE 50
+uint8_t rxBuffer[RX_BUFFER_SIZE];
+uint8_t rxIndex = 0;
+uint8_t rxByte;             // Temporary single-byte storage
+volatile uint8_t stringReady = 0;
 
 /* USER CODE END PFP */
 
@@ -78,6 +87,8 @@ int main(void)
   UART1_Init();
   ADC1_Init();
   ADC1_Start( 5);
+  
+  HAL_UART_Receive_IT(&huart1, &rxByte, 1);
 
   init_LCD();
   lcd_command(CLEAR);
@@ -103,6 +114,14 @@ int main(void)
         sprintf(buf, "POT1 %4u\r\n",pot1_value);
         HAL_UART_Transmit(&huart1, (uint8_t*)buf, strlen(buf), HAL_MAX_DELAY);
     }
+
+    if (stringReady)
+        {
+            stringReady = 0; 
+            char * Recieved =  (char*)rxBuffer;
+            lcd_putstring(Recieved);
+            handle(Recieved);
+        }
     
   
   }
@@ -246,7 +265,6 @@ static void MX_GPIO_Init(void)
   GPIOA->PUPDR &= ~((3U << (5 * 2)) | (3U << (6 * 2)));
 
   GPIOB->MODER = 0x5555;
-  GPIOB->ODR = 0xFF;
 }
 
 void EXTI0_IRQHandler(void)
@@ -349,6 +367,7 @@ void UART1_Init(void)
     huart1.Init.Mode = UART_MODE_TX_RX;
     huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
     huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+    HAL_NVIC_EnableIRQ(USART1_IRQn);
     
     if (HAL_UART_Init(&huart1) != HAL_OK)
     {
@@ -356,7 +375,10 @@ void UART1_Init(void)
         Error_Handler();
     }
 }
-
+void USART1_IRQHandler(void)
+{
+    HAL_UART_IRQHandler(&huart1);
+}
 void ADC_IRQHandler(void)
 {
     if (ADC1->SR & ADC_SR_EOC)
@@ -376,6 +398,27 @@ void ADC_IRQHandler(void)
             current_channel = 5; 
             ADC1_Start(5);                        // Next: PA5
         }
+    }
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+    if (huart->Instance == USART1)
+    {
+        if (rxByte == '\n' || rxByte == '\r')
+        {
+            rxBuffer[rxIndex] = '\0';
+            rxIndex = 0;
+            stringReady = 1;
+        }
+        else
+        {
+            if (rxIndex < RX_SIZE - 1)
+                rxBuffer[rxIndex++] = rxByte;
+        }
+
+        // Receive next byte
+        HAL_UART_Receive_IT(&huart1, &rxByte, 1);
     }
 }
 
@@ -417,6 +460,39 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
+
+void handle(char* Msg){
+
+  if ( (Msg[0] == 'H') && (Msg[1] == 'I') ){
+    char msg[] = "HEY\r\n";
+    HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  }
+
+  if ( (Msg[0] == 'U') && (Msg[1] == 'P') ){
+    char msg[] = "YES\r\n";
+    HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  }
+
+  
+  if ( (Msg[0] == 'W') && (Msg[1] == 'R') ){
+    char msg[] = "DID\r\n";
+    HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  }
+
+  if ( (Msg[0] == 'L') && (Msg[1] == 'I') ){
+    char msg[] = "LIT\r\n";
+    HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  }
+
+  if ( (Msg[0] == 'E') && (Msg[1] == 'S') ){
+    char msg[] = "SHO\r\n";
+    HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  }
+
+
+
+}
+
 #ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
