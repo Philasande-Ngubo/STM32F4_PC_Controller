@@ -35,9 +35,13 @@ class Controller:
     
     def setLEDS(self, num :int) -> bool:
         return (self.send_and_receive("LI "+str(num)) == "LIT")
+    
+    def writeToLCD(self, line1 :str, line2 :str) -> bool:
+        return (self.send_and_receive("WR "+line1+";"+line2) == "DONE")
 
 # Example usage
 
 con = Controller("COM4")
 con.setLEDS(255)
+con.writeToLCD("Philasande","Ngubo")
 con.close()
