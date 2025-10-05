@@ -30,8 +30,6 @@ def send_and_receive(ser,message):
     # Read response
     response = ser.readline().decode('utf-8').strip()  # strip removes \r\n
     ser.close()
-    return response    
-
-print(controllers())
+    return response
 
 
