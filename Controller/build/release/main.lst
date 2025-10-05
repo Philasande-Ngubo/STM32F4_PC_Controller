@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -35,7 +35,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 1
   33 0010 0694     		str	r4, [sp, #24]
   34 0012 0794     		str	r4, [sp, #28]
   35 0014 0094     		str	r4, [sp]
-  36 0016 2F4B     		ldr	r3, .L3
+  36 0016 4D4B     		ldr	r3, .L3
   37 0018 1A6B     		ldr	r2, [r3, #48]
   38 001a 42F08002 		orr	r2, r2, #128
   39 001e 1A63     		str	r2, [r3, #48]
@@ -58,577 +58,876 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 1
   56 0048 1B6B     		ldr	r3, [r3, #48]
   57 004a 03F00203 		and	r3, r3, #2
   58 004e 0293     		str	r3, [sp, #8]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 2
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 2
 
 
   59 0050 029B     		ldr	r3, [sp, #8]
   60 0052 4FF4404B 		mov	fp, #49152
   61 0056 CDF80CB0 		str	fp, [sp, #12]
-  62 005a 0127     		movs	r7, #1
-  63 005c 0497     		str	r7, [sp, #16]
-  64 005e DFF880A0 		ldr	r10, .L3+12
-  65 0062 2946     		mov	r1, r5
-  66 0064 5046     		mov	r0, r10
-  67 0066 FFF7FEFF 		bl	HAL_GPIO_Init
-  68 006a 4FF44079 		mov	r9, #768
-  69 006e CDF80C90 		str	r9, [sp, #12]
-  70 0072 2946     		mov	r1, r5
-  71 0074 1848     		ldr	r0, .L3+4
-  72 0076 FFF7FEFF 		bl	HAL_GPIO_Init
-  73 007a 4FF41048 		mov	r8, #36864
-  74 007e CDF80C80 		str	r8, [sp, #12]
-  75 0082 164E     		ldr	r6, .L3+8
-  76 0084 2946     		mov	r1, r5
-  77 0086 3046     		mov	r0, r6
-  78 0088 FFF7FEFF 		bl	HAL_GPIO_Init
-  79 008c 2246     		mov	r2, r4
-  80 008e 5946     		mov	r1, fp
-  81 0090 5046     		mov	r0, r10
-  82 0092 FFF7FEFF 		bl	HAL_GPIO_WritePin
-  83 0096 2246     		mov	r2, r4
-  84 0098 4946     		mov	r1, r9
-  85 009a 0F48     		ldr	r0, .L3+4
-  86 009c FFF7FEFF 		bl	HAL_GPIO_WritePin
-  87 00a0 2246     		mov	r2, r4
-  88 00a2 4146     		mov	r1, r8
-  89 00a4 3046     		mov	r0, r6
-  90 00a6 FFF7FEFF 		bl	HAL_GPIO_WritePin
-  91 00aa 0397     		str	r7, [sp, #12]
-  92 00ac 4FF48813 		mov	r3, #1114112
-  93 00b0 0493     		str	r3, [sp, #16]
-  94 00b2 0597     		str	r7, [sp, #20]
-  95 00b4 2946     		mov	r1, r5
-  96 00b6 3046     		mov	r0, r6
-  97 00b8 FFF7FEFF 		bl	HAL_GPIO_Init
-  98 00bc 2246     		mov	r2, r4
-  99 00be 0221     		movs	r1, #2
- 100 00c0 0620     		movs	r0, #6
- 101 00c2 FFF7FEFF 		bl	HAL_NVIC_SetPriority
- 102 00c6 0620     		movs	r0, #6
- 103 00c8 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
- 104 00cc 09B0     		add	sp, sp, #36
- 105              		@ sp needed
- 106 00ce BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 107              	.L4:
- 108 00d2 00BF     		.align	2
- 109              	.L3:
- 110 00d4 00380240 		.word	1073887232
- 111 00d8 00040240 		.word	1073873920
- 112 00dc 00000240 		.word	1073872896
- 113 00e0 00080240 		.word	1073874944
- 115              		.section	.text.MX_DMA_Init,"ax",%progbits
- 116              		.align	1
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 3
+  62 005a 4FF00108 		mov	r8, #1
+  63 005e CDF81080 		str	r8, [sp, #16]
+  64 0062 2946     		mov	r1, r5
+  65 0064 3A48     		ldr	r0, .L3+4
+  66 0066 FFF7FEFF 		bl	HAL_GPIO_Init
+  67 006a 4FF44079 		mov	r9, #768
+  68 006e CDF80C90 		str	r9, [sp, #12]
+  69 0072 384F     		ldr	r7, .L3+8
+  70 0074 2946     		mov	r1, r5
+  71 0076 3846     		mov	r0, r7
+  72 0078 FFF7FEFF 		bl	HAL_GPIO_Init
+  73 007c 4FF4104A 		mov	r10, #36864
+  74 0080 CDF80CA0 		str	r10, [sp, #12]
+  75 0084 344E     		ldr	r6, .L3+12
+  76 0086 2946     		mov	r1, r5
+  77 0088 3046     		mov	r0, r6
+  78 008a FFF7FEFF 		bl	HAL_GPIO_Init
+  79 008e 2246     		mov	r2, r4
+  80 0090 5946     		mov	r1, fp
+  81 0092 2F48     		ldr	r0, .L3+4
+  82 0094 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  83 0098 2246     		mov	r2, r4
+  84 009a 4946     		mov	r1, r9
+  85 009c 3846     		mov	r0, r7
+  86 009e FFF7FEFF 		bl	HAL_GPIO_WritePin
+  87 00a2 2246     		mov	r2, r4
+  88 00a4 5146     		mov	r1, r10
+  89 00a6 3046     		mov	r0, r6
+  90 00a8 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  91 00ac CDF80C80 		str	r8, [sp, #12]
+  92 00b0 4FF48813 		mov	r3, #1114112
+  93 00b4 0493     		str	r3, [sp, #16]
+  94 00b6 CDF81480 		str	r8, [sp, #20]
+  95 00ba 2946     		mov	r1, r5
+  96 00bc 3046     		mov	r0, r6
+  97 00be FFF7FEFF 		bl	HAL_GPIO_Init
+  98 00c2 2246     		mov	r2, r4
+  99 00c4 0221     		movs	r1, #2
+ 100 00c6 0620     		movs	r0, #6
+ 101 00c8 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 102 00cc 0620     		movs	r0, #6
+ 103 00ce FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 104 00d2 0F23     		movs	r3, #15
+ 105 00d4 0393     		str	r3, [sp, #12]
+ 106 00d6 4FF40413 		mov	r3, #2162688
+ 107 00da 0493     		str	r3, [sp, #16]
+ 108 00dc CDF81480 		str	r8, [sp, #20]
+ 109 00e0 0694     		str	r4, [sp, #24]
+ 110 00e2 2946     		mov	r1, r5
+ 111 00e4 3046     		mov	r0, r6
+ 112 00e6 FFF7FEFF 		bl	HAL_GPIO_Init
+ 113 00ea 2246     		mov	r2, r4
+ 114 00ec 0221     		movs	r1, #2
+ 115 00ee 0620     		movs	r0, #6
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 3
 
 
- 117              		.syntax unified
- 118              		.thumb
- 119              		.thumb_func
- 121              	MX_DMA_Init:
- 122              		@ args = 0, pretend = 0, frame = 8
- 123              		@ frame_needed = 0, uses_anonymous_args = 0
- 124 0000 00B5     		push	{lr}
- 125 0002 83B0     		sub	sp, sp, #12
- 126 0004 0021     		movs	r1, #0
- 127 0006 0191     		str	r1, [sp, #4]
- 128 0008 094B     		ldr	r3, .L7
- 129 000a 1A6B     		ldr	r2, [r3, #48]
- 130 000c 42F40012 		orr	r2, r2, #2097152
- 131 0010 1A63     		str	r2, [r3, #48]
- 132 0012 1B6B     		ldr	r3, [r3, #48]
- 133 0014 03F40013 		and	r3, r3, #2097152
- 134 0018 0193     		str	r3, [sp, #4]
- 135 001a 019B     		ldr	r3, [sp, #4]
- 136 001c 0A46     		mov	r2, r1
- 137 001e 1020     		movs	r0, #16
- 138 0020 FFF7FEFF 		bl	HAL_NVIC_SetPriority
- 139 0024 1020     		movs	r0, #16
- 140 0026 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
- 141 002a 03B0     		add	sp, sp, #12
- 142              		@ sp needed
- 143 002c 5DF804FB 		ldr	pc, [sp], #4
- 144              	.L8:
- 145              		.align	2
- 146              	.L7:
- 147 0030 00380240 		.word	1073887232
- 149              		.section	.text.EXTI0_IRQHandler,"ax",%progbits
- 150              		.align	1
- 151              		.global	EXTI0_IRQHandler
- 152              		.syntax unified
- 153              		.thumb
- 154              		.thumb_func
- 156              	EXTI0_IRQHandler:
- 157              		@ args = 0, pretend = 0, frame = 0
- 158              		@ frame_needed = 0, uses_anonymous_args = 0
- 159 0000 08B5     		push	{r3, lr}
- 160 0002 0120     		movs	r0, #1
- 161 0004 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
- 162 0008 08BD     		pop	{r3, pc}
- 164              		.section	.text.Error_Handler,"ax",%progbits
- 165              		.align	1
- 166              		.global	Error_Handler
- 167              		.syntax unified
- 168              		.thumb
- 169              		.thumb_func
- 171              	Error_Handler:
- 172              		@ Volatile: function does not return.
- 173              		@ args = 0, pretend = 0, frame = 0
- 174              		@ frame_needed = 0, uses_anonymous_args = 0
- 175              		@ link register save eliminated.
- 176              		.syntax unified
- 177              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
- 178 0000 72B6     		cpsid i
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 4
+ 116 00f0 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 117 00f4 0620     		movs	r0, #6
+ 118 00f6 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 119 00fa 2246     		mov	r2, r4
+ 120 00fc 0221     		movs	r1, #2
+ 121 00fe 0720     		movs	r0, #7
+ 122 0100 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 123 0104 0720     		movs	r0, #7
+ 124 0106 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 125 010a 2246     		mov	r2, r4
+ 126 010c 0221     		movs	r1, #2
+ 127 010e 0820     		movs	r0, #8
+ 128 0110 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 129 0114 0820     		movs	r0, #8
+ 130 0116 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 131 011a 2246     		mov	r2, r4
+ 132 011c 0221     		movs	r1, #2
+ 133 011e 0920     		movs	r0, #9
+ 134 0120 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 135 0124 0920     		movs	r0, #9
+ 136 0126 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 137 012a 3368     		ldr	r3, [r6]
+ 138 012c 43F47053 		orr	r3, r3, #15360
+ 139 0130 3360     		str	r3, [r6]
+ 140 0132 F368     		ldr	r3, [r6, #12]
+ 141 0134 23F47053 		bic	r3, r3, #15360
+ 142 0138 F360     		str	r3, [r6, #12]
+ 143 013a 45F25553 		movw	r3, #21845
+ 144 013e 3B60     		str	r3, [r7]
+ 145 0140 FF23     		movs	r3, #255
+ 146 0142 7B61     		str	r3, [r7, #20]
+ 147 0144 09B0     		add	sp, sp, #36
+ 148              		@ sp needed
+ 149 0146 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 150              	.L4:
+ 151 014a 00BF     		.align	2
+ 152              	.L3:
+ 153 014c 00380240 		.word	1073887232
+ 154 0150 00080240 		.word	1073874944
+ 155 0154 00040240 		.word	1073873920
+ 156 0158 00000240 		.word	1073872896
+ 158              		.section	.text.MX_DMA_Init,"ax",%progbits
+ 159              		.align	1
+ 160              		.syntax unified
+ 161              		.thumb
+ 162              		.thumb_func
+ 164              	MX_DMA_Init:
+ 165              		@ args = 0, pretend = 0, frame = 8
+ 166              		@ frame_needed = 0, uses_anonymous_args = 0
+ 167 0000 00B5     		push	{lr}
+ 168 0002 83B0     		sub	sp, sp, #12
+ 169 0004 0021     		movs	r1, #0
+ 170 0006 0191     		str	r1, [sp, #4]
+ 171 0008 094B     		ldr	r3, .L7
+ 172 000a 1A6B     		ldr	r2, [r3, #48]
+ 173 000c 42F40012 		orr	r2, r2, #2097152
+ 174 0010 1A63     		str	r2, [r3, #48]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 4
 
 
- 179              	@ 0 "" 2
- 180              		.thumb
- 181              		.syntax unified
- 182              	.L12:
- 183 0002 FEE7     		b	.L12
- 185              		.section	.text.MX_TIM2_Init,"ax",%progbits
- 186              		.align	1
- 187              		.syntax unified
- 188              		.thumb
- 189              		.thumb_func
- 191              	MX_TIM2_Init:
- 192              		@ args = 0, pretend = 0, frame = 56
- 193              		@ frame_needed = 0, uses_anonymous_args = 0
- 194 0000 00B5     		push	{lr}
- 195 0002 8FB0     		sub	sp, sp, #60
- 196 0004 0023     		movs	r3, #0
- 197 0006 0A93     		str	r3, [sp, #40]
- 198 0008 0B93     		str	r3, [sp, #44]
- 199 000a 0C93     		str	r3, [sp, #48]
- 200 000c 0D93     		str	r3, [sp, #52]
- 201 000e 0893     		str	r3, [sp, #32]
- 202 0010 0993     		str	r3, [sp, #36]
- 203 0012 0193     		str	r3, [sp, #4]
- 204 0014 0293     		str	r3, [sp, #8]
- 205 0016 0393     		str	r3, [sp, #12]
- 206 0018 0493     		str	r3, [sp, #16]
- 207 001a 0593     		str	r3, [sp, #20]
- 208 001c 0693     		str	r3, [sp, #24]
- 209 001e 0793     		str	r3, [sp, #28]
- 210 0020 3648     		ldr	r0, .L27
- 211 0022 4FF08042 		mov	r2, #1073741824
- 212 0026 0260     		str	r2, [r0]
- 213 0028 4360     		str	r3, [r0, #4]
- 214 002a 8360     		str	r3, [r0, #8]
- 215 002c 344A     		ldr	r2, .L27+4
- 216 002e 1268     		ldr	r2, [r2]
- 217 0030 013A     		subs	r2, r2, #1
- 218 0032 C260     		str	r2, [r0, #12]
- 219 0034 0361     		str	r3, [r0, #16]
- 220 0036 8361     		str	r3, [r0, #24]
- 221 0038 FFF7FEFF 		bl	HAL_TIM_Base_Init
- 222 003c 0028     		cmp	r0, #0
- 223 003e 50D1     		bne	.L21
- 224 0040 4FF48053 		mov	r3, #4096
- 225 0044 0A93     		str	r3, [sp, #40]
- 226 0046 0AA9     		add	r1, sp, #40
- 227 0048 2C48     		ldr	r0, .L27
- 228 004a FFF7FEFF 		bl	HAL_TIM_ConfigClockSource
- 229 004e 0028     		cmp	r0, #0
- 230 0050 49D1     		bne	.L22
- 231 0052 2A48     		ldr	r0, .L27
- 232 0054 FFF7FEFF 		bl	HAL_TIM_OC_Init
- 233 0058 0028     		cmp	r0, #0
- 234 005a 46D1     		bne	.L23
- 235 005c 0023     		movs	r3, #0
- 236 005e 0893     		str	r3, [sp, #32]
- 237 0060 0993     		str	r3, [sp, #36]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 5
+ 175 0012 1B6B     		ldr	r3, [r3, #48]
+ 176 0014 03F40013 		and	r3, r3, #2097152
+ 177 0018 0193     		str	r3, [sp, #4]
+ 178 001a 019B     		ldr	r3, [sp, #4]
+ 179 001c 0A46     		mov	r2, r1
+ 180 001e 1020     		movs	r0, #16
+ 181 0020 FFF7FEFF 		bl	HAL_NVIC_SetPriority
+ 182 0024 1020     		movs	r0, #16
+ 183 0026 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+ 184 002a 03B0     		add	sp, sp, #12
+ 185              		@ sp needed
+ 186 002c 5DF804FB 		ldr	pc, [sp], #4
+ 187              	.L8:
+ 188              		.align	2
+ 189              	.L7:
+ 190 0030 00380240 		.word	1073887232
+ 192              		.section	.text.EXTI0_IRQHandler,"ax",%progbits
+ 193              		.align	1
+ 194              		.global	EXTI0_IRQHandler
+ 195              		.syntax unified
+ 196              		.thumb
+ 197              		.thumb_func
+ 199              	EXTI0_IRQHandler:
+ 200              		@ args = 0, pretend = 0, frame = 0
+ 201              		@ frame_needed = 0, uses_anonymous_args = 0
+ 202 0000 08B5     		push	{r3, lr}
+ 203 0002 0120     		movs	r0, #1
+ 204 0004 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 205 0008 08BD     		pop	{r3, pc}
+ 207              		.section	.text.EXTI1_IRQHandler,"ax",%progbits
+ 208              		.align	1
+ 209              		.global	EXTI1_IRQHandler
+ 210              		.syntax unified
+ 211              		.thumb
+ 212              		.thumb_func
+ 214              	EXTI1_IRQHandler:
+ 215              		@ args = 0, pretend = 0, frame = 0
+ 216              		@ frame_needed = 0, uses_anonymous_args = 0
+ 217 0000 08B5     		push	{r3, lr}
+ 218 0002 0220     		movs	r0, #2
+ 219 0004 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 220 0008 08BD     		pop	{r3, pc}
+ 222              		.section	.text.EXTI2_IRQHandler,"ax",%progbits
+ 223              		.align	1
+ 224              		.global	EXTI2_IRQHandler
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 229              	EXTI2_IRQHandler:
+ 230              		@ args = 0, pretend = 0, frame = 0
+ 231              		@ frame_needed = 0, uses_anonymous_args = 0
+ 232 0000 08B5     		push	{r3, lr}
+ 233 0002 0420     		movs	r0, #4
+ 234 0004 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 235 0008 08BD     		pop	{r3, pc}
+ 237              		.section	.text.EXTI3_IRQHandler,"ax",%progbits
+ 238              		.align	1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 5
 
 
- 238 0062 08A9     		add	r1, sp, #32
- 239 0064 2548     		ldr	r0, .L27
- 240 0066 FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
- 241 006a 0028     		cmp	r0, #0
- 242 006c 3FD1     		bne	.L24
- 243 006e 0022     		movs	r2, #0
- 244 0070 0192     		str	r2, [sp, #4]
- 245 0072 0292     		str	r2, [sp, #8]
- 246 0074 0392     		str	r2, [sp, #12]
- 247 0076 0592     		str	r2, [sp, #20]
- 248 0078 01A9     		add	r1, sp, #4
- 249 007a 2048     		ldr	r0, .L27
- 250 007c FFF7FEFF 		bl	HAL_TIM_OC_ConfigChannel
- 251 0080 0028     		cmp	r0, #0
- 252 0082 36D1     		bne	.L25
- 253 0084 0023     		movs	r3, #0
- 254 0086 0093     		str	r3, [sp]
- 255 0088 1E4A     		ldr	r2, .L27+8
- 256 008a 116B     		ldr	r1, [r2, #48]
- 257 008c 41F40011 		orr	r1, r1, #2097152
- 258 0090 1163     		str	r1, [r2, #48]
- 259 0092 126B     		ldr	r2, [r2, #48]
- 260 0094 02F40012 		and	r2, r2, #2097152
- 261 0098 0092     		str	r2, [sp]
- 262 009a 009A     		ldr	r2, [sp]
- 263 009c 1A48     		ldr	r0, .L27+12
- 264 009e 1B4A     		ldr	r2, .L27+16
- 265 00a0 0260     		str	r2, [r0]
- 266 00a2 4FF0C062 		mov	r2, #100663296
- 267 00a6 4260     		str	r2, [r0, #4]
- 268 00a8 4022     		movs	r2, #64
- 269 00aa 8260     		str	r2, [r0, #8]
- 270 00ac C360     		str	r3, [r0, #12]
- 271 00ae 4FF48062 		mov	r2, #1024
- 272 00b2 0261     		str	r2, [r0, #16]
- 273 00b4 4FF48052 		mov	r2, #4096
- 274 00b8 4261     		str	r2, [r0, #20]
- 275 00ba 4FF48042 		mov	r2, #16384
- 276 00be 8261     		str	r2, [r0, #24]
- 277 00c0 4FF48072 		mov	r2, #256
- 278 00c4 C261     		str	r2, [r0, #28]
- 279 00c6 4FF40032 		mov	r2, #131072
- 280 00ca 0262     		str	r2, [r0, #32]
- 281 00cc 4362     		str	r3, [r0, #36]
- 282 00ce FFF7FEFF 		bl	HAL_DMA_Init
- 283 00d2 80B9     		cbnz	r0, .L26
- 284 00d4 094A     		ldr	r2, .L27
- 285 00d6 0C4B     		ldr	r3, .L27+12
- 286 00d8 5362     		str	r3, [r2, #36]
- 287 00da 9A63     		str	r2, [r3, #56]
- 288 00dc 0FB0     		add	sp, sp, #60
- 289              		@ sp needed
- 290 00de 5DF804FB 		ldr	pc, [sp], #4
- 291              	.L21:
- 292 00e2 FFF7FEFF 		bl	Error_Handler
- 293              	.L22:
- 294 00e6 FFF7FEFF 		bl	Error_Handler
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 6
+ 239              		.global	EXTI3_IRQHandler
+ 240              		.syntax unified
+ 241              		.thumb
+ 242              		.thumb_func
+ 244              	EXTI3_IRQHandler:
+ 245              		@ args = 0, pretend = 0, frame = 0
+ 246              		@ frame_needed = 0, uses_anonymous_args = 0
+ 247 0000 08B5     		push	{r3, lr}
+ 248 0002 0820     		movs	r0, #8
+ 249 0004 FFF7FEFF 		bl	HAL_GPIO_EXTI_IRQHandler
+ 250 0008 08BD     		pop	{r3, pc}
+ 252              		.section	.rodata.HAL_GPIO_EXTI_Callback.str1.4,"aMS",%progbits,1
+ 253              		.align	2
+ 254              	.LC0:
+ 255 0000 42544E30 		.ascii	"BTN0\015\012\000"
+ 255      0D0A00
+ 256 0007 00       		.align	2
+ 257              	.LC1:
+ 258 0008 42544E31 		.ascii	"BTN1\015\012\000"
+ 258      0D0A00
+ 259 000f 00       		.align	2
+ 260              	.LC2:
+ 261 0010 42544E32 		.ascii	"BTN2\015\012\000"
+ 261      0D0A00
+ 262 0017 00       		.align	2
+ 263              	.LC3:
+ 264 0018 42544E33 		.ascii	"BTN3\015\012\000"
+ 264      0D0A00
+ 265              		.section	.text.HAL_GPIO_EXTI_Callback,"ax",%progbits
+ 266              		.align	1
+ 267              		.global	HAL_GPIO_EXTI_Callback
+ 268              		.syntax unified
+ 269              		.thumb
+ 270              		.thumb_func
+ 272              	HAL_GPIO_EXTI_Callback:
+ 273              		@ args = 0, pretend = 0, frame = 8
+ 274              		@ frame_needed = 0, uses_anonymous_args = 0
+ 275 0000 10B5     		push	{r4, lr}
+ 276 0002 82B0     		sub	sp, sp, #8
+ 277 0004 0446     		mov	r4, r0
+ 278 0006 FFF7FEFF 		bl	HAL_GetTick
+ 279 000a 631E     		subs	r3, r4, #1
+ 280 000c 072B     		cmp	r3, #7
+ 281 000e 0AD8     		bhi	.L17
+ 282 0010 DFE803F0 		tbb	[pc, r3]
+ 283              	.L20:
+ 284 0014 04       		.byte	(.L23-.L20)/2
+ 285 0015 21       		.byte	(.L22-.L20)/2
+ 286 0016 09       		.byte	(.L17-.L20)/2
+ 287 0017 3C       		.byte	(.L21-.L20)/2
+ 288 0018 09       		.byte	(.L17-.L20)/2
+ 289 0019 09       		.byte	(.L17-.L20)/2
+ 290 001a 09       		.byte	(.L17-.L20)/2
+ 291 001b 57       		.byte	(.L19-.L20)/2
+ 292              		.p2align 1
+ 293              	.L23:
+ 294 001c 364B     		ldr	r3, .L27
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 6
 
 
- 295              	.L23:
- 296 00ea FFF7FEFF 		bl	Error_Handler
- 297              	.L24:
- 298 00ee FFF7FEFF 		bl	Error_Handler
- 299              	.L25:
- 300 00f2 FFF7FEFF 		bl	Error_Handler
- 301              	.L26:
- 302 00f6 FFF7FEFF 		bl	Error_Handler
- 303              	.L28:
- 304 00fa 00BF     		.align	2
- 305              	.L27:
- 306 00fc 00000000 		.word	htim2
- 307 0100 00000000 		.word	TIM2_Ticks
- 308 0104 00380240 		.word	1073887232
- 309 0108 00000000 		.word	hdma_tim2_ch1
- 310 010c 88600240 		.word	1073897608
- 312              		.section	.text.MX_TIM3_Init,"ax",%progbits
- 313              		.align	1
- 314              		.syntax unified
- 315              		.thumb
- 316              		.thumb_func
- 318              	MX_TIM3_Init:
- 319              		@ args = 0, pretend = 0, frame = 56
- 320              		@ frame_needed = 0, uses_anonymous_args = 0
- 321 0000 00B5     		push	{lr}
- 322 0002 8FB0     		sub	sp, sp, #60
- 323 0004 0023     		movs	r3, #0
- 324 0006 0A93     		str	r3, [sp, #40]
- 325 0008 0B93     		str	r3, [sp, #44]
- 326 000a 0C93     		str	r3, [sp, #48]
- 327 000c 0D93     		str	r3, [sp, #52]
- 328 000e 0893     		str	r3, [sp, #32]
- 329 0010 0993     		str	r3, [sp, #36]
- 330 0012 0193     		str	r3, [sp, #4]
- 331 0014 0293     		str	r3, [sp, #8]
- 332 0016 0393     		str	r3, [sp, #12]
- 333 0018 0493     		str	r3, [sp, #16]
- 334 001a 0593     		str	r3, [sp, #20]
- 335 001c 0693     		str	r3, [sp, #24]
- 336 001e 0793     		str	r3, [sp, #28]
- 337 0020 1E48     		ldr	r0, .L41
- 338 0022 1F4A     		ldr	r2, .L41+4
- 339 0024 0260     		str	r2, [r0]
- 340 0026 4360     		str	r3, [r0, #4]
- 341 0028 8360     		str	r3, [r0, #8]
- 342 002a 40F6FF72 		movw	r2, #4095
- 343 002e C260     		str	r2, [r0, #12]
- 344 0030 0361     		str	r3, [r0, #16]
- 345 0032 8361     		str	r3, [r0, #24]
- 346 0034 FFF7FEFF 		bl	HAL_TIM_Base_Init
- 347 0038 28BB     		cbnz	r0, .L36
- 348 003a 4FF48053 		mov	r3, #4096
- 349 003e 0A93     		str	r3, [sp, #40]
- 350 0040 0AA9     		add	r1, sp, #40
- 351 0042 1648     		ldr	r0, .L41
- 352 0044 FFF7FEFF 		bl	HAL_TIM_ConfigClockSource
- 353 0048 F8B9     		cbnz	r0, .L37
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 7
+ 295 001e 1B68     		ldr	r3, [r3]
+ 296 0020 C31A     		subs	r3, r0, r3
+ 297 0022 C82B     		cmp	r3, #200
+ 298 0024 01D8     		bhi	.L26
+ 299              	.L17:
+ 300 0026 02B0     		add	sp, sp, #8
+ 301              		@ sp needed
+ 302 0028 10BD     		pop	{r4, pc}
+ 303              	.L26:
+ 304 002a 334B     		ldr	r3, .L27
+ 305 002c D860     		str	r0, [r3, #12]
+ 306 002e 334B     		ldr	r3, .L27+4
+ 307 0030 93E80300 		ldm	r3, {r0, r1}
+ 308 0034 0090     		str	r0, [sp]
+ 309 0036 ADF80410 		strh	r1, [sp, #4]	@ movhi
+ 310 003a 090C     		lsrs	r1, r1, #16
+ 311 003c 8DF80610 		strb	r1, [sp, #6]
+ 312 0040 6846     		mov	r0, sp
+ 313 0042 FFF7FEFF 		bl	strlen
+ 314 0046 4FF0FF33 		mov	r3, #-1
+ 315 004a 82B2     		uxth	r2, r0
+ 316 004c 6946     		mov	r1, sp
+ 317 004e 2C48     		ldr	r0, .L27+8
+ 318 0050 FFF7FEFF 		bl	HAL_UART_Transmit
+ 319 0054 E7E7     		b	.L17
+ 320              	.L22:
+ 321 0056 284B     		ldr	r3, .L27
+ 322 0058 5B68     		ldr	r3, [r3, #4]
+ 323 005a C31A     		subs	r3, r0, r3
+ 324 005c C82B     		cmp	r3, #200
+ 325 005e E2D9     		bls	.L17
+ 326 0060 254B     		ldr	r3, .L27
+ 327 0062 D860     		str	r0, [r3, #12]
+ 328 0064 274B     		ldr	r3, .L27+12
+ 329 0066 93E80300 		ldm	r3, {r0, r1}
+ 330 006a 0090     		str	r0, [sp]
+ 331 006c ADF80410 		strh	r1, [sp, #4]	@ movhi
+ 332 0070 090C     		lsrs	r1, r1, #16
+ 333 0072 8DF80610 		strb	r1, [sp, #6]
+ 334 0076 6846     		mov	r0, sp
+ 335 0078 FFF7FEFF 		bl	strlen
+ 336 007c 4FF0FF33 		mov	r3, #-1
+ 337 0080 82B2     		uxth	r2, r0
+ 338 0082 6946     		mov	r1, sp
+ 339 0084 1E48     		ldr	r0, .L27+8
+ 340 0086 FFF7FEFF 		bl	HAL_UART_Transmit
+ 341 008a CCE7     		b	.L17
+ 342              	.L21:
+ 343 008c 1A4B     		ldr	r3, .L27
+ 344 008e 9B68     		ldr	r3, [r3, #8]
+ 345 0090 C31A     		subs	r3, r0, r3
+ 346 0092 C82B     		cmp	r3, #200
+ 347 0094 C7D9     		bls	.L17
+ 348 0096 184B     		ldr	r3, .L27
+ 349 0098 D860     		str	r0, [r3, #12]
+ 350 009a 1B4B     		ldr	r3, .L27+16
+ 351 009c 93E80300 		ldm	r3, {r0, r1}
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 7
 
 
- 354 004a 1448     		ldr	r0, .L41
- 355 004c FFF7FEFF 		bl	HAL_TIM_PWM_Init
- 356 0050 E8B9     		cbnz	r0, .L38
- 357 0052 0023     		movs	r3, #0
- 358 0054 0893     		str	r3, [sp, #32]
- 359 0056 0993     		str	r3, [sp, #36]
- 360 0058 08A9     		add	r1, sp, #32
- 361 005a 1048     		ldr	r0, .L41
- 362 005c FFF7FEFF 		bl	HAL_TIMEx_MasterConfigSynchronization
- 363 0060 B8B9     		cbnz	r0, .L39
- 364 0062 6023     		movs	r3, #96
- 365 0064 0193     		str	r3, [sp, #4]
- 366 0066 0023     		movs	r3, #0
- 367 0068 0293     		str	r3, [sp, #8]
- 368 006a 0393     		str	r3, [sp, #12]
- 369 006c 0593     		str	r3, [sp, #20]
- 370 006e 0822     		movs	r2, #8
- 371 0070 01A9     		add	r1, sp, #4
- 372 0072 0A48     		ldr	r0, .L41
- 373 0074 FFF7FEFF 		bl	HAL_TIM_PWM_ConfigChannel
- 374 0078 68B9     		cbnz	r0, .L40
- 375 007a 0848     		ldr	r0, .L41
- 376 007c FFF7FEFF 		bl	HAL_TIM_MspPostInit
- 377 0080 0FB0     		add	sp, sp, #60
- 378              		@ sp needed
- 379 0082 5DF804FB 		ldr	pc, [sp], #4
- 380              	.L36:
- 381 0086 FFF7FEFF 		bl	Error_Handler
- 382              	.L37:
- 383 008a FFF7FEFF 		bl	Error_Handler
- 384              	.L38:
- 385 008e FFF7FEFF 		bl	Error_Handler
- 386              	.L39:
- 387 0092 FFF7FEFF 		bl	Error_Handler
- 388              	.L40:
- 389 0096 FFF7FEFF 		bl	Error_Handler
- 390              	.L42:
- 391 009a 00BF     		.align	2
- 392              	.L41:
- 393 009c 00000000 		.word	htim3
- 394 00a0 00040040 		.word	1073742848
- 396              		.section	.text.SystemClock_Config,"ax",%progbits
+ 352 00a0 0090     		str	r0, [sp]
+ 353 00a2 ADF80410 		strh	r1, [sp, #4]	@ movhi
+ 354 00a6 090C     		lsrs	r1, r1, #16
+ 355 00a8 8DF80610 		strb	r1, [sp, #6]
+ 356 00ac 6846     		mov	r0, sp
+ 357 00ae FFF7FEFF 		bl	strlen
+ 358 00b2 4FF0FF33 		mov	r3, #-1
+ 359 00b6 82B2     		uxth	r2, r0
+ 360 00b8 6946     		mov	r1, sp
+ 361 00ba 1148     		ldr	r0, .L27+8
+ 362 00bc FFF7FEFF 		bl	HAL_UART_Transmit
+ 363 00c0 B1E7     		b	.L17
+ 364              	.L19:
+ 365 00c2 0D4B     		ldr	r3, .L27
+ 366 00c4 DB68     		ldr	r3, [r3, #12]
+ 367 00c6 C31A     		subs	r3, r0, r3
+ 368 00c8 C82B     		cmp	r3, #200
+ 369 00ca ACD9     		bls	.L17
+ 370 00cc 0A4B     		ldr	r3, .L27
+ 371 00ce D860     		str	r0, [r3, #12]
+ 372 00d0 0E4B     		ldr	r3, .L27+20
+ 373 00d2 93E80300 		ldm	r3, {r0, r1}
+ 374 00d6 0090     		str	r0, [sp]
+ 375 00d8 ADF80410 		strh	r1, [sp, #4]	@ movhi
+ 376 00dc 090C     		lsrs	r1, r1, #16
+ 377 00de 8DF80610 		strb	r1, [sp, #6]
+ 378 00e2 6846     		mov	r0, sp
+ 379 00e4 FFF7FEFF 		bl	strlen
+ 380 00e8 4FF0FF33 		mov	r3, #-1
+ 381 00ec 82B2     		uxth	r2, r0
+ 382 00ee 6946     		mov	r1, sp
+ 383 00f0 0348     		ldr	r0, .L27+8
+ 384 00f2 FFF7FEFF 		bl	HAL_UART_Transmit
+ 385 00f6 96E7     		b	.L17
+ 386              	.L28:
+ 387              		.align	2
+ 388              	.L27:
+ 389 00f8 00000000 		.word	lastInterruptTime
+ 390 00fc 00000000 		.word	.LC0
+ 391 0100 00000000 		.word	huart1
+ 392 0104 08000000 		.word	.LC1
+ 393 0108 10000000 		.word	.LC2
+ 394 010c 18000000 		.word	.LC3
+ 396              		.section	.text.ADC1_Start,"ax",%progbits
  397              		.align	1
- 398              		.global	SystemClock_Config
+ 398              		.global	ADC1_Start
  399              		.syntax unified
  400              		.thumb
  401              		.thumb_func
- 403              	SystemClock_Config:
- 404              		@ args = 0, pretend = 0, frame = 80
+ 403              	ADC1_Start:
+ 404              		@ args = 0, pretend = 0, frame = 0
  405              		@ frame_needed = 0, uses_anonymous_args = 0
- 406 0000 10B5     		push	{r4, lr}
- 407 0002 94B0     		sub	sp, sp, #80
- 408 0004 07AC     		add	r4, sp, #28
- 409 0006 3422     		movs	r2, #52
- 410 0008 0021     		movs	r1, #0
- 411 000a 2046     		mov	r0, r4
- 412 000c FFF7FEFF 		bl	memset
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 8
+ 406              		@ link register save eliminated.
+ 407 0000 00F01F00 		and	r0, r0, #31
+ 408 0004 034B     		ldr	r3, .L30
+ 409 0006 5863     		str	r0, [r3, #52]
+ 410 0008 9A68     		ldr	r2, [r3, #8]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 8
 
 
- 413 0010 0023     		movs	r3, #0
- 414 0012 0293     		str	r3, [sp, #8]
- 415 0014 0393     		str	r3, [sp, #12]
- 416 0016 0493     		str	r3, [sp, #16]
- 417 0018 0593     		str	r3, [sp, #20]
- 418 001a 0693     		str	r3, [sp, #24]
- 419 001c 0093     		str	r3, [sp]
- 420 001e 194A     		ldr	r2, .L49
- 421 0020 116C     		ldr	r1, [r2, #64]
- 422 0022 41F08051 		orr	r1, r1, #268435456
- 423 0026 1164     		str	r1, [r2, #64]
- 424 0028 126C     		ldr	r2, [r2, #64]
- 425 002a 02F08052 		and	r2, r2, #268435456
- 426 002e 0092     		str	r2, [sp]
- 427 0030 009A     		ldr	r2, [sp]
- 428 0032 0193     		str	r3, [sp, #4]
- 429 0034 1449     		ldr	r1, .L49+4
- 430 0036 0A68     		ldr	r2, [r1]
- 431 0038 22F44042 		bic	r2, r2, #49152
- 432 003c 42F48042 		orr	r2, r2, #16384
- 433 0040 0A60     		str	r2, [r1]
- 434 0042 0A68     		ldr	r2, [r1]
- 435 0044 02F44042 		and	r2, r2, #49152
- 436 0048 0192     		str	r2, [sp, #4]
- 437 004a 019A     		ldr	r2, [sp, #4]
- 438 004c 0222     		movs	r2, #2
- 439 004e 0792     		str	r2, [sp, #28]
- 440 0050 0122     		movs	r2, #1
- 441 0052 0A92     		str	r2, [sp, #40]
- 442 0054 1022     		movs	r2, #16
- 443 0056 0B92     		str	r2, [sp, #44]
- 444 0058 0D93     		str	r3, [sp, #52]
- 445 005a 2046     		mov	r0, r4
- 446 005c FFF7FEFF 		bl	HAL_RCC_OscConfig
- 447 0060 60B9     		cbnz	r0, .L47
- 448 0062 0F23     		movs	r3, #15
- 449 0064 0293     		str	r3, [sp, #8]
- 450 0066 0021     		movs	r1, #0
- 451 0068 0391     		str	r1, [sp, #12]
- 452 006a 0491     		str	r1, [sp, #16]
- 453 006c 0591     		str	r1, [sp, #20]
- 454 006e 0691     		str	r1, [sp, #24]
- 455 0070 02A8     		add	r0, sp, #8
- 456 0072 FFF7FEFF 		bl	HAL_RCC_ClockConfig
- 457 0076 18B9     		cbnz	r0, .L48
- 458 0078 14B0     		add	sp, sp, #80
- 459              		@ sp needed
- 460 007a 10BD     		pop	{r4, pc}
- 461              	.L47:
- 462 007c FFF7FEFF 		bl	Error_Handler
- 463              	.L48:
- 464 0080 FFF7FEFF 		bl	Error_Handler
- 465              	.L50:
- 466              		.align	2
- 467              	.L49:
- 468 0084 00380240 		.word	1073887232
- 469 0088 00700040 		.word	1073770496
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 9
+ 411 000a 42F08042 		orr	r2, r2, #1073741824
+ 412 000e 9A60     		str	r2, [r3, #8]
+ 413 0010 7047     		bx	lr
+ 414              	.L31:
+ 415 0012 00BF     		.align	2
+ 416              	.L30:
+ 417 0014 00200140 		.word	1073815552
+ 419              		.section	.text.ADC_IRQHandler,"ax",%progbits
+ 420              		.align	1
+ 421              		.global	ADC_IRQHandler
+ 422              		.syntax unified
+ 423              		.thumb
+ 424              		.thumb_func
+ 426              	ADC_IRQHandler:
+ 427              		@ args = 0, pretend = 0, frame = 0
+ 428              		@ frame_needed = 0, uses_anonymous_args = 0
+ 429 0000 08B5     		push	{r3, lr}
+ 430 0002 0E4B     		ldr	r3, .L37
+ 431 0004 1B68     		ldr	r3, [r3]
+ 432 0006 13F0020F 		tst	r3, #2
+ 433 000a 0DD0     		beq	.L32
+ 434 000c 0B4B     		ldr	r3, .L37
+ 435 000e DB6C     		ldr	r3, [r3, #76]
+ 436 0010 9BB2     		uxth	r3, r3
+ 437 0012 0B4A     		ldr	r2, .L37+4
+ 438 0014 1278     		ldrb	r2, [r2]	@ zero_extendqisi2
+ 439 0016 052A     		cmp	r2, #5
+ 440 0018 07D0     		beq	.L36
+ 441 001a 0A4A     		ldr	r2, .L37+8
+ 442 001c 1380     		strh	r3, [r2]	@ movhi
+ 443 001e 0520     		movs	r0, #5
+ 444 0020 074B     		ldr	r3, .L37+4
+ 445 0022 1870     		strb	r0, [r3]
+ 446 0024 FFF7FEFF 		bl	ADC1_Start
+ 447              	.L32:
+ 448 0028 08BD     		pop	{r3, pc}
+ 449              	.L36:
+ 450 002a 074A     		ldr	r2, .L37+12
+ 451 002c 1380     		strh	r3, [r2]	@ movhi
+ 452 002e 0620     		movs	r0, #6
+ 453 0030 034B     		ldr	r3, .L37+4
+ 454 0032 1870     		strb	r0, [r3]
+ 455 0034 FFF7FEFF 		bl	ADC1_Start
+ 456 0038 F6E7     		b	.L32
+ 457              	.L38:
+ 458 003a 00BF     		.align	2
+ 459              	.L37:
+ 460 003c 00200140 		.word	1073815552
+ 461 0040 00000000 		.word	current_channel.0
+ 462 0044 00000000 		.word	pot1_value
+ 463 0048 00000000 		.word	pot0_value
+ 465              		.section	.text.ADC1_Init,"ax",%progbits
+ 466              		.align	1
+ 467              		.global	ADC1_Init
+ 468              		.syntax unified
+ 469              		.thumb
+ 470              		.thumb_func
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 9
 
 
- 471              		.section	.rodata.main.str1.4,"aMS",%progbits,1
- 472              		.align	2
- 473              	.LC0:
- 474 0000 536A6176 		.ascii	"Sjava\000"
- 474      6100
- 475              		.section	.text.main,"ax",%progbits
- 476              		.align	1
- 477              		.global	main
- 478              		.syntax unified
- 479              		.thumb
- 480              		.thumb_func
- 482              	main:
- 483              		@ Volatile: function does not return.
- 484              		@ args = 0, pretend = 0, frame = 0
- 485              		@ frame_needed = 0, uses_anonymous_args = 0
- 486 0000 08B5     		push	{r3, lr}
- 487 0002 FFF7FEFF 		bl	HAL_Init
- 488 0006 FFF7FEFF 		bl	SystemClock_Config
- 489 000a FFF7FEFF 		bl	MX_GPIO_Init
- 490 000e FFF7FEFF 		bl	MX_DMA_Init
- 491 0012 FFF7FEFF 		bl	MX_TIM2_Init
- 492 0016 FFF7FEFF 		bl	MX_TIM3_Init
- 493 001a FFF7FEFF 		bl	init_LCD
- 494 001e 0120     		movs	r0, #1
- 495 0020 FFF7FEFF 		bl	lcd_command
- 496 0024 0148     		ldr	r0, .L54
- 497 0026 FFF7FEFF 		bl	lcd_putstring
- 498              	.L52:
- 499 002a FEE7     		b	.L52
- 500              	.L55:
- 501              		.align	2
- 502              	.L54:
- 503 002c 00000000 		.word	.LC0
- 505              		.global	DestAddress
- 506              		.section	.data.DestAddress,"aw"
- 507              		.align	2
- 510              	DestAddress:
- 511 0000 3C040040 		.word	1073742908
- 512              		.global	TIM2_Ticks
- 513              		.section	.bss.TIM2_Ticks,"aw",%nobits
- 514              		.align	2
- 517              	TIM2_Ticks:
- 518 0000 00000000 		.space	4
- 519              		.global	Drum_LUT
- 520              		.section	.bss.Drum_LUT,"aw",%nobits
- 521              		.align	2
- 524              	Drum_LUT:
- 525 0000 00000000 		.space	4
- 526              		.global	Guitar_LUT
- 527              		.section	.bss.Guitar_LUT,"aw",%nobits
- 528              		.align	2
- 531              	Guitar_LUT:
- 532 0000 00000000 		.space	4
- 533              		.global	Piano_LUT
- 534              		.section	.bss.Piano_LUT,"aw",%nobits
- 535              		.align	2
- 538              	Piano_LUT:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 10
+ 472              	ADC1_Init:
+ 473              		@ args = 0, pretend = 0, frame = 0
+ 474              		@ frame_needed = 0, uses_anonymous_args = 0
+ 475              		@ link register save eliminated.
+ 476 0000 134A     		ldr	r2, .L40
+ 477 0002 536C     		ldr	r3, [r2, #68]
+ 478 0004 43F48073 		orr	r3, r3, #256
+ 479 0008 5364     		str	r3, [r2, #68]
+ 480 000a 124B     		ldr	r3, .L40+4
+ 481 000c 5A68     		ldr	r2, [r3, #4]
+ 482 000e 22F44032 		bic	r2, r2, #196608
+ 483 0012 5A60     		str	r2, [r3, #4]
+ 484 0014 5A68     		ldr	r2, [r3, #4]
+ 485 0016 42F48032 		orr	r2, r2, #65536
+ 486 001a 5A60     		str	r2, [r3, #4]
+ 487 001c A3F54073 		sub	r3, r3, #768
+ 488 0020 0022     		movs	r2, #0
+ 489 0022 5A60     		str	r2, [r3, #4]
+ 490 0024 40F20241 		movw	r1, #1026
+ 491 0028 9960     		str	r1, [r3, #8]
+ 492 002a DA62     		str	r2, [r3, #44]
+ 493 002c 1A69     		ldr	r2, [r3, #16]
+ 494 002e 42F45822 		orr	r2, r2, #884736
+ 495 0032 1A61     		str	r2, [r3, #16]
+ 496 0034 5A68     		ldr	r2, [r3, #4]
+ 497 0036 42F02002 		orr	r2, r2, #32
+ 498 003a 5A60     		str	r2, [r3, #4]
+ 499 003c 064A     		ldr	r2, .L40+8
+ 500 003e 4FF48021 		mov	r1, #262144
+ 501 0042 1160     		str	r1, [r2]
+ 502 0044 9A68     		ldr	r2, [r3, #8]
+ 503 0046 42F00102 		orr	r2, r2, #1
+ 504 004a 9A60     		str	r2, [r3, #8]
+ 505 004c 7047     		bx	lr
+ 506              	.L41:
+ 507 004e 00BF     		.align	2
+ 508              	.L40:
+ 509 0050 00380240 		.word	1073887232
+ 510 0054 00230140 		.word	1073816320
+ 511 0058 00E100E0 		.word	-536813312
+ 513              		.section	.text.Error_Handler,"ax",%progbits
+ 514              		.align	1
+ 515              		.global	Error_Handler
+ 516              		.syntax unified
+ 517              		.thumb
+ 518              		.thumb_func
+ 520              	Error_Handler:
+ 521              		@ Volatile: function does not return.
+ 522              		@ args = 0, pretend = 0, frame = 0
+ 523              		@ frame_needed = 0, uses_anonymous_args = 0
+ 524              		@ link register save eliminated.
+ 525              		.syntax unified
+ 526              	@ 962 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 527 0000 72B6     		cpsid i
+ 528              	@ 0 "" 2
+ 529              		.thumb
+ 530              		.syntax unified
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 10
 
 
- 539 0000 00000000 		.space	4
- 540              		.global	Triangle_LUT
- 541              		.section	.bss.Triangle_LUT,"aw",%nobits
- 542              		.align	2
- 545              	Triangle_LUT:
- 546              		.global	Saw_LUT
- 547              		.section	.bss.Saw_LUT,"aw",%nobits
- 548              		.align	2
- 551              	Saw_LUT:
- 552              		.global	Sin_LUT
- 553              		.section	.bss.Sin_LUT,"aw",%nobits
- 554              		.align	2
- 557              	Sin_LUT:
- 558              		.global	hdma_tim2_ch1
- 559              		.section	.bss.hdma_tim2_ch1,"aw",%nobits
- 560              		.align	2
- 563              	hdma_tim2_ch1:
- 564 0000 00000000 		.space	96
- 564      00000000 
- 564      00000000 
- 564      00000000 
- 564      00000000 
- 565              		.global	htim3
- 566              		.section	.bss.htim3,"aw",%nobits
- 567              		.align	2
- 570              	htim3:
- 571 0000 00000000 		.space	72
- 571      00000000 
- 571      00000000 
- 571      00000000 
- 571      00000000 
- 572              		.global	htim2
- 573              		.section	.bss.htim2,"aw",%nobits
- 574              		.align	2
- 577              	htim2:
- 578 0000 00000000 		.space	72
- 578      00000000 
- 578      00000000 
- 578      00000000 
- 578      00000000 
- 579              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 11
+ 531              	.L43:
+ 532 0002 FEE7     		b	.L43
+ 534              		.section	.text.UART1_Init,"ax",%progbits
+ 535              		.align	1
+ 536              		.syntax unified
+ 537              		.thumb
+ 538              		.thumb_func
+ 540              	UART1_Init:
+ 541              		@ args = 0, pretend = 0, frame = 32
+ 542              		@ frame_needed = 0, uses_anonymous_args = 0
+ 543 0000 10B5     		push	{r4, lr}
+ 544 0002 88B0     		sub	sp, sp, #32
+ 545 0004 0024     		movs	r4, #0
+ 546 0006 0194     		str	r4, [sp, #4]
+ 547 0008 1C4B     		ldr	r3, .L48
+ 548 000a 5A6C     		ldr	r2, [r3, #68]
+ 549 000c 42F01002 		orr	r2, r2, #16
+ 550 0010 5A64     		str	r2, [r3, #68]
+ 551 0012 5A6C     		ldr	r2, [r3, #68]
+ 552 0014 02F01002 		and	r2, r2, #16
+ 553 0018 0192     		str	r2, [sp, #4]
+ 554 001a 019A     		ldr	r2, [sp, #4]
+ 555 001c 0294     		str	r4, [sp, #8]
+ 556 001e 1A6B     		ldr	r2, [r3, #48]
+ 557 0020 42F00102 		orr	r2, r2, #1
+ 558 0024 1A63     		str	r2, [r3, #48]
+ 559 0026 1B6B     		ldr	r3, [r3, #48]
+ 560 0028 03F00103 		and	r3, r3, #1
+ 561 002c 0293     		str	r3, [sp, #8]
+ 562 002e 029B     		ldr	r3, [sp, #8]
+ 563 0030 03A9     		add	r1, sp, #12
+ 564 0032 0394     		str	r4, [sp, #12]
+ 565 0034 4C60     		str	r4, [r1, #4]
+ 566 0036 8C60     		str	r4, [r1, #8]
+ 567 0038 CC60     		str	r4, [r1, #12]
+ 568 003a 0C61     		str	r4, [r1, #16]
+ 569 003c 4FF4C063 		mov	r3, #1536
+ 570 0040 0393     		str	r3, [sp, #12]
+ 571 0042 0223     		movs	r3, #2
+ 572 0044 0493     		str	r3, [sp, #16]
+ 573 0046 0323     		movs	r3, #3
+ 574 0048 0693     		str	r3, [sp, #24]
+ 575 004a 0723     		movs	r3, #7
+ 576 004c 0793     		str	r3, [sp, #28]
+ 577 004e 0C48     		ldr	r0, .L48+4
+ 578 0050 FFF7FEFF 		bl	HAL_GPIO_Init
+ 579 0054 0B48     		ldr	r0, .L48+8
+ 580 0056 0C4B     		ldr	r3, .L48+12
+ 581 0058 0360     		str	r3, [r0]
+ 582 005a 4FF4E133 		mov	r3, #115200
+ 583 005e 4360     		str	r3, [r0, #4]
+ 584 0060 8460     		str	r4, [r0, #8]
+ 585 0062 C460     		str	r4, [r0, #12]
+ 586 0064 0461     		str	r4, [r0, #16]
+ 587 0066 0C23     		movs	r3, #12
+ 588 0068 4361     		str	r3, [r0, #20]
+ 589 006a 8461     		str	r4, [r0, #24]
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 11
+
+
+ 590 006c C461     		str	r4, [r0, #28]
+ 591 006e FFF7FEFF 		bl	HAL_UART_Init
+ 592 0072 08B9     		cbnz	r0, .L47
+ 593 0074 08B0     		add	sp, sp, #32
+ 594              		@ sp needed
+ 595 0076 10BD     		pop	{r4, pc}
+ 596              	.L47:
+ 597 0078 FFF7FEFF 		bl	Error_Handler
+ 598              	.L49:
+ 599              		.align	2
+ 600              	.L48:
+ 601 007c 00380240 		.word	1073887232
+ 602 0080 00000240 		.word	1073872896
+ 603 0084 00000000 		.word	huart1
+ 604 0088 00100140 		.word	1073811456
+ 606              		.section	.text.SystemClock_Config,"ax",%progbits
+ 607              		.align	1
+ 608              		.global	SystemClock_Config
+ 609              		.syntax unified
+ 610              		.thumb
+ 611              		.thumb_func
+ 613              	SystemClock_Config:
+ 614              		@ args = 0, pretend = 0, frame = 80
+ 615              		@ frame_needed = 0, uses_anonymous_args = 0
+ 616 0000 10B5     		push	{r4, lr}
+ 617 0002 94B0     		sub	sp, sp, #80
+ 618 0004 07AC     		add	r4, sp, #28
+ 619 0006 3422     		movs	r2, #52
+ 620 0008 0021     		movs	r1, #0
+ 621 000a 2046     		mov	r0, r4
+ 622 000c FFF7FEFF 		bl	memset
+ 623 0010 0023     		movs	r3, #0
+ 624 0012 0293     		str	r3, [sp, #8]
+ 625 0014 0393     		str	r3, [sp, #12]
+ 626 0016 0493     		str	r3, [sp, #16]
+ 627 0018 0593     		str	r3, [sp, #20]
+ 628 001a 0693     		str	r3, [sp, #24]
+ 629 001c 0093     		str	r3, [sp]
+ 630 001e 194A     		ldr	r2, .L56
+ 631 0020 116C     		ldr	r1, [r2, #64]
+ 632 0022 41F08051 		orr	r1, r1, #268435456
+ 633 0026 1164     		str	r1, [r2, #64]
+ 634 0028 126C     		ldr	r2, [r2, #64]
+ 635 002a 02F08052 		and	r2, r2, #268435456
+ 636 002e 0092     		str	r2, [sp]
+ 637 0030 009A     		ldr	r2, [sp]
+ 638 0032 0193     		str	r3, [sp, #4]
+ 639 0034 1449     		ldr	r1, .L56+4
+ 640 0036 0A68     		ldr	r2, [r1]
+ 641 0038 22F44042 		bic	r2, r2, #49152
+ 642 003c 42F48042 		orr	r2, r2, #16384
+ 643 0040 0A60     		str	r2, [r1]
+ 644 0042 0A68     		ldr	r2, [r1]
+ 645 0044 02F44042 		and	r2, r2, #49152
+ 646 0048 0192     		str	r2, [sp, #4]
+ 647 004a 019A     		ldr	r2, [sp, #4]
+ 648 004c 0222     		movs	r2, #2
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 12
+
+
+ 649 004e 0792     		str	r2, [sp, #28]
+ 650 0050 0122     		movs	r2, #1
+ 651 0052 0A92     		str	r2, [sp, #40]
+ 652 0054 1022     		movs	r2, #16
+ 653 0056 0B92     		str	r2, [sp, #44]
+ 654 0058 0D93     		str	r3, [sp, #52]
+ 655 005a 2046     		mov	r0, r4
+ 656 005c FFF7FEFF 		bl	HAL_RCC_OscConfig
+ 657 0060 60B9     		cbnz	r0, .L54
+ 658 0062 0F23     		movs	r3, #15
+ 659 0064 0293     		str	r3, [sp, #8]
+ 660 0066 0021     		movs	r1, #0
+ 661 0068 0391     		str	r1, [sp, #12]
+ 662 006a 0491     		str	r1, [sp, #16]
+ 663 006c 0591     		str	r1, [sp, #20]
+ 664 006e 0691     		str	r1, [sp, #24]
+ 665 0070 02A8     		add	r0, sp, #8
+ 666 0072 FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 667 0076 18B9     		cbnz	r0, .L55
+ 668 0078 14B0     		add	sp, sp, #80
+ 669              		@ sp needed
+ 670 007a 10BD     		pop	{r4, pc}
+ 671              	.L54:
+ 672 007c FFF7FEFF 		bl	Error_Handler
+ 673              	.L55:
+ 674 0080 FFF7FEFF 		bl	Error_Handler
+ 675              	.L57:
+ 676              		.align	2
+ 677              	.L56:
+ 678 0084 00380240 		.word	1073887232
+ 679 0088 00700040 		.word	1073770496
+ 681              		.section	.rodata.main.str1.4,"aMS",%progbits,1
+ 682              		.align	2
+ 683              	.LC4:
+ 684 0000 25347500 		.ascii	"%4u\000"
+ 685              		.section	.text.main,"ax",%progbits
+ 686              		.align	1
+ 687              		.global	main
+ 688              		.syntax unified
+ 689              		.thumb
+ 690              		.thumb_func
+ 692              	main:
+ 693              		@ Volatile: function does not return.
+ 694              		@ args = 0, pretend = 0, frame = 16
+ 695              		@ frame_needed = 0, uses_anonymous_args = 0
+ 696 0000 00B5     		push	{lr}
+ 697 0002 85B0     		sub	sp, sp, #20
+ 698 0004 FFF7FEFF 		bl	HAL_Init
+ 699 0008 FFF7FEFF 		bl	SystemClock_Config
+ 700 000c FFF7FEFF 		bl	MX_GPIO_Init
+ 701 0010 FFF7FEFF 		bl	MX_DMA_Init
+ 702 0014 FFF7FEFF 		bl	UART1_Init
+ 703 0018 FFF7FEFF 		bl	ADC1_Init
+ 704 001c 0520     		movs	r0, #5
+ 705 001e FFF7FEFF 		bl	ADC1_Start
+ 706 0022 FFF7FEFF 		bl	init_LCD
+ 707 0026 0120     		movs	r0, #1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 13
+
+
+ 708 0028 FFF7FEFF 		bl	lcd_command
+ 709 002c 0BE0     		b	.L60
+ 710              	.L59:
+ 711 002e 1C4B     		ldr	r3, .L64
+ 712 0030 1B88     		ldrh	r3, [r3]
+ 713 0032 9BB2     		uxth	r3, r3
+ 714 0034 1B4A     		ldr	r2, .L64+4
+ 715 0036 1288     		ldrh	r2, [r2]
+ 716 0038 92B2     		uxth	r2, r2
+ 717 003a 9B1A     		subs	r3, r3, r2
+ 718 003c 002B     		cmp	r3, #0
+ 719 003e B8BF     		it	lt
+ 720 0040 5B42     		rsblt	r3, r3, #0
+ 721 0042 1E2B     		cmp	r3, #30
+ 722 0044 1BDC     		bgt	.L63
+ 723              	.L60:
+ 724 0046 184B     		ldr	r3, .L64+8
+ 725 0048 1B88     		ldrh	r3, [r3]
+ 726 004a 9BB2     		uxth	r3, r3
+ 727 004c 174A     		ldr	r2, .L64+12
+ 728 004e 1288     		ldrh	r2, [r2]
+ 729 0050 92B2     		uxth	r2, r2
+ 730 0052 9B1A     		subs	r3, r3, r2
+ 731 0054 002B     		cmp	r3, #0
+ 732 0056 B8BF     		it	lt
+ 733 0058 5B42     		rsblt	r3, r3, #0
+ 734 005a 1E2B     		cmp	r3, #30
+ 735 005c E7DD     		ble	.L59
+ 736 005e 124A     		ldr	r2, .L64+8
+ 737 0060 1388     		ldrh	r3, [r2]
+ 738 0062 9BB2     		uxth	r3, r3
+ 739 0064 1149     		ldr	r1, .L64+12
+ 740 0066 0B80     		strh	r3, [r1]	@ movhi
+ 741 0068 1288     		ldrh	r2, [r2]
+ 742 006a 01AC     		add	r4, sp, #4
+ 743 006c 92B2     		uxth	r2, r2
+ 744 006e 1049     		ldr	r1, .L64+16
+ 745 0070 2046     		mov	r0, r4
+ 746 0072 FFF7FEFF 		bl	sprintf
+ 747 0076 2046     		mov	r0, r4
+ 748 0078 FFF7FEFF 		bl	lcd_putstring
+ 749 007c D7E7     		b	.L59
+ 750              	.L63:
+ 751 007e 084A     		ldr	r2, .L64
+ 752 0080 1388     		ldrh	r3, [r2]
+ 753 0082 9BB2     		uxth	r3, r3
+ 754 0084 0749     		ldr	r1, .L64+4
+ 755 0086 0B80     		strh	r3, [r1]	@ movhi
+ 756 0088 1288     		ldrh	r2, [r2]
+ 757 008a 01AC     		add	r4, sp, #4
+ 758 008c 92B2     		uxth	r2, r2
+ 759 008e 0849     		ldr	r1, .L64+16
+ 760 0090 2046     		mov	r0, r4
+ 761 0092 FFF7FEFF 		bl	sprintf
+ 762 0096 2046     		mov	r0, r4
+ 763 0098 FFF7FEFF 		bl	lcd_putstring
+ 764 009c D3E7     		b	.L60
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 14
+
+
+ 765              	.L65:
+ 766 009e 00BF     		.align	2
+ 767              	.L64:
+ 768 00a0 00000000 		.word	pot1_value
+ 769 00a4 00000000 		.word	old_pot1_value
+ 770 00a8 00000000 		.word	pot0_value
+ 771 00ac 00000000 		.word	old_pot0_value
+ 772 00b0 00000000 		.word	.LC4
+ 774              		.section	.data.current_channel.0,"aw"
+ 777              	current_channel.0:
+ 778 0000 05       		.byte	5
+ 779              		.global	lastInterruptTime
+ 780              		.section	.bss.lastInterruptTime,"aw",%nobits
+ 781              		.align	2
+ 784              	lastInterruptTime:
+ 785 0000 00000000 		.space	16
+ 785      00000000 
+ 785      00000000 
+ 785      00000000 
+ 786              		.global	old_pot1_value
+ 787              		.section	.bss.old_pot1_value,"aw",%nobits
+ 788              		.align	1
+ 791              	old_pot1_value:
+ 792 0000 0000     		.space	2
+ 793              		.global	old_pot0_value
+ 794              		.section	.bss.old_pot0_value,"aw",%nobits
+ 795              		.align	1
+ 798              	old_pot0_value:
+ 799 0000 0000     		.space	2
+ 800              		.global	pot1_value
+ 801              		.section	.bss.pot1_value,"aw",%nobits
+ 802              		.align	1
+ 805              	pot1_value:
+ 806 0000 0000     		.space	2
+ 807              		.global	pot0_value
+ 808              		.section	.bss.pot0_value,"aw",%nobits
+ 809              		.align	1
+ 812              	pot0_value:
+ 813 0000 0000     		.space	2
+ 814              		.global	huart1
+ 815              		.section	.bss.huart1,"aw",%nobits
+ 816              		.align	2
+ 819              	huart1:
+ 820 0000 00000000 		.space	72
+ 820      00000000 
+ 820      00000000 
+ 820      00000000 
+ 820      00000000 
+ 821              		.global	hdma_tim2_ch1
+ 822              		.section	.bss.hdma_tim2_ch1,"aw",%nobits
+ 823              		.align	2
+ 826              	hdma_tim2_ch1:
+ 827 0000 00000000 		.space	96
+ 827      00000000 
+ 827      00000000 
+ 827      00000000 
+ 827      00000000 
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 15
+
+
+ 828              		.global	htim3
+ 829              		.section	.bss.htim3,"aw",%nobits
+ 830              		.align	2
+ 833              	htim3:
+ 834 0000 00000000 		.space	72
+ 834      00000000 
+ 834      00000000 
+ 834      00000000 
+ 834      00000000 
+ 835              		.global	htim2
+ 836              		.section	.bss.htim2,"aw",%nobits
+ 837              		.align	2
+ 840              	htim2:
+ 841 0000 00000000 		.space	72
+ 841      00000000 
+ 841      00000000 
+ 841      00000000 
+ 841      00000000 
+ 842              		.ident	"GCC: (xPack GNU Arm Embedded GCC x86_64) 14.2.1 20241119"
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:18     .text.MX_GPIO_Init:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:23     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:110    .text.MX_GPIO_Init:000000d4 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:116    .text.MX_DMA_Init:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:121    .text.MX_DMA_Init:00000000 MX_DMA_Init
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:147    .text.MX_DMA_Init:00000030 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:150    .text.EXTI0_IRQHandler:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:156    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:165    .text.Error_Handler:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:171    .text.Error_Handler:00000000 Error_Handler
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:186    .text.MX_TIM2_Init:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:191    .text.MX_TIM2_Init:00000000 MX_TIM2_Init
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:306    .text.MX_TIM2_Init:000000fc $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:577    .bss.htim2:00000000 htim2
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:517    .bss.TIM2_Ticks:00000000 TIM2_Ticks
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:563    .bss.hdma_tim2_ch1:00000000 hdma_tim2_ch1
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:313    .text.MX_TIM3_Init:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:318    .text.MX_TIM3_Init:00000000 MX_TIM3_Init
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:393    .text.MX_TIM3_Init:0000009c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:570    .bss.htim3:00000000 htim3
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:397    .text.SystemClock_Config:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:403    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:468    .text.SystemClock_Config:00000084 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:472    .rodata.main.str1.4:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:476    .text.main:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:482    .text.main:00000000 main
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:503    .text.main:0000002c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:510    .data.DestAddress:00000000 DestAddress
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:507    .data.DestAddress:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:514    .bss.TIM2_Ticks:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:524    .bss.Drum_LUT:00000000 Drum_LUT
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:521    .bss.Drum_LUT:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:531    .bss.Guitar_LUT:00000000 Guitar_LUT
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:528    .bss.Guitar_LUT:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:538    .bss.Piano_LUT:00000000 Piano_LUT
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:535    .bss.Piano_LUT:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:545    .bss.Triangle_LUT:00000000 Triangle_LUT
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:551    .bss.Saw_LUT:00000000 Saw_LUT
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:557    .bss.Sin_LUT:00000000 Sin_LUT
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:560    .bss.hdma_tim2_ch1:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:567    .bss.htim3:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s:574    .bss.htim2:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:18     .text.MX_GPIO_Init:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:23     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:153    .text.MX_GPIO_Init:0000014c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:159    .text.MX_DMA_Init:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:164    .text.MX_DMA_Init:00000000 MX_DMA_Init
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:190    .text.MX_DMA_Init:00000030 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:193    .text.EXTI0_IRQHandler:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:199    .text.EXTI0_IRQHandler:00000000 EXTI0_IRQHandler
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:208    .text.EXTI1_IRQHandler:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:214    .text.EXTI1_IRQHandler:00000000 EXTI1_IRQHandler
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:223    .text.EXTI2_IRQHandler:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:229    .text.EXTI2_IRQHandler:00000000 EXTI2_IRQHandler
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:238    .text.EXTI3_IRQHandler:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:244    .text.EXTI3_IRQHandler:00000000 EXTI3_IRQHandler
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:253    .rodata.HAL_GPIO_EXTI_Callback.str1.4:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:266    .text.HAL_GPIO_EXTI_Callback:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:272    .text.HAL_GPIO_EXTI_Callback:00000000 HAL_GPIO_EXTI_Callback
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:284    .text.HAL_GPIO_EXTI_Callback:00000014 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:292    .text.HAL_GPIO_EXTI_Callback:0000001c $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:389    .text.HAL_GPIO_EXTI_Callback:000000f8 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:784    .bss.lastInterruptTime:00000000 lastInterruptTime
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:819    .bss.huart1:00000000 huart1
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:397    .text.ADC1_Start:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:403    .text.ADC1_Start:00000000 ADC1_Start
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:417    .text.ADC1_Start:00000014 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:420    .text.ADC_IRQHandler:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:426    .text.ADC_IRQHandler:00000000 ADC_IRQHandler
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:460    .text.ADC_IRQHandler:0000003c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:777    .data.current_channel.0:00000000 current_channel.0
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:805    .bss.pot1_value:00000000 pot1_value
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:812    .bss.pot0_value:00000000 pot0_value
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:466    .text.ADC1_Init:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:472    .text.ADC1_Init:00000000 ADC1_Init
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:509    .text.ADC1_Init:00000050 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:514    .text.Error_Handler:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:520    .text.Error_Handler:00000000 Error_Handler
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:535    .text.UART1_Init:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:540    .text.UART1_Init:00000000 UART1_Init
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:601    .text.UART1_Init:0000007c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:607    .text.SystemClock_Config:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:613    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:678    .text.SystemClock_Config:00000084 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:682    .rodata.main.str1.4:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:686    .text.main:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:692    .text.main:00000000 main
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:768    .text.main:000000a0 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:791    .bss.old_pot1_value:00000000 old_pot1_value
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:798    .bss.old_pot0_value:00000000 old_pot0_value
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:781    .bss.lastInterruptTime:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:788    .bss.old_pot1_value:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:795    .bss.old_pot0_value:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:802    .bss.pot1_value:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:809    .bss.pot0_value:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:816    .bss.huart1:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:826    .bss.hdma_tim2_ch1:00000000 hdma_tim2_ch1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s 			page 17
+
+
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:823    .bss.hdma_tim2_ch1:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:833    .bss.htim3:00000000 htim3
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:830    .bss.htim3:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:840    .bss.htim2:00000000 htim2
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccNe2yeh.s:837    .bss.htim2:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init
@@ -636,22 +935,15 @@ HAL_GPIO_WritePin
 HAL_NVIC_SetPriority
 HAL_NVIC_EnableIRQ
 HAL_GPIO_EXTI_IRQHandler
-HAL_TIM_Base_Init
-HAL_TIM_ConfigClockSource
-HAL_TIM_OC_Init
-HAL_TIMEx_MasterConfigSynchronization
-HAL_TIM_OC_ConfigChannel
-HAL_DMA_Init
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cc2891Wj.s 			page 12
-
-
-HAL_TIM_PWM_Init
-HAL_TIM_PWM_ConfigChannel
-HAL_TIM_MspPostInit
+HAL_GetTick
+strlen
+HAL_UART_Transmit
+HAL_UART_Init
 memset
 HAL_RCC_OscConfig
 HAL_RCC_ClockConfig
 HAL_Init
 init_LCD
 lcd_command
+sprintf
 lcd_putstring

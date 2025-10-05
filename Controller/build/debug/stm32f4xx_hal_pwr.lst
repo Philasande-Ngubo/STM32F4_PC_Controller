@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
   24              		.thumb
   25              		.thumb_func
   27              	HAL_PWR_DeInit:
-  28              	.LFB134:
+  28              	.LFB239:
    1:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
    2:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   ******************************************************************************
    3:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @file    stm32f4xx_hal_pwr.c
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /** @defgroup PWR PWR
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 2
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 2
 
 
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief PWR HAL module driver
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Deinitializes the HAL PWR peripheral registers to their default reset values.
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 3
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 3
 
 
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @retval None
@@ -149,7 +149,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
   47              	.L2:
   48 0014 00380240 		.word	1073887232
   49              		.cfi_endproc
-  50              	.LFE134:
+  50              	.LFE239:
   52              		.section	.text.HAL_PWR_EnableBkUpAccess,"ax",%progbits
   53              		.align	1
   54              		.global	HAL_PWR_EnableBkUpAccess
@@ -157,7 +157,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
   56              		.thumb
   57              		.thumb_func
   59              	HAL_PWR_EnableBkUpAccess:
-  60              	.LFB135:
+  60              	.LFB240:
   95:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
   96:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
   97:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enables access to the backup domain (RTC registers, RTC 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
   63              		@ args = 0, pretend = 0, frame = 8
   64              		@ frame_needed = 0, uses_anonymous_args = 0
   65              		@ link register save eliminated.
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 4
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 4
 
 
   66 0000 82B0     		sub	sp, sp, #8
@@ -213,7 +213,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
   90 0014 00000E42 		.word	1108213760
   91 0018 00700040 		.word	1073770496
   92              		.cfi_endproc
-  93              	.LFE135:
+  93              	.LFE240:
   95              		.section	.text.HAL_PWR_DisableBkUpAccess,"ax",%progbits
   96              		.align	1
   97              		.global	HAL_PWR_DisableBkUpAccess
@@ -221,7 +221,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
   99              		.thumb
  100              		.thumb_func
  102              	HAL_PWR_DisableBkUpAccess:
- 103              	.LFB136:
+ 103              	.LFB241:
  115:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  116:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  117:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Disables access to the backup domain (RTC registers, RTC 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  128:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** void HAL_PWR_DisableBkUpAccess(void)
  129:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** {
  104              		.loc 1 129 1 is_stmt 1 view -0
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 5
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 5
 
 
  105              		.cfi_startproc
@@ -277,7 +277,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  133 0014 00000E42 		.word	1108213760
  134 0018 00700040 		.word	1073770496
  135              		.cfi_endproc
- 136              	.LFE136:
+ 136              	.LFE241:
  138              		.section	.text.HAL_PWR_ConfigPVD,"ax",%progbits
  139              		.align	1
  140              		.global	HAL_PWR_ConfigPVD
@@ -286,7 +286,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  143              		.thumb_func
  145              	HAL_PWR_ConfigPVD:
  146              	.LVL0:
- 147              	.LFB137:
+ 147              	.LFB242:
  135:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  136:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  137:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @}
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** @verbatim
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****  ===============================================================================
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 6
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 6
 
 
  146:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****                  ##### Peripheral Control functions #####
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       and the HSE RC oscillators are disabled. Internal SRAM and register contents 
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       are preserved.
  202:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       The voltage regulator can be configured either in normal or low-power mode.
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 7
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 7
 
 
  203:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       To minimize the consumption In Stop mode, FLASH can be powered off before 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  257:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****                 HAL_RTCEx_SetTimeStamp_IT() or HAL_RTCEx_SetTamper_IT() functions.
  258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****                   
  259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****         (++) To wake up from the Stop mode with an RTC Wake-up event, it is necessary to
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 8
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 8
 
 
  260:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****               configure the RTC to generate the RTC Wake-up event using the HAL_RTCEx_SetWakeUpTime
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  174 0026 9A60     		str	r2, [r3, #8]
  288:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   __HAL_PWR_PVD_EXTI_DISABLE_FALLING_EDGE(); 
  175              		.loc 1 288 3 view .LVU29
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 9
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 9
 
 
  176 0028 DA68     		ldr	r2, [r3, #12]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  213 0064 9360     		str	r3, [r2, #8]
  214              	.L15:
  306:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   }
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 10
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 10
 
 
  307:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   
@@ -567,7 +567,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  232 007c 00700040 		.word	1073770496
  233 0080 003C0140 		.word	1073822720
  234              		.cfi_endproc
- 235              	.LFE137:
+ 235              	.LFE242:
  237              		.section	.text.HAL_PWR_EnablePVD,"ax",%progbits
  238              		.align	1
  239              		.global	HAL_PWR_EnablePVD
@@ -575,7 +575,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  241              		.thumb
  242              		.thumb_func
  244              	HAL_PWR_EnablePVD:
- 245              	.LFB138:
+ 245              	.LFB243:
  313:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  314:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  315:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enables the Power Voltage Detector(PVD).
@@ -598,14 +598,14 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  256              		.loc 1 321 1 view .LVU50
  257 0006 7047     		bx	lr
  258              	.L21:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 11
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 11
 
 
  259              		.align	2
  260              	.L20:
  261 0008 00000E42 		.word	1108213760
  262              		.cfi_endproc
- 263              	.LFE138:
+ 263              	.LFE243:
  265              		.section	.text.HAL_PWR_DisablePVD,"ax",%progbits
  266              		.align	1
  267              		.global	HAL_PWR_DisablePVD
@@ -613,7 +613,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  269              		.thumb
  270              		.thumb_func
  272              	HAL_PWR_DisablePVD:
- 273              	.LFB139:
+ 273              	.LFB244:
  322:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  323:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  324:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Disables the Power Voltage Detector(PVD).
@@ -640,7 +640,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  288              	.L23:
  289 0008 00000E42 		.word	1108213760
  290              		.cfi_endproc
- 291              	.LFE139:
+ 291              	.LFE244:
  293              		.section	.text.HAL_PWR_EnableWakeUpPin,"ax",%progbits
  294              		.align	1
  295              		.global	HAL_PWR_EnableWakeUpPin
@@ -649,7 +649,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  298              		.thumb_func
  300              	HAL_PWR_EnableWakeUpPin:
  301              	.LVL1:
- 302              	.LFB140:
+ 302              	.LFB245:
  331:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  332:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  333:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enables the Wake-up PINx functionality.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  336:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *           @arg PWR_WAKEUP_PIN1
  337:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *           @arg PWR_WAKEUP_PIN2 available only on STM32F410xx/STM32F446xx/STM32F412xx/STM32F413x
  338:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *           @arg PWR_WAKEUP_PIN3 available only on STM32F410xx/STM32F412xx/STM32F413xx/STM32F423x
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 12
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 12
 
 
  339:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @retval None
@@ -689,7 +689,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  318              	.L26:
  319 000c 00700040 		.word	1073770496
  320              		.cfi_endproc
- 321              	.LFE140:
+ 321              	.LFE245:
  323              		.section	.text.HAL_PWR_DisableWakeUpPin,"ax",%progbits
  324              		.align	1
  325              		.global	HAL_PWR_DisableWakeUpPin
@@ -698,7 +698,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  328              		.thumb_func
  330              	HAL_PWR_DisableWakeUpPin:
  331              	.LVL2:
- 332              	.LFB141:
+ 332              	.LFB246:
  349:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  350:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  351:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Disables the Wake-up PINx functionality.
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  337              		@ link register save eliminated.
  361:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   /* Check the parameter */
  362:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   assert_param(IS_PWR_WAKEUP_PIN(WakeUpPinx));  
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 13
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 13
 
 
  338              		.loc 1 362 3 view .LVU60
@@ -738,7 +738,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  348              	.L29:
  349 000c 00700040 		.word	1073770496
  350              		.cfi_endproc
- 351              	.LFE141:
+ 351              	.LFE246:
  353              		.section	.text.HAL_PWR_EnterSLEEPMode,"ax",%progbits
  354              		.align	1
  355              		.global	HAL_PWR_EnterSLEEPMode
@@ -747,7 +747,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  358              		.thumb_func
  360              	HAL_PWR_EnterSLEEPMode:
  361              	.LVL3:
- 362              	.LFB142:
+ 362              	.LFB247:
  367:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   
  368:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  369:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enters Sleep mode.
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  364              		.cfi_startproc
  365              		@ args = 0, pretend = 0, frame = 0
  366              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 14
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 14
 
 
  367              		@ link register save eliminated.
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  418:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     /* Request Wait For Event */
  419:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     __WFE();
  396              		.loc 1 419 5 view .LVU74
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 15
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 15
 
 
  397              		.syntax unified
@@ -866,7 +866,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  416              	.L36:
  417 0020 00ED00E0 		.word	-536810240
  418              		.cfi_endproc
- 419              	.LFE142:
+ 419              	.LFE247:
  421              		.section	.text.HAL_PWR_EnterSTOPMode,"ax",%progbits
  422              		.align	1
  423              		.global	HAL_PWR_EnterSTOPMode
@@ -875,7 +875,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  426              		.thumb_func
  428              	HAL_PWR_EnterSTOPMode:
  429              	.LVL4:
- 430              	.LFB143:
+ 430              	.LFB248:
  422:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  423:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  424:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enters Stop mode. 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  441:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *            @arg PWR_STOPENTRY_WFE_NO_EVT_CLEAR : Enter STOP mode with WFE instruction and
  442:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *                                                  no clear of pending event before.
  443:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @retval None
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 16
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 16
 
 
  444:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  460 001e 40BF     		sev
  461              	@ 0 "" 2
  469:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       __WFE();
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 17
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 17
 
 
  462              		.loc 1 469 7 view .LVU87
@@ -1006,7 +1006,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  496 0034 00700040 		.word	1073770496
  497 0038 00ED00E0 		.word	-536810240
  498              		.cfi_endproc
- 499              	.LFE143:
+ 499              	.LFE248:
  501              		.section	.text.HAL_PWR_EnterSTANDBYMode,"ax",%progbits
  502              		.align	1
  503              		.global	HAL_PWR_EnterSTANDBYMode
@@ -1014,11 +1014,11 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  505              		.thumb
  506              		.thumb_func
  508              	HAL_PWR_EnterSTANDBYMode:
- 509              	.LFB144:
+ 509              	.LFB249:
  477:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  478:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  479:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enters Standby mode.
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 18
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 18
 
 
  480:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @note In Standby mode, all I/O pins are high impedance except for:
@@ -1074,18 +1074,18 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  537 0018 00700040 		.word	1073770496
  538 001c 00ED00E0 		.word	-536810240
  539              		.cfi_endproc
- 540              	.LFE144:
+ 540              	.LFE249:
  542              		.section	.text.HAL_PWR_PVDCallback,"ax",%progbits
  543              		.align	1
  544              		.weak	HAL_PWR_PVDCallback
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 19
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 19
 
 
  545              		.syntax unified
  546              		.thumb
  547              		.thumb_func
  549              	HAL_PWR_PVDCallback:
- 550              	.LFB146:
+ 550              	.LFB251:
  503:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  504:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  505:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief This function handles the PWR PVD interrupt request.
@@ -1123,7 +1123,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  556              		.loc 1 531 1 view .LVU98
  557 0000 7047     		bx	lr
  558              		.cfi_endproc
- 559              	.LFE146:
+ 559              	.LFE251:
  561              		.section	.text.HAL_PWR_PVD_IRQHandler,"ax",%progbits
  562              		.align	1
  563              		.global	HAL_PWR_PVD_IRQHandler
@@ -1131,14 +1131,14 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  565              		.thumb
  566              		.thumb_func
  568              	HAL_PWR_PVD_IRQHandler:
- 569              	.LFB145:
+ 569              	.LFB250:
  510:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   /* Check PWR Exti flag */
  570              		.loc 1 510 1 view -0
  571              		.cfi_startproc
  572              		@ args = 0, pretend = 0, frame = 0
  573              		@ frame_needed = 0, uses_anonymous_args = 0
  574 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 20
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 20
 
 
  575              		.cfi_def_cfa_offset 8
@@ -1176,7 +1176,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  600              	.L53:
  601 001c 003C0140 		.word	1073822720
  602              		.cfi_endproc
- 603              	.LFE145:
+ 603              	.LFE250:
  605              		.section	.text.HAL_PWR_EnableSleepOnExit,"ax",%progbits
  606              		.align	1
  607              		.global	HAL_PWR_EnableSleepOnExit
@@ -1184,7 +1184,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  609              		.thumb
  610              		.thumb_func
  612              	HAL_PWR_EnableSleepOnExit:
- 613              	.LFB147:
+ 613              	.LFB252:
  532:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  533:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  534:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Indicates Sleep-On-Exit when returning from Handler mode to Thread mode. 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  542:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** {
  614              		.loc 1 542 1 is_stmt 1 view -0
  615              		.cfi_startproc
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 21
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 21
 
 
  616              		@ args = 0, pretend = 0, frame = 0
@@ -1219,7 +1219,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  628              	.L56:
  629 000c 00ED00E0 		.word	-536810240
  630              		.cfi_endproc
- 631              	.LFE147:
+ 631              	.LFE252:
  633              		.section	.text.HAL_PWR_DisableSleepOnExit,"ax",%progbits
  634              		.align	1
  635              		.global	HAL_PWR_DisableSleepOnExit
@@ -1227,7 +1227,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  637              		.thumb
  638              		.thumb_func
  640              	HAL_PWR_DisableSleepOnExit:
- 641              	.LFB148:
+ 641              	.LFB253:
  546:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  547:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  548:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Disables Sleep-On-Exit feature when returning from Handler mode to Thread mode. 
@@ -1257,8 +1257,8 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  656              	.L59:
  657 000c 00ED00E0 		.word	-536810240
  658              		.cfi_endproc
- 659              	.LFE148:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 22
+ 659              	.LFE253:
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 22
 
 
  661              		.section	.text.HAL_PWR_EnableSEVOnPend,"ax",%progbits
@@ -1268,7 +1268,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  665              		.thumb
  666              		.thumb_func
  668              	HAL_PWR_EnableSEVOnPend:
- 669              	.LFB149:
+ 669              	.LFB254:
  558:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  559:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  560:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Enables CORTEX M4 SEVONPEND bit. 
@@ -1298,7 +1298,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  684              	.L62:
  685 000c 00ED00E0 		.word	-536810240
  686              		.cfi_endproc
- 687              	.LFE149:
+ 687              	.LFE254:
  689              		.section	.text.HAL_PWR_DisableSEVOnPend,"ax",%progbits
  690              		.align	1
  691              		.global	HAL_PWR_DisableSEVOnPend
@@ -1306,7 +1306,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  693              		.thumb
  694              		.thumb_func
  696              	HAL_PWR_DisableSEVOnPend:
- 697              	.LFB150:
+ 697              	.LFB255:
  570:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  571:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
  572:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Disables CORTEX M4 SEVONPEND bit. 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  578:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** {
  698              		.loc 1 578 1 is_stmt 1 view -0
  699              		.cfi_startproc
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 23
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 23
 
 
  700              		@ args = 0, pretend = 0, frame = 0
@@ -1339,7 +1339,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  712              	.L65:
  713 000c 00ED00E0 		.word	-536810240
  714              		.cfi_endproc
- 715              	.LFE150:
+ 715              	.LFE255:
  717              		.text
  718              	.Letext0:
  719              		.file 2 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
@@ -1348,60 +1348,60 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 1
  722              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
  723              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
  724              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h"
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s 			page 24
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_pwr.c
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:21     .text.HAL_PWR_DeInit:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:27     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:48     .text.HAL_PWR_DeInit:00000014 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:53     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:59     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:90     .text.HAL_PWR_EnableBkUpAccess:00000014 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:96     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:102    .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:133    .text.HAL_PWR_DisableBkUpAccess:00000014 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:139    .text.HAL_PWR_ConfigPVD:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:145    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:232    .text.HAL_PWR_ConfigPVD:0000007c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:238    .text.HAL_PWR_EnablePVD:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:244    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:261    .text.HAL_PWR_EnablePVD:00000008 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:266    .text.HAL_PWR_DisablePVD:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:272    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:289    .text.HAL_PWR_DisablePVD:00000008 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:294    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:300    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:319    .text.HAL_PWR_EnableWakeUpPin:0000000c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:324    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:330    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:349    .text.HAL_PWR_DisableWakeUpPin:0000000c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:354    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:360    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:417    .text.HAL_PWR_EnterSLEEPMode:00000020 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:422    .text.HAL_PWR_EnterSTOPMode:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:428    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:496    .text.HAL_PWR_EnterSTOPMode:00000034 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:502    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:508    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:537    .text.HAL_PWR_EnterSTANDBYMode:00000018 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:543    .text.HAL_PWR_PVDCallback:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:549    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:562    .text.HAL_PWR_PVD_IRQHandler:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:568    .text.HAL_PWR_PVD_IRQHandler:00000000 HAL_PWR_PVD_IRQHandler
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:601    .text.HAL_PWR_PVD_IRQHandler:0000001c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:606    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:612    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:629    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:634    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:640    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:657    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:662    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:668    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:685    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:690    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:696    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccfQb5Rf.s:713    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:21     .text.HAL_PWR_DeInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:27     .text.HAL_PWR_DeInit:00000000 HAL_PWR_DeInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:48     .text.HAL_PWR_DeInit:00000014 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:53     .text.HAL_PWR_EnableBkUpAccess:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:59     .text.HAL_PWR_EnableBkUpAccess:00000000 HAL_PWR_EnableBkUpAccess
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:90     .text.HAL_PWR_EnableBkUpAccess:00000014 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:96     .text.HAL_PWR_DisableBkUpAccess:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:102    .text.HAL_PWR_DisableBkUpAccess:00000000 HAL_PWR_DisableBkUpAccess
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:133    .text.HAL_PWR_DisableBkUpAccess:00000014 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:139    .text.HAL_PWR_ConfigPVD:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:145    .text.HAL_PWR_ConfigPVD:00000000 HAL_PWR_ConfigPVD
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:232    .text.HAL_PWR_ConfigPVD:0000007c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:238    .text.HAL_PWR_EnablePVD:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:244    .text.HAL_PWR_EnablePVD:00000000 HAL_PWR_EnablePVD
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:261    .text.HAL_PWR_EnablePVD:00000008 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:266    .text.HAL_PWR_DisablePVD:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:272    .text.HAL_PWR_DisablePVD:00000000 HAL_PWR_DisablePVD
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:289    .text.HAL_PWR_DisablePVD:00000008 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:294    .text.HAL_PWR_EnableWakeUpPin:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:300    .text.HAL_PWR_EnableWakeUpPin:00000000 HAL_PWR_EnableWakeUpPin
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:319    .text.HAL_PWR_EnableWakeUpPin:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:324    .text.HAL_PWR_DisableWakeUpPin:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:330    .text.HAL_PWR_DisableWakeUpPin:00000000 HAL_PWR_DisableWakeUpPin
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:349    .text.HAL_PWR_DisableWakeUpPin:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:354    .text.HAL_PWR_EnterSLEEPMode:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:360    .text.HAL_PWR_EnterSLEEPMode:00000000 HAL_PWR_EnterSLEEPMode
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:417    .text.HAL_PWR_EnterSLEEPMode:00000020 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:422    .text.HAL_PWR_EnterSTOPMode:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:428    .text.HAL_PWR_EnterSTOPMode:00000000 HAL_PWR_EnterSTOPMode
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:496    .text.HAL_PWR_EnterSTOPMode:00000034 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:502    .text.HAL_PWR_EnterSTANDBYMode:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:508    .text.HAL_PWR_EnterSTANDBYMode:00000000 HAL_PWR_EnterSTANDBYMode
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:537    .text.HAL_PWR_EnterSTANDBYMode:00000018 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:543    .text.HAL_PWR_PVDCallback:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:549    .text.HAL_PWR_PVDCallback:00000000 HAL_PWR_PVDCallback
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:562    .text.HAL_PWR_PVD_IRQHandler:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:568    .text.HAL_PWR_PVD_IRQHandler:00000000 HAL_PWR_PVD_IRQHandler
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:601    .text.HAL_PWR_PVD_IRQHandler:0000001c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:606    .text.HAL_PWR_EnableSleepOnExit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:612    .text.HAL_PWR_EnableSleepOnExit:00000000 HAL_PWR_EnableSleepOnExit
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:629    .text.HAL_PWR_EnableSleepOnExit:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:634    .text.HAL_PWR_DisableSleepOnExit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:640    .text.HAL_PWR_DisableSleepOnExit:00000000 HAL_PWR_DisableSleepOnExit
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:657    .text.HAL_PWR_DisableSleepOnExit:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:662    .text.HAL_PWR_EnableSEVOnPend:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:668    .text.HAL_PWR_EnableSEVOnPend:00000000 HAL_PWR_EnableSEVOnPend
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:685    .text.HAL_PWR_EnableSEVOnPend:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:690    .text.HAL_PWR_DisableSEVOnPend:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:696    .text.HAL_PWR_DisableSEVOnPend:00000000 HAL_PWR_DisableSEVOnPend
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccSjeGWM.s:713    .text.HAL_PWR_DisableSEVOnPend:0000000c $d
 
 NO UNDEFINED SYMBOLS

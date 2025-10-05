@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
   24              		.thumb
   25              		.thumb_func
   27              	HAL_MspInit:
-  28              	.LFB134:
+  28              	.LFB239:
    1:Core/Src/stm32f4xx_hal_msp.c **** /* USER CODE BEGIN Header */
    2:Core/Src/stm32f4xx_hal_msp.c **** /**
    3:Core/Src/stm32f4xx_hal_msp.c ****   ******************************************************************************
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
   28:Core/Src/stm32f4xx_hal_msp.c **** /* Private typedef -----------------------------------------------------------*/
   29:Core/Src/stm32f4xx_hal_msp.c **** /* USER CODE BEGIN TD */
   30:Core/Src/stm32f4xx_hal_msp.c **** 
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 2
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 2
 
 
   31:Core/Src/stm32f4xx_hal_msp.c **** /* USER CODE END TD */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
   40 0004 0091     		str	r1, [sp]
   41              		.loc 1 73 3 view .LVU3
   42 0006 0B4B     		ldr	r3, .L3
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 3
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 3
 
 
   43 0008 5A6C     		ldr	r2, [r3, #68]
@@ -166,7 +166,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
   77              	.L3:
   78 0034 00380240 		.word	1073887232
   79              		.cfi_endproc
-  80              	.LFE134:
+  80              	.LFE239:
   82              		.section	.text.HAL_TIM_Base_MspInit,"ax",%progbits
   83              		.align	1
   84              		.global	HAL_TIM_Base_MspInit
@@ -175,10 +175,10 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
   87              		.thumb_func
   89              	HAL_TIM_Base_MspInit:
   90              	.LVL0:
-  91              	.LFB135:
+  91              	.LFB240:
   82:Core/Src/stm32f4xx_hal_msp.c **** 
   83:Core/Src/stm32f4xx_hal_msp.c **** /**
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 4
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 4
 
 
   84:Core/Src/stm32f4xx_hal_msp.c ****   * @brief TIM_Base MSP Initialization
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  121:Core/Src/stm32f4xx_hal_msp.c ****   }
  122:Core/Src/stm32f4xx_hal_msp.c ****   else if(htim_base->Instance==TIM3)
  109              		.loc 1 122 8 is_stmt 1 view .LVU19
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 5
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 5
 
 
  110              		.loc 1 122 10 is_stmt 0 view .LVU20
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  145              		.loc 1 101 5 view .LVU29
  101:Core/Src/stm32f4xx_hal_msp.c ****     hdma_tim2_ch1.Init.Channel = DMA_CHANNEL_3;
  146              		.loc 1 101 28 is_stmt 0 view .LVU30
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 6
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 6
 
 
  147 0030 1748     		ldr	r0, .L13+8
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  182 0056 4362     		str	r3, [r0, #36]
  111:Core/Src/stm32f4xx_hal_msp.c ****     {
  183              		.loc 1 111 5 is_stmt 1 view .LVU50
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 7
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 7
 
 
  111:Core/Src/stm32f4xx_hal_msp.c ****     {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  225              	.L14:
  226 0086 00BF     		.align	2
  227              	.L13:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 8
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 8
 
 
  228 0088 00040040 		.word	1073742848
@@ -426,7 +426,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  230 0090 00000000 		.word	hdma_tim2_ch1
  231 0094 88600240 		.word	1073897608
  232              		.cfi_endproc
- 233              	.LFE135:
+ 233              	.LFE240:
  235              		.section	.text.HAL_TIM_MspPostInit,"ax",%progbits
  236              		.align	1
  237              		.global	HAL_TIM_MspPostInit
@@ -435,7 +435,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  240              		.thumb_func
  242              	HAL_TIM_MspPostInit:
  243              	.LVL7:
- 244              	.LFB136:
+ 244              	.LFB241:
  135:Core/Src/stm32f4xx_hal_msp.c **** 
  136:Core/Src/stm32f4xx_hal_msp.c **** void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
  137:Core/Src/stm32f4xx_hal_msp.c **** {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  147:Core/Src/stm32f4xx_hal_msp.c ****     PB0     ------> TIM3_CH3
  148:Core/Src/stm32f4xx_hal_msp.c ****     */
  149:Core/Src/stm32f4xx_hal_msp.c ****     GPIO_InitStruct.Pin = GPIO_PIN_0;
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 9
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 9
 
 
  150:Core/Src/stm32f4xx_hal_msp.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  304              		.loc 1 150 26 is_stmt 0 view .LVU82
  305 003a 0223     		movs	r3, #2
  306 003c 0293     		str	r3, [sp, #8]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 10
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 10
 
 
  151:Core/Src/stm32f4xx_hal_msp.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -568,7 +568,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  325 0050 00380240 		.word	1073887232
  326 0054 00040240 		.word	1073873920
  327              		.cfi_endproc
- 328              	.LFE136:
+ 328              	.LFE241:
  330              		.section	.text.HAL_TIM_Base_MspDeInit,"ax",%progbits
  331              		.align	1
  332              		.global	HAL_TIM_Base_MspDeInit
@@ -577,7 +577,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  335              		.thumb_func
  337              	HAL_TIM_Base_MspDeInit:
  338              	.LVL12:
- 339              	.LFB137:
+ 339              	.LFB242:
  162:Core/Src/stm32f4xx_hal_msp.c **** /**
  163:Core/Src/stm32f4xx_hal_msp.c ****   * @brief TIM_Base MSP De-Initialization
  164:Core/Src/stm32f4xx_hal_msp.c ****   * This function freeze the hardware resources used in this example
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  170:Core/Src/stm32f4xx_hal_msp.c ****   if(htim_base->Instance==TIM2)
  349              		.loc 1 170 3 is_stmt 1 view .LVU92
  350              		.loc 1 170 15 is_stmt 0 view .LVU93
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 11
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 11
 
 
  351 0002 0368     		ldr	r3, [r0]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  376              	.LVL16:
  377 0022 F5E7     		b	.L21
  378              	.LVL17:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 12
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 12
 
 
  379              	.L26:
@@ -676,7 +676,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  390 0034 00040040 		.word	1073742848
  391 0038 00380240 		.word	1073887232
  392              		.cfi_endproc
- 393              	.LFE137:
+ 393              	.LFE242:
  395              		.text
  396              	.Letext0:
  397              		.file 2 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
@@ -687,23 +687,23 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 1
  402              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  403              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
  404              		.file 9 "Core/Inc/main.h"
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s 			page 13
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_msp.c
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:21     .text.HAL_MspInit:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:27     .text.HAL_MspInit:00000000 HAL_MspInit
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:78     .text.HAL_MspInit:00000034 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:83     .text.HAL_TIM_Base_MspInit:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:89     .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:228    .text.HAL_TIM_Base_MspInit:00000088 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:236    .text.HAL_TIM_MspPostInit:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:242    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:324    .text.HAL_TIM_MspPostInit:0000004c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:331    .text.HAL_TIM_Base_MspDeInit:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:337    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccXwVIf0.s:390    .text.HAL_TIM_Base_MspDeInit:00000034 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:21     .text.HAL_MspInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:27     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:78     .text.HAL_MspInit:00000034 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:83     .text.HAL_TIM_Base_MspInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:89     .text.HAL_TIM_Base_MspInit:00000000 HAL_TIM_Base_MspInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:228    .text.HAL_TIM_Base_MspInit:00000088 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:236    .text.HAL_TIM_MspPostInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:242    .text.HAL_TIM_MspPostInit:00000000 HAL_TIM_MspPostInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:324    .text.HAL_TIM_MspPostInit:0000004c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:331    .text.HAL_TIM_Base_MspDeInit:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:337    .text.HAL_TIM_Base_MspDeInit:00000000 HAL_TIM_Base_MspDeInit
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccGJH2zC.s:390    .text.HAL_TIM_Base_MspDeInit:00000034 $d
 
 UNDEFINED SYMBOLS
 HAL_DMA_Init

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -28,7 +28,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
   25              		.thumb_func
   27              	delay:
   28              	.LVL0:
-  29              	.LFB139:
+  29              	.LFB244:
    1:Core/Src/lcd_stm32f4.c **** //********************************************************************
    2:Core/Src/lcd_stm32f4.c **** //*                      EEE2046F STM32F0                            *
    3:Core/Src/lcd_stm32f4.c **** //*                         LCD MODULE                               *
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
   27:Core/Src/lcd_stm32f4.c **** //* 1............VSS.......................GND                       *
   28:Core/Src/lcd_stm32f4.c **** //* 2............VDD.......................+5V                       *
   29:Core/Src/lcd_stm32f4.c **** //* 3............CONTRAST..................POT 2                     *
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 2
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 2
 
 
   30:Core/Src/lcd_stm32f4.c **** //* 4............RS  - Register Select.....PC14 (LCD_RS)             *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
   84:Core/Src/lcd_stm32f4.c ****     	GPIOA->BSRR |= LCD_D7_RESET;
   85:Core/Src/lcd_stm32f4.c ****     }
   86:Core/Src/lcd_stm32f4.c **** // DATALINE 6
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 3
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 3
 
 
   87:Core/Src/lcd_stm32f4.c ****     if ((command & 0x40) != 0)		// Select bit 6 of command, if HIGH set Data line 6 (D6) 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  141:Core/Src/lcd_stm32f4.c ****     	GPIOB->BSRR |= LCD_D5_RESET;
  142:Core/Src/lcd_stm32f4.c ****     }
  143:Core/Src/lcd_stm32f4.c ****     // DATALINE 4
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 4
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 4
 
 
  144:Core/Src/lcd_stm32f4.c ****     if ((command & 0x01) != 0)		// Select bit 0 of command, if HIGH set Data line 4 (D4)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  198:Core/Src/lcd_stm32f4.c **** 
  199:Core/Src/lcd_stm32f4.c ****  void lcd_putchar(unsigned char character)
  200:Core/Src/lcd_stm32f4.c **** {
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 5
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 5
 
 
  201:Core/Src/lcd_stm32f4.c **** 	GPIOC->BSRR |= LCD_RS_SET;	// Register Select (RS) line HIGH (data sent will now be read as text);
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  255:Core/Src/lcd_stm32f4.c **** 	{
  256:Core/Src/lcd_stm32f4.c ****             GPIOA->BSRR |= LCD_D6_SET;
  257:Core/Src/lcd_stm32f4.c ****         }
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 6
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 6
 
 
  258:Core/Src/lcd_stm32f4.c ****         else				// else RESET D6
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  312:Core/Src/lcd_stm32f4.c **** 
  313:Core/Src/lcd_stm32f4.c ****     GPIOC->BSRR |= LCD_EN_SET;		// pull E (PC15) HIGH
  314:Core/Src/lcd_stm32f4.c **** 
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 7
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 7
 
 
  315:Core/Src/lcd_stm32f4.c ****     delay(20);				// Delay
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
   59              		.loc 1 335 50 discriminator 3 view .LVU10
   60              		.thumb
   61              		.syntax unified
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 8
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 8
 
 
   62 0010 019B     		ldr	r3, [sp, #4]
@@ -438,7 +438,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
   73              		@ sp needed
   74 001e 7047     		bx	lr
   75              		.cfi_endproc
-  76              	.LFE139:
+  76              	.LFE244:
   78              		.section	.text.pulse_strobe,"ax",%progbits
   79              		.align	1
   80              		.global	pulse_strobe
@@ -446,7 +446,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
   82              		.thumb
   83              		.thumb_func
   85              	pulse_strobe:
-  86              	.LFB138:
+  86              	.LFB243:
  310:Core/Src/lcd_stm32f4.c ****     delay(20);				// Delay
   87              		.loc 1 310 1 is_stmt 1 view -0
   88              		.cfi_startproc
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  109              	.LVL3:
  317:Core/Src/lcd_stm32f4.c **** 
  110              		.loc 1 317 5 view .LVU19
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 9
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 9
 
 
  317:Core/Src/lcd_stm32f4.c **** 
@@ -510,7 +510,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  130              	.L7:
  131 0030 00080240 		.word	1073874944
  132              		.cfi_endproc
- 133              	.LFE138:
+ 133              	.LFE243:
  135              		.section	.text.lcd_putchar,"ax",%progbits
  136              		.align	1
  137              		.global	lcd_putchar
@@ -519,7 +519,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  140              		.thumb_func
  142              	lcd_putchar:
  143              	.LVL5:
- 144              	.LFB136:
+ 144              	.LFB241:
  200:Core/Src/lcd_stm32f4.c **** 	GPIOC->BSRR |= LCD_RS_SET;	// Register Select (RS) line HIGH (data sent will now be read as text);
  145              		.loc 1 200 1 is_stmt 1 view -0
  146              		.cfi_startproc
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  156              		.loc 1 201 7 is_stmt 0 view .LVU30
  157 0004 3D4A     		ldr	r2, .L28
  158 0006 9369     		ldr	r3, [r2, #24]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 10
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 10
 
 
  201:Core/Src/lcd_stm32f4.c **** // Put upper nibble (upper 4-bits) on data lines, command mode
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  197              	.L15:
  233:Core/Src/lcd_stm32f4.c ****         {
  198              		.loc 1 233 9 is_stmt 1 view .LVU47
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 11
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 11
 
 
  233:Core/Src/lcd_stm32f4.c ****         {
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  237              		.loc 1 264 9 is_stmt 1 view .LVU63
  264:Core/Src/lcd_stm32f4.c ****         {
  238              		.loc 1 264 12 is_stmt 0 view .LVU64
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 12
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 12
 
 
  239 0072 14F0020F 		tst	r4, #2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  278              		.loc 1 220 18 is_stmt 0 view .LVU79
  279 00a6 164A     		ldr	r2, .L28+4
  280 00a8 9369     		ldr	r3, [r2, #24]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 13
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 13
 
 
  220:Core/Src/lcd_stm32f4.c ****         }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  322              	.L22:
  270:Core/Src/lcd_stm32f4.c ****         }
  323              		.loc 1 270 10 is_stmt 1 view .LVU93
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 14
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 14
 
 
  270:Core/Src/lcd_stm32f4.c ****         }
@@ -809,7 +809,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  344 0100 00000240 		.word	1073872896
  345 0104 00040240 		.word	1073873920
  346              		.cfi_endproc
- 347              	.LFE136:
+ 347              	.LFE241:
  349              		.section	.text.lcd_putstring,"ax",%progbits
  350              		.align	1
  351              		.global	lcd_putstring
@@ -818,7 +818,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  354              		.thumb_func
  356              	lcd_putstring:
  357              	.LVL10:
- 358              	.LFB137:
+ 358              	.LFB242:
  292:Core/Src/lcd_stm32f4.c ****     unsigned char count = 0;
  359              		.loc 1 292 1 is_stmt 1 view -0
  360              		.cfi_startproc
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  372              	.LVL11:
  295:Core/Src/lcd_stm32f4.c ****     {
  373              		.loc 1 295 5 view .LVU102
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 15
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 15
 
 
  293:Core/Src/lcd_stm32f4.c **** 
@@ -879,7 +879,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  300:Core/Src/lcd_stm32f4.c **** 
  399              		.loc 1 300 1 view .LVU113
  400              		.cfi_endproc
- 401              	.LFE137:
+ 401              	.LFE242:
  403              		.section	.text.lcd_command,"ax",%progbits
  404              		.align	1
  405              		.global	lcd_command
@@ -888,7 +888,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  408              		.thumb_func
  410              	lcd_command:
  411              	.LVL16:
- 412              	.LFB134:
+ 412              	.LFB239:
   73:Core/Src/lcd_stm32f4.c ****     GPIOC->BSRR |= LCD_RS_RESET;	// Register Select (RS)line low (data sent will now be read as com
  413              		.loc 1 73 1 is_stmt 1 view -0
  414              		.cfi_startproc
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  417              		.loc 1 73 1 is_stmt 0 view .LVU115
  418 0000 10B5     		push	{r4, lr}
  419              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 16
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 16
 
 
  420              		.cfi_offset 4, -8
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  458              		.loc 1 98 6 is_stmt 1 view .LVU131
   98:Core/Src/lcd_stm32f4.c ****     }
  459              		.loc 1 98 11 is_stmt 0 view .LVU132
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 17
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 17
 
 
  460 0034 354A     		ldr	r2, .L53+8
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  498              		.loc 1 128 14 is_stmt 0 view .LVU148
  499 0068 274A     		ldr	r2, .L53+4
  500 006a 9369     		ldr	r3, [r2, #24]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 18
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 18
 
 
  128:Core/Src/lcd_stm32f4.c ****     }
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  540              		.loc 1 80 6 is_stmt 1 view .LVU163
   80:Core/Src/lcd_stm32f4.c ****     }
  541              		.loc 1 80 11 is_stmt 0 view .LVU164
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 19
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 19
 
 
  542 00a0 A2F50062 		sub	r2, r2, #2048
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  583 00da 9361     		str	r3, [r2, #24]
  584 00dc C1E7     		b	.L44
  585              	.L45:
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 20
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 20
 
 
  132:Core/Src/lcd_stm32f4.c ****     }
@@ -1183,7 +1183,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  616 0108 00000240 		.word	1073872896
  617 010c 00040240 		.word	1073873920
  618              		.cfi_endproc
- 619              	.LFE134:
+ 619              	.LFE239:
  621              		.section	.text.init_LCD,"ax",%progbits
  622              		.align	1
  623              		.global	init_LCD
@@ -1191,14 +1191,14 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  625              		.thumb
  626              		.thumb_func
  628              	init_LCD:
- 629              	.LFB135:
+ 629              	.LFB240:
  169:Core/Src/lcd_stm32f4.c **** 	RCC->AHB1ENR |= RCC_AHB1ENR_GPIOAEN;
  630              		.loc 1 169 1 is_stmt 1 view -0
  631              		.cfi_startproc
  632              		@ args = 0, pretend = 0, frame = 0
  633              		@ frame_needed = 0, uses_anonymous_args = 0
  634 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 21
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 21
 
 
  635              		.cfi_def_cfa_offset 8
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  672              		.loc 1 176 10 is_stmt 0 view .LVU204
  673 0032 02F58062 		add	r2, r2, #1024
  674 0036 1368     		ldr	r3, [r2]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 22
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 22
 
 
  176:Core/Src/lcd_stm32f4.c **** 
@@ -1304,7 +1304,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  707 0068 00380240 		.word	1073887232
  708 006c 00000240 		.word	1073872896
  709              		.cfi_endproc
- 710              	.LFE135:
+ 710              	.LFE240:
  712              		.section	.rodata.lcd_clear_line.str1.4,"aMS",%progbits,1
  713              		.align	2
  714              	.LC0:
@@ -1318,12 +1318,12 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  718              		.global	lcd_clear_line
  719              		.syntax unified
  720              		.thumb
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 23
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 23
 
 
  721              		.thumb_func
  723              	lcd_clear_line:
- 724              	.LFB140:
+ 724              	.LFB245:
  341:Core/Src/lcd_stm32f4.c **** 
  342:Core/Src/lcd_stm32f4.c **** void lcd_clear_line(void) {
  725              		.loc 1 342 27 is_stmt 1 view -0
@@ -1347,7 +1347,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  741              	.L61:
  742 000c 00000000 		.word	.LC0
  743              		.cfi_endproc
- 744              	.LFE140:
+ 744              	.LFE245:
  746              		.section	.text.lcd_update_line,"ax",%progbits
  747              		.align	1
  748              		.global	lcd_update_line
@@ -1356,7 +1356,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  751              		.thumb_func
  753              	lcd_update_line:
  754              	.LVL29:
- 755              	.LFB141:
+ 755              	.LFB246:
  345:Core/Src/lcd_stm32f4.c **** 
  346:Core/Src/lcd_stm32f4.c **** void lcd_update_line(char* new_string) {
  756              		.loc 1 346 40 is_stmt 1 view -0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  771              	.LVL31:
  348:Core/Src/lcd_stm32f4.c ****     lcd_clear_line();  // Clear the line
  772              		.loc 1 348 5 is_stmt 1 view .LVU220
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 24
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 24
 
 
  773 000a FFF7FEFF 		bl	lcd_clear_line
@@ -1398,38 +1398,38 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 1
  784 001a 10BD     		pop	{r4, pc}
  785              		.loc 1 351 1 view .LVU224
  786              		.cfi_endproc
- 787              	.LFE141:
+ 787              	.LFE246:
  789              		.text
  790              	.Letext0:
  791              		.file 2 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
  792              		.file 3 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
  793              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s 			page 25
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s 			page 25
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 lcd_stm32f4.c
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:21     .text.delay:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:27     .text.delay:00000000 delay
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:79     .text.pulse_strobe:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:85     .text.pulse_strobe:00000000 pulse_strobe
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:131    .text.pulse_strobe:00000030 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:136    .text.lcd_putchar:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:142    .text.lcd_putchar:00000000 lcd_putchar
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:343    .text.lcd_putchar:000000fc $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:350    .text.lcd_putstring:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:356    .text.lcd_putstring:00000000 lcd_putstring
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:404    .text.lcd_command:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:410    .text.lcd_command:00000000 lcd_command
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:615    .text.lcd_command:00000104 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:622    .text.init_LCD:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:628    .text.init_LCD:00000000 init_LCD
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:707    .text.init_LCD:00000068 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:713    .rodata.lcd_clear_line.str1.4:00000000 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:717    .text.lcd_clear_line:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:723    .text.lcd_clear_line:00000000 lcd_clear_line
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:742    .text.lcd_clear_line:0000000c $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:747    .text.lcd_update_line:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccAtHi8X.s:753    .text.lcd_update_line:00000000 lcd_update_line
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:21     .text.delay:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:27     .text.delay:00000000 delay
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:79     .text.pulse_strobe:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:85     .text.pulse_strobe:00000000 pulse_strobe
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:131    .text.pulse_strobe:00000030 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:136    .text.lcd_putchar:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:142    .text.lcd_putchar:00000000 lcd_putchar
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:343    .text.lcd_putchar:000000fc $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:350    .text.lcd_putstring:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:356    .text.lcd_putstring:00000000 lcd_putstring
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:404    .text.lcd_command:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:410    .text.lcd_command:00000000 lcd_command
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:615    .text.lcd_command:00000104 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:622    .text.init_LCD:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:628    .text.init_LCD:00000000 init_LCD
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:707    .text.init_LCD:00000068 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:713    .rodata.lcd_clear_line.str1.4:00000000 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:717    .text.lcd_clear_line:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:723    .text.lcd_clear_line:00000000 lcd_clear_line
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:742    .text.lcd_clear_line:0000000c $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:747    .text.lcd_update_line:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\ccUZBciK.s:753    .text.lcd_update_line:00000000 lcd_update_line
 
 NO UNDEFINED SYMBOLS

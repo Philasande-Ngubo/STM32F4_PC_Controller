@@ -27,6 +27,7 @@
 #include "lcd_stm32f4.h"
 /* USER CODE END Includes */
 #include <string.h>
+#include <stdlib.h>
 
 
 /* Private variables ---------------------------------------------------------*/
@@ -34,8 +35,6 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 DMA_HandleTypeDef hdma_tim2_ch1;
 UART_HandleTypeDef huart1;
-
-
 
 // TODO: Equation to calculate TIM2_Ticks
 
@@ -47,7 +46,14 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_DMA_Init(void);
 static void UART1_Init(void);
+void ADC1_Init(void);
+void ADC1_Start(uint8_t channel);
+void ADC_IRQHandler(void);
 
+volatile uint16_t pot0_value = 0;
+volatile uint16_t pot1_value = 0;
+volatile uint16_t old_pot0_value = 0;
+volatile uint16_t old_pot1_value = 0;
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -63,8 +69,6 @@ static void UART1_Init(void);
   */
 int main(void)
 {
-
-  
   HAL_Init();
 
   SystemClock_Config();
@@ -72,13 +76,33 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   UART1_Init();
+  ADC1_Init();
+  ADC1_Start( 5);
 
   init_LCD();
   lcd_command(CLEAR);
-
+  
+  char buf[10];
+  
 
   while (1)
   {
+
+    //Checks For pots rotations
+    if ( abs(pot0_value - old_pot0_value) > 30){
+        old_pot0_value = pot0_value;
+        
+        sprintf(buf, "POT0 %4u\r\n", pot0_value);
+
+        HAL_UART_Transmit(&huart1, (uint8_t*)buf, strlen(buf), HAL_MAX_DELAY);
+    }
+
+    if ( abs(pot1_value - old_pot1_value) > 30){
+        old_pot1_value = pot1_value;
+
+        sprintf(buf, "POT1 %4u\r\n",pot1_value);
+        HAL_UART_Transmit(&huart1, (uint8_t*)buf, strlen(buf), HAL_MAX_DELAY);
+    }
     
   
   }
@@ -217,6 +241,10 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_SetPriority(EXTI3_IRQn, 2, 0);  // SW3 on PC3
   HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 
+   // Set PA5 and PA6 as analog mode, no pull-up/down
+  GPIOA->MODER |= (3U << (5 * 2)) | (3U << (6 * 2));
+  GPIOA->PUPDR &= ~((3U << (5 * 2)) | (3U << (6 * 2)));
+
   GPIOB->MODER = 0x5555;
   GPIOB->ODR = 0xFF;
 }
@@ -288,6 +316,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     }
 }
 
+void ADC1_Start(uint8_t channel)
+{
+    ADC1->SQR3 = channel & 0x1F;                  // Select ADC channel
+    ADC1->CR2 |= ADC_CR2_SWSTART;                 // Start conversion
+}
+
 void UART1_Init(void)
 {
     // Enable clocks
@@ -321,6 +355,50 @@ void UART1_Init(void)
         // Initialization Error
         Error_Handler();
     }
+}
+
+void ADC_IRQHandler(void)
+{
+    if (ADC1->SR & ADC_SR_EOC)
+    {
+        static uint8_t current_channel = 5;       // Start from channel 5
+        uint16_t value = ADC1->DR;                // Read result, clears EOC flag
+
+        if (current_channel == 5)
+        {
+            pot0_value = value;
+            current_channel = 6;
+            ADC1_Start(6);                        // Next: PA6
+        }
+        else
+        {
+            pot1_value = value;
+            current_channel = 5; 
+            ADC1_Start(5);                        // Next: PA5
+        }
+    }
+}
+
+void ADC1_Init(void)
+{
+    RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;           // Enable ADC1 clock
+
+    // ADC common prescaler (PCLK2 / 4)
+    ADC->CCR &= ~(3U << 16);
+    ADC->CCR |= (1U << 16);                       // Divide by 4
+
+    ADC1->CR1 = 0;                                // 12-bit, single conversion
+    ADC1->CR2 = ADC_CR2_EOCS | ADC_CR2_CONT;      // EOC after each, continuous mode
+    ADC1->SQR1 = 0;                               // One conversion per sequence
+
+    // Sampling time for channels 5 and 6: 56 cycles (enough for stable reads)
+    ADC1->SMPR2 |= (3U << (5 * 3)) | (3U << (6 * 3));
+
+    // Enable EOC interrupt
+    ADC1->CR1 |= ADC_CR1_EOCIE;
+    NVIC_EnableIRQ(ADC_IRQn);
+
+    ADC1->CR2 |= ADC_CR2_ADON;                    // Power on ADC
 }
 
 

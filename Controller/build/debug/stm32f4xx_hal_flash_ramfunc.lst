@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -27,7 +27,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
   24              		.thumb
   25              		.thumb_func
   27              	HAL_FLASHEx_StopFlashInterfaceClk:
-  28              	.LFB134:
+  28              	.LFB239:
    1:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** /**
    2:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****   ******************************************************************************
    3:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****   * @file    stm32f4xx_hal_flash_ramfunc.c
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****     *** GNU Compiler ***
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****     --------------------
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****     [..] RAM functions are defined using a specific toolchain attribute
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 2
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s 			page 2
 
 
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****          "__attribute__((section(".RamFunc")))".
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
   85:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****   */
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** 
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** /**
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 3
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s 			page 3
 
 
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****   * @brief Stop the flash interface while System Run
@@ -178,17 +178,17 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
   68 0028 00380240 		.word	1073887232
   69 002c 00700040 		.word	1073770496
   70              		.cfi_endproc
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 4
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s 			page 4
 
 
-  71              	.LFE134:
+  71              	.LFE239:
   73              		.align	1
   74              		.global	HAL_FLASHEx_StartFlashInterfaceClk
   75              		.syntax unified
   76              		.thumb
   77              		.thumb_func
   79              	HAL_FLASHEx_StartFlashInterfaceClk:
-  80              	.LFB135:
+  80              	.LFB240:
  103:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** 
  104:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** /**
  105:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****   * @brief Start the flash interface while System Run
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
  111              		.loc 1 118 3 view .LVU18
  119:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** }
  112              		.loc 1 119 1 is_stmt 0 view .LVU19
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 5
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s 			page 5
 
 
  113 0054 02B0     		add	sp, sp, #8
@@ -251,14 +251,14 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
  120 0058 00380240 		.word	1073887232
  121 005c 00700040 		.word	1073770496
  122              		.cfi_endproc
- 123              	.LFE135:
+ 123              	.LFE240:
  125              		.align	1
  126              		.global	HAL_FLASHEx_EnableFlashSleepMode
  127              		.syntax unified
  128              		.thumb
  129              		.thumb_func
  131              	HAL_FLASHEx_EnableFlashSleepMode:
- 132              	.LFB136:
+ 132              	.LFB241:
  120:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** 
  121:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** /**
  122:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****   * @brief Enable the flash sleep while System Run
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
  157              		.loc 1 131 3 view .LVU26
  132:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****   /* Enable the flash sleep while System Run */
  133:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****   SET_BIT(PWR->CR, PWR_CR_FMSSR);
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 6
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s 			page 6
 
 
  158              		.loc 1 133 3 view .LVU27
@@ -321,14 +321,14 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
  172 0088 00380240 		.word	1073887232
  173 008c 00700040 		.word	1073770496
  174              		.cfi_endproc
- 175              	.LFE136:
+ 175              	.LFE241:
  177              		.align	1
  178              		.global	HAL_FLASHEx_DisableFlashSleepMode
  179              		.syntax unified
  180              		.thumb
  181              		.thumb_func
  183              	HAL_FLASHEx_DisableFlashSleepMode:
- 184              	.LFB137:
+ 184              	.LFB242:
  137:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** 
  138:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c **** /**
  139:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c ****   * @brief Disable the flash sleep while System Run
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
  199 0098 1A6C     		ldr	r2, [r3, #64]
  200 009a 42F08052 		orr	r2, r2, #268435456
  201 009e 1A64     		str	r2, [r3, #64]
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 7
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s 			page 7
 
 
  202              		.loc 1 148 3 view .LVU34
@@ -391,29 +391,29 @@ ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 1
  224 00b8 00380240 		.word	1073887232
  225 00bc 00700040 		.word	1073770496
  226              		.cfi_endproc
- 227              	.LFE137:
+ 227              	.LFE242:
  229              		.text
  230              	.Letext0:
  231              		.file 2 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
  232              		.file 3 "C:/Users/P Ngubo/AppData/Roaming/Code/User/globalStorage/bmd.stm32-for-vscode/@xpack-dev-
  233              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
  234              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
-ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s 			page 8
+ARM GAS  C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f4xx_hal_flash_ramfunc.c
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:21     .RamFunc:00000000 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:27     .RamFunc:00000000 HAL_FLASHEx_StopFlashInterfaceClk
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:68     .RamFunc:00000028 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:73     .RamFunc:00000030 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:79     .RamFunc:00000030 HAL_FLASHEx_StartFlashInterfaceClk
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:120    .RamFunc:00000058 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:125    .RamFunc:00000060 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:131    .RamFunc:00000060 HAL_FLASHEx_EnableFlashSleepMode
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:172    .RamFunc:00000088 $d
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:177    .RamFunc:00000090 $t
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:183    .RamFunc:00000090 HAL_FLASHEx_DisableFlashSleepMode
-C:\Users\PNGUBO~1\AppData\Local\Temp\ccX4OdhH.s:224    .RamFunc:000000b8 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:21     .RamFunc:00000000 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:27     .RamFunc:00000000 HAL_FLASHEx_StopFlashInterfaceClk
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:68     .RamFunc:00000028 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:73     .RamFunc:00000030 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:79     .RamFunc:00000030 HAL_FLASHEx_StartFlashInterfaceClk
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:120    .RamFunc:00000058 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:125    .RamFunc:00000060 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:131    .RamFunc:00000060 HAL_FLASHEx_EnableFlashSleepMode
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:172    .RamFunc:00000088 $d
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:177    .RamFunc:00000090 $t
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:183    .RamFunc:00000090 HAL_FLASHEx_DisableFlashSleepMode
+C:\Users\PNGUBO~1\AppData\Local\Temp\cczoopDg.s:224    .RamFunc:000000b8 $d
 
 NO UNDEFINED SYMBOLS
