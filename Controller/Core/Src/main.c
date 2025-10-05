@@ -52,6 +52,7 @@ void ADC_IRQHandler(void);
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
 void handle(char* Msg);
 int parseLIValue(const char *msg);
+int parseWRCommand(const char *msg, char *line1, char *line2, int maxLen);
 
 volatile uint16_t pot0_value = 0;
 volatile uint16_t pot1_value = 0;
@@ -118,10 +119,9 @@ int main(void)
 
     if (stringReady)
         {
-            stringReady = 0; 
             char * Recieved =  (char*)rxBuffer;
-            lcd_putstring(Recieved);
             handle(Recieved);
+            stringReady = 0; 
         }
     
   
@@ -467,9 +467,9 @@ void handle(char* Msg){
   if ( (Msg[0] == 'H') && (Msg[1] == 'I') ){
     lcd_command(CLEAR);
     lcd_putstring("Controller");
-    lcd_command(CLEAR);
-    lcd_putstring("Connected");
-    
+    lcd_command(LINE_TWO);
+    lcd_putstring("Connected.");
+
     char msg[] = "HEY\r\n";
     HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
   }
@@ -477,7 +477,7 @@ void handle(char* Msg){
   if ( (Msg[0] == 'U') && (Msg[1] == 'P') ){
     lcd_command(CLEAR);
     lcd_putstring("Controller");
-    lcd_command(CLEAR);
+    lcd_command(LINE_TWO);
     lcd_putstring("Connected");
 
     char msg[] = "YES\r\n";
@@ -486,6 +486,17 @@ void handle(char* Msg){
 
   
   if ( (Msg[0] == 'W') && (Msg[1] == 'R') ){
+
+    char line1[50];
+    char line2[50];
+    if ( parseWRCommand(Msg,line1,line2,50 ) ){
+      lcd_command(CLEAR);
+      lcd_putstring(line1);
+      lcd_command(LINE_TWO);
+      lcd_putstring(line2);
+    }
+
+  
     char msg[] = "DID\r\n";
     HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
   }
@@ -500,6 +511,10 @@ void handle(char* Msg){
   }
 
   if ( (Msg[0] == 'E') && (Msg[1] == 'S') ){
+    lcd_command(CLEAR);
+    lcd_putstring("Controller");
+    lcd_command(LINE_TWO);
+    lcd_putstring("Disconnected");
     char msg[] = "SHO\r\n";
     HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
   }
@@ -532,6 +547,40 @@ int parseLIValue(const char *msg) {
 
     return -1; // Invalid format or out of range
 }
+
+int parseWRCommand(const char *msg, char *line1, char *line2, int maxLen) {
+    char buffer[256];
+    strncpy(buffer, msg, sizeof(buffer)-1);
+    buffer[sizeof(buffer)-1] = '\0';
+    rtrim(buffer);
+
+    char cmd[3] = {0};
+    char rest[256] = {0};
+
+    // Separate the command and the rest
+    if (sscanf(buffer, "%2s %[^\n]", cmd, rest) != 2)
+        return 0;
+
+    if (strcmp(cmd, "WR") != 0)
+        return 0;
+
+    // Split by ';'
+    char *sep = strchr(rest, ';');
+    if (!sep)
+        return 0;
+
+    *sep = '\0';
+    strncpy(line1, rest, maxLen-1);
+    line1[maxLen-1] = '\0';
+    strncpy(line2, sep+1, maxLen-1);
+    line2[maxLen-1] = '\0';
+
+    rtrim(line1);
+    rtrim(line2);
+
+    return 1;
+}
+
 
 #ifdef USE_FULL_ASSERT
 /**
