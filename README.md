@@ -19,6 +19,37 @@ There are couple of options one may choose from but the program source code is i
 
 ## <img width="24" height="24" alt="18967516" src="https://github.com/user-attachments/assets/d35eabf1-aa29-4f70-b6a1-1bcdfb5e9ac8" /> The Protocol
 
+Perhaps before explaining the protocol it is best I also show the schematic of the STM32F446RTCx
+
+<img width="413" height="308" alt="image" src="https://github.com/user-attachments/assets/22cc996f-1c6a-44c4-a1e8-63e1ff55fca7" />
+
+<img width="669" height="273" alt="image" src="https://github.com/user-attachments/assets/fc79840f-0ce4-4f74-a889-974617537a96" />
+
+ 
+### <img width="20" height="20" alt="images" src="https://github.com/user-attachments/assets/e045468e-aff0-42ca-b2cf-e7c0949240e4" /> Potentiometers
+There are two potentiometers namely 
+- POT0
+- POT1
+
+### <img width="20" height="20" alt="5735377" src="https://github.com/user-attachments/assets/0bd06e8f-1104-41a3-ae07-579b82dd0476" /> PushButtons
+There are four programmable switch buttons
+- SW0
+- SW1
+- SW2
+- SW3
+
+### <img width="20" height="20" alt="2231268" src="https://github.com/user-attachments/assets/252a7dab-794b-443a-bdf2-8a055e649e85" /> LED STRIP
+
+The LED strip consists of 8 Leds numbered 0 to 7
+
+<img width="202" height="50" alt="image" src="https://github.com/user-attachments/assets/d2dbb1b9-1c76-41cd-8c17-612204b65e6c" />
+
+
+
+  
+
+
+
 
 
 
