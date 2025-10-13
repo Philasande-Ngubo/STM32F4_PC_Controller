@@ -107,6 +107,36 @@ The LED strip consists of 8 Leds numbered 0 to 7
       SHO
   There the PC knows the STM was disconnected gracefully
 
+<br/><br/>
 
+## <img width="24" height="24" alt="11152927" src="https://github.com/user-attachments/assets/f97d1614-dc18-4132-b206-0091ea60e0b6" />   COMMUNICATING
+
+I have written a small python program to communicate with the STM which is on *PC/* which is simple but is not exhaustive  you will need to have **pySerial, PyQt5** installed
+
+    pip install PyQt5
+    pip install pyserial
+ The in order to Run the program just run a 
+
+    python3 Main.py
+<img height="250" alt="image" src="https://github.com/user-attachments/assets/fb41768a-79c0-4650-9a91-16f112c9cd95" />
+<br/><br/>
+
+So now it will automatically detect if the an stm is connected Howerver I recommend you use a more robust serial tester that will allow flexibity
+
+- Advanced Serial Port Monitor (download <a href = "https://www.aggsoft.com/serial-port-monitor/download.htm">Here</a>)
+- COM Port Monitoring (download <a href = "https://www.aggsoft.com/serial-port-monitor/download.htm](https://www.com-port-monitoring.com/serial-port-terminal/">Here</a>)
+- COM Port Monitoring (download <a href = "https://advanced-serial-port-monitor.software.informer.com/">Here</a>)
+- Or any other COM port monitor
+
+## <img width="24" height="24" alt="12695920" src="https://github.com/user-attachments/assets/7deba80a-c036-4f6b-abee-d99e90235176" /> Tips
+<br/><br/>
+
+- If your PC cannot detect the COM download the port driver <a href="https://www.silabs.com/interface/usb-bridges/classic/device.cp2102?tab=specs">download </a> the driver and update it(see more on<a href="https://support.microsoft.com/en-us/windows/update-drivers-through-device-manager-in-windows-ec62f46c-ff14-c91d-eead-d7126dc1f7b6">updating drivers</a>)
+
+- Write your own programs to test and more functionality
+
+
+
+> Feel free to contact me on Email to query about the code 
 
 
