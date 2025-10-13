@@ -5,7 +5,7 @@ practical requirements we made a whole protocol that communicates with the PC an
 
 ![499581631508302795](https://github.com/user-attachments/assets/2c3a14f3-43fb-4a9f-90c9-43612ec406b5)
 
-
+<br/>
 
 ## <img width="24" height="24" alt="16319418" src="https://github.com/user-attachments/assets/e913d363-9611-4bd8-9982-f0ae4fedfefc" /> Loading the program to stm32 
 
@@ -14,6 +14,11 @@ There are couple of options one may choose from but the program source code is i
 - Use the <a href= "https://www.st.com/en/development-tools/stm32cubeide.html">STM32CUBIDE</a>
 * Use Visual studio code (see <a href= "https://zenembed.com/vscode-cubemx-guide">setting up vscode for STM32</a>)
 + Or your convenient way of running stm32 programs
+
+<br/>
+
+## <img width="24" height="24" alt="18967516" src="https://github.com/user-attachments/assets/d35eabf1-aa29-4f70-b6a1-1bcdfb5e9ac8" /> The Protocol
+
 
 
 
