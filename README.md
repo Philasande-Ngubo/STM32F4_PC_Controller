@@ -42,9 +42,9 @@ There are four programmable switch buttons
 
 The LED strip consists of 8 Leds numbered 0 to 7
 
-<img style ="opacity: 0.2" width="202" height="50" alt="image" src="https://github.com/user-attachments/assets/d2dbb1b9-1c76-41cd-8c17-612204b65e6c" />
+<img style ="opacity: 0.2" width="202" height="50" alt="image" src="https://github.com/user-attachments/assets/d2dbb1b9-1c76-41cd-8c17-612204b65e6c" /><br/><br/>
 
-## <img width="24" height="24" alt="6201651" src="https://github.com/user-attachments/assets/9c21d04f-181f-4771-bf23-1f5e38372625" /> FROM STM32 to PC
+##  <img width="24" height="24" alt="3430375" src="https://github.com/user-attachments/assets/513deb21-64fc-4855-af74-ea0cee898e1f" /> FROM STM32 to PC
 
 - Pushbutton pressed<br/>
   The stm sends a message to the pc
@@ -55,14 +55,57 @@ The LED strip consists of 8 Leds numbered 0 to 7
    The stm sends a message to the pc
   
       POT<Pot number i.e 0 or 1> <percentage turned>
-  e.g if POT0 is turned halfway the stm will send *POT0 50* to the uart com
+  e.g if POT0 is turned halfway the stm will send *POT0 50* to the uart com<br/>
 
+## <img width="24" height="24" alt="4186598" src="https://github.com/user-attachments/assets/c8b86d35-466e-448b-8962-71f170df37cc" /> FROM STM32 to PC
 
-
+- <img width="20" height="20" alt="18536728" src="https://github.com/user-attachments/assets/c5b1e3c9-4a87-4209-9a0e-d6430bde5d27" /> Handshake <br/>
+  The PC sends the *HI* message to the  to the STM
+  
+      HI
+  the STM must respond with a HEY
+  
+      HEY
+  To recognise the connection request there and then the handshake is done<br/>
 
   
 
+- <img width="20" height="20" alt="9968180" src="https://github.com/user-attachments/assets/0d1fafa4-5ca7-4f4a-86dc-b3e64b90aa59" /> PING <br/>
+  The PC sends the *UP* message to the  to the STM
+  
+      UP
+  the STM must respond with a HEY
+  
+      YES
+  There the PC knows the STM is still available<br/>
 
+
+- <img width="20" height="20" alt="908792" src="https://github.com/user-attachments/assets/2dd67cf3-a463-4f0a-9469-e0d6c49b3bbd" />   Write to LCD <br/>
+  The PC sends the *WR <LINE1>;<LINE2>* message to the  to the STM
+  
+      WR <LINE1>;<LINE2>
+  the STM must respond with a *DID* after ensuring that it has written to the LCD
+  
+      YES
+  e.g sending a *WR HELLO;WORLD* will write a *Hello* on the first line of the lcd and a *World* on the Second screen of the lcd<br/>
+
+- <img width="20" height="20" alt="2338802" src="https://github.com/user-attachments/assets/5d13a932-3362-4841-a126-40bc2e971d6d" />  Write to the LED strip <br/>
+  The PC sends the *LI <NUM>* message to the  to the STM
+  
+      LI <NUM>
+  the STM must respond with a *LIT* after ensuring that it has written to the LED strip
+  
+      LIT
+   i.e sending a LI 0 will turn off all the lights while sending LI 255 will light all the light so the way this works is the they are eight LED represented in binary number 0b00000000 each bit represents a lit LED unit so the number you can send is bounded between 0 and 225 inclusive any number in this range will be valid. e.g to light the first and light LED the targert is 0b10000001 for which the decimal equavalent is 129 so LI 129 will achieve the desired effect.
+
+- <img width="20" height="20" alt="5334705" src="https://github.com/user-attachments/assets/81806352-c669-493a-a46d-2bb9d9b5df36" /> Ending the Session <br/>
+  The PC sends the *ES* message to the  to the STM
+  
+      ES
+  the STM must respond with a SHO 
+  
+      SHO
+  There the PC knows the STM was disconnected gracefully
 
 
 
