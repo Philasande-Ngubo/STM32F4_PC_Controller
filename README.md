@@ -42,7 +42,10 @@ There are four programmable switch buttons
 
 The LED strip consists of 8 Leds numbered 0 to 7
 
-<img width="202" height="50" alt="image" src="https://github.com/user-attachments/assets/d2dbb1b9-1c76-41cd-8c17-612204b65e6c" />
+<img opacity= 0.7 width="202" height="50" alt="image" src="https://github.com/user-attachments/assets/d2dbb1b9-1c76-41cd-8c17-612204b65e6c" />
+
+## <img width="24" height="24" alt="6201651" src="https://github.com/user-attachments/assets/9c21d04f-181f-4771-bf23-1f5e38372625" /> FROM STM32 to PC
+
 
 
 
