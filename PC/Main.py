@@ -290,7 +290,8 @@ class STM32ControlUI(QMainWindow):
             BAUD_RATE = 115200
             ser = serial.Serial(COMS[0][0], BAUD_RATE, timeout=1)
             pc_com.send_and_receive(ser,"LI "+str(LED)+"\r\n");
-            pc_com.send_and_receive(ser,"WR "+lines[0]+";"+lines[1]+"\r\n");
+            pc_com.send_and_receive(ser,"WR "+lines[0]+";"+lines[1]+"\r\n")
+            ser.close()
         
         # Update status label briefly
         self.status_label.setText('✓ State Sent Successfully')

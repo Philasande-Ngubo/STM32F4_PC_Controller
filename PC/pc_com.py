@@ -32,4 +32,13 @@ def send_and_receive(ser,message):
     ser.close()
     return response
 
+ports = controllers()
+
+if ports:
+    ser = serial.Serial(ports[0][0], BAUD_RATE, timeout=1)
+    while True:
+        response = ser.readline().decode('utf-8').strip() 
+        if response:
+            print(response)
+
 
